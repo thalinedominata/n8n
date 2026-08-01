@@ -11,9 +11,13 @@
  * else changes. A separate rigged variant exists for future animation
  * (see docs/roadmap.md).
  */
-/** Hero display mesh: 100k triangles, PBR material maps (metallic/roughness/normal). */
+/**
+ * Display mesh. Currently the approved rigged model — the first PBR hero
+ * attempt mis-registered the rear texture onto the chest (straps on the
+ * front) and was rejected; a symmetry-off re-roll is in progress.
+ */
 export const GOBOT_MODEL_URL =
-	'https://d3u0tzju9qaucj.cloudfront.net/7d051b5a-7bfe-49fe-a484-24e7b3a9458a/a823946b-4597-42bf-ac49-0e0be34404ea.glb';
+	'https://d3u0tzju9qaucj.cloudfront.net/7d051b5a-7bfe-49fe-a484-24e7b3a9458a/d1fb2741-a1d5-4b2f-b1da-7825918abecb.glb';
 
 /** Rigged variant (humanoid skeleton, standard mesh) — reserved for future animation. */
 export const GOBOT_RIGGED_MODEL_URL =
