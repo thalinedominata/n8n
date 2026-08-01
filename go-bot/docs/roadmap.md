@@ -61,3 +61,13 @@ ever wanted, the path is image-to-3D generation or a commissioned model
 2. Design tokens remain the single styling source of truth.
 3. Go-Bot's character constants stay canon across SVG, 3D, and video.
 4. Every version ships with its documentation.
+
+## Decision log
+
+- **2026-08-01 — 3D wave animation: closed, not shipping.** Auto-rigging
+  (Meshy via Higgsfield) was attempted five ways; the best result animates
+  but rubber-stretches his rigid shells (soft-blended skin weights).
+  A solid robot doesn't stretch — ENGAGE GLOBAL verdict. The wave lives in
+  the hero film; the committed static model is the 3D representation.
+  Future path if ever wanted: manual rigid-bind rig in Blender (each shell
+  panel weighted 100% to one bone), not further auto-rig re-rolls.
