@@ -28,7 +28,7 @@ npm run dev        # http://localhost:3000
 ## Technology
 
 Next.js 15 · React 19 · TypeScript (strict) · Tailwind CSS 4 · Motion
-(Framer Motion) · GSAP · React Three Fiber + Three.js · shadcn/ui patterns ·
+(Framer Motion) · GSAP · shadcn/ui patterns ·
 Lucide · Lenis · Vercel
 
 ## Repository map
@@ -46,7 +46,6 @@ go-bot/
 │   │   ├── layout/        Navbar, Footer
 │   │   └── motion/        Motion wrappers (Reveal, SmoothScrollProvider)
 │   ├── animations/        Motion tokens, shared variants, GSAP setup
-│   ├── three/             React Three Fiber scenes (3D)
 │   ├── hooks/             Reusable React hooks
 │   ├── types/             Shared TypeScript models
 │   ├── data/              Typed content (life domains, industries, roadmap, …)

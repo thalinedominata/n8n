@@ -13,15 +13,15 @@ const VIEWS: Array<{ media: GoBotFigureProps['media']; label: string }> = [
 
 /**
  * The prototype gallery — Go-Bot as himself, in 3D-realistic renders and
- * film (brand rule: never the flat cartoon unless instructed). The
- * interactive R3F stage in src/three/ stays wired for the day the glTF
- * export of this prototype lands.
+ * film. This media IS the character's canonical representation (brand
+ * rule: never the flat cartoon unless instructed); no 3D model asset
+ * exists, and the platform is designed around that.
  */
-export function GoBot3DShowcase() {
+export function PrototypeShowcase() {
 	const [media, setMedia] = useState<GoBotFigureProps['media']>('film');
 
 	return (
-		<section id="gobot-3d" className="bg-surface-warm py-28">
+		<section id="prototype" className="bg-surface-warm py-28">
 			<Container>
 				<SectionHeading
 					eyebrow="The Prototype"
@@ -44,7 +44,7 @@ export function GoBot3DShowcase() {
 				<Reveal className="mx-auto max-w-3xl">
 					<GoBotFigure media={media} className="max-h-[32rem] w-full" />
 					<p className="mt-4 text-center text-overline text-ink-tertiary">
-						Interactive 3D arrives when the prototype&apos;s model export lands — same views, full orbit
+						Captured on the prototype film set — every pixel is the real design
 					</p>
 				</Reveal>
 			</Container>

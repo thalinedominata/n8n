@@ -18,7 +18,7 @@ with a vector version in `src/components/ui/logo.tsx`.
 
 | File | Purpose |
 | --- | --- |
-| `go-bot-prototype.glb` | 3D model export for the V2 React Three Fiber stage |
+| — | No 3D model exists; the renders and film above are the canonical Go-Bot. Image-to-3D generation is the future option if interactivity is ever wanted |
 | `go-bot-turnaround.png` | Full turnaround for animators |
 
 ## Rules
@@ -29,4 +29,4 @@ with a vector version in `src/components/ui/logo.tsx`.
 - **Personality is canon.** Warm, curious, optimistic. Idle behavior timing
   lives in the same constants file and applies to every representation
   (SVG, 3D, video).
-- Optimize new SVGs with SVGO and glTF with gltf-transform before committing.
+- Optimize new SVGs with SVGO and compress new film to faststart MP4 before committing.

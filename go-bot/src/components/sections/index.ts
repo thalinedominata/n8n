@@ -3,7 +3,7 @@ export { Problem } from './problem';
 export { Architecture } from './architecture';
 export { LifeDomains } from './life-domains';
 export { HardwareExplorer } from './hardware-explorer';
-export { GoBot3DShowcase } from './gobot-3d-showcase';
+export { PrototypeShowcase } from './prototype-showcase';
 export { Industries } from './industries';
 export { AiDemo } from './ai-demo';
 export { Roadmap } from './roadmap';

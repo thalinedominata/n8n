@@ -48,9 +48,9 @@ orange, or orange as an accent; never distort or re-proportion the bars.
 
 **Go-Bot is always shown 3D-realistic** — the prototype renders
 (`public/assets/gobot/go-bot-front.jpg` / `go-bot-back.jpg`) and film
-(`go-bot-wave.mp4`), rendered via the `GoBotFigure` component. The
-interactive R3F stage joins this tier when the prototype's glTF export
-lands. The flat vector `GoBot` illustration is NOT a site-surface
+(`go-bot-wave.mp4`), rendered via the `GoBotFigure` component. No 3D
+model asset exists — the renders and film ARE the canonical Go-Bot.
+The flat vector `GoBot` illustration is NOT a site-surface
 representation: it serves only as a loading fallback or when explicitly
 instructed (icons, diagrams).
 

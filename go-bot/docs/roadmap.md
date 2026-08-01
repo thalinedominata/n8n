@@ -27,16 +27,19 @@ phases sorted into platform layers.
 
 ## Version 2 — Immersion *(active)*
 
-- [x] 3D Go-Bot: procedural R3F model in `src/three/go-bot-model.tsx`,
-      driven by the same MOODS state machine and character constants as
-      the SVG — one behavior engine, two renderers. Homepage showcase
-      (`#gobot-3d`) with live mood switching and orbit controls; loads
-      lazily so three.js never enters the initial bundle.
-- [ ] glTF prototype swap-in (geometry replaces primitives; animation
-      contract in go-bot-model.tsx stays identical)
-- [ ] GSAP ScrollTrigger deep-dives: pinned hardware exploded view,
-      scroll-scrubbed architecture story
-- [ ] 3D hardware explorer: anatomy hotspots move onto the 3D model
+**Decision: media-first, no 3D model.** Go-Bot exists as prototype
+renders and film only — there is no source 3D model to export. The
+experimental R3F/three.js layer was removed; `GoBotFigure` (renders +
+film) is the character's permanent representation. If interactive 3D is
+ever wanted, the path is image-to-3D generation or a commissioned model
+— a product decision, not a technical blocker.
+
+- [x] Go-Bot as himself site-wide: hero film loop, prototype gallery,
+      photo-based hardware explorer with front/back hotspot views
+- [ ] More film: mood/expression clips from the same prototype set
+      (thinking, walking, head-turn) to extend GoBotFigure
+- [ ] GSAP ScrollTrigger deep-dives: pinned hardware exploded story,
+      scroll-scrubbed architecture narrative
 - [ ] Capability demo interactions; localization (i18n layer); a11y audit
 
 ## Version 3 — Intelligence

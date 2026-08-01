@@ -14,8 +14,6 @@
 	},
 	"dependencies": {
 		"@gsap/react": "^2.1.2",
-		"@react-three/drei": "^10.0.0",
-		"@react-three/fiber": "^9.0.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"gsap": "^3.12.7",
@@ -25,15 +23,13 @@
 		"next": "^15.3.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
-		"tailwind-merge": "^3.0.2",
-		"three": "^0.175.0"
+		"tailwind-merge": "^3.0.2"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4.1.0",
 		"@types/node": "^22.13.0",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
-		"@types/three": "^0.175.0",
 		"tailwindcss": "^4.1.0",
 		"typescript": "^5.8.2",
 		"vitest": "^3.0.8"

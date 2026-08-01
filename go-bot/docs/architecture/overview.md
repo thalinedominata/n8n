@@ -8,7 +8,7 @@ million lines of code. Every decision optimizes for:
 1. **Scale** — new surfaces (dashboard, developer portal, marketplace) slot in without rework.
 2. **Reuse** — one implementation per concept; zero duplication.
 3. **Replaceability** — layers depend on contracts, not internals.
-4. **Performance** — heavy modules (three.js, GSAP) load only where used.
+4. **Performance** — heavy modules (GSAP, media) load only where used.
 
 ## Layered architecture
 
@@ -52,9 +52,7 @@ migration path to a CMS in a later version without touching components.
 ## Client/server split
 
 Pages are server components by default. `'use client'` appears only where
-interactivity demands it (animations, state, pointer tracking). Three.js is
-isolated in `src/three/` and dynamically imported so it never enters the
-initial bundle.
+interactivity demands it (animations, state, pointer tracking).
 
 ## Motion architecture
 

@@ -34,7 +34,6 @@ go-bot/
 │   │   ├── gobot/                 # The animated character + his spec
 │   │   └── motion/                # Motion wrappers (Reveal, SmoothScrollProvider)
 │   ├── animations/                # Motion tokens, variants, GSAP registration
-│   ├── three/                     # React Three Fiber scenes
 │   ├── hooks/                     # Reusable hooks
 │   ├── types/                     # Shared TypeScript contracts
 │   ├── data/                      # Typed content
@@ -64,7 +63,7 @@ go-bot/
 | A reusable entrance/hover animation | `animations/variants.ts` |
 | Stateful reusable behavior | `hooks/` |
 | A pure function with no React | `lib/` |
-| Anything three.js | `three/` |
+| Go-Bot's canonical media (film, renders) | `public/assets/{gobot,video}` via `GoBotFigure` |
 | Go-Bot's look or personality | `components/gobot/` + `public/assets/gobot/` |
 
 ## Rules

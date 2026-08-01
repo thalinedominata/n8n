@@ -41,7 +41,7 @@ graph TD
 | 3 | Go-Bot component library | ✅ Shipped | `src/components/gobot` — moods, roles, presets |
 | 4 | Life domain database | ✅ All 20 domains populated | `src/data/life-domains.ts` + `life-domain-details.ts` |
 | 5 | Capability engine | ✅ Engine + seed set | `src/data/capabilities.ts` + `/capabilities` |
-| 6 | Hardware explorer (16 parts) | ✅ Shipped (2D); 3D in V2 | `src/data/hardware.ts` + homepage |
+| 6 | Hardware explorer (17 parts) | ✅ Shipped on the real renders (front/back hotspots) | `src/data/hardware.ts` + homepage |
 | 7 | Industry engine | ✅ Shipped | `src/data/industries.ts` + `/industries/[slug]` |
 | 8 | AI playground | ✅ Scripted; live in V3 | `src/components/sections/ai-demo.tsx` |
 | 9 | Investor experience | 📋 Planned (V3) | Future `app/(investors)` route group |
@@ -57,8 +57,9 @@ graph TD
   the engine, surfaced on every domain and industry page it references.
 - A new **industry** = one entry in `industries.ts` → homepage card and a
   full transformed experience at `/industries/[id]`.
-- A new **Go-Bot pose** = one mood in `go-bot.moods.ts` → available to
-  every current and future surface, in SVG today and 3D tomorrow.
+- A new **Go-Bot expression** = a film clip added to `GoBotFigure`'s
+  media set (canonical), or a mood in `go-bot.moods.ts` for the
+  illustration library.
 
 Integrity is enforced by tests (`tests/unit/data.test.ts`): cross-references
 must resolve, confidence must be a percentage, ids must be stable.
@@ -67,14 +68,14 @@ must resolve, confidence must be a percentage, ids must be stable.
 
 | Proposed | Here | Why |
 | --- | --- | --- |
-| `components/{ui,layout,sections,gobot,3d,cards}` | `src/components/{ui,layout,sections,gobot,…}` + `src/three` | Same split, under `src/` per Next.js convention |
+| `components/{ui,layout,sections,gobot,3d,cards}` | `src/components/{ui,layout,sections,gobot,…}` | Same split, under `src/` per Next.js convention |
 | `components/animations` | `src/animations` + `src/components/motion` | Tokens/variants vs. motion wrapper components |
 | `components/timeline`, `icons` | `sections/roadmap.tsx`, Lucide + `ui/logo.tsx` | Promote to folders when they grow past single files |
 | `lib` / `hooks` / `data` / `styles` | `src/lib` / `src/hooks` / `src/data` / `globals.css` tokens | Identical roles |
 | `content` | `src/data` (typed) | Same brain; becomes CMS-backed in V3 without component changes |
 | `design-system` | `src/components/ui` + `docs/design-system` | Code and documentation of the same system |
 | `api` | `app/api` (V3) | Ships with the first server capability |
-| `public/{images,models,videos,icons}` | `public/assets/{images,models,video,gobot}` | `models/` reserved for the V2 glTF pipeline |
+| `public/{images,models,videos,icons}` | `public/assets/{images,models,video,gobot}` | `models/` reserved should a 3D pipeline ever be commissioned |
 
 ## Multi-application future
 

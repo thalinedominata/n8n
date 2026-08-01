@@ -121,7 +121,7 @@ Design mobile-first; the page column is `max-w-6xl` (wide) / `max-w-3xl`
 | GoBotIdle/Thinking/Listening/Talking/Happy/Concerned/Scanning/Charging/Walking | Mood presets |
 | GoBotHero | Hero-scale preset |
 | GoBotMedical/Security/Police/Education/Construction/Firefighter/ChildCare/ElderCare/Developer | Role presets |
-| GoBot3D | Lazy-loaded 3D renderer (React Three Fiber) — same mood engine, SVG fallback while loading |
+| GoBotFigure | The canonical Go-Bot: prototype film & front/back renders (brand default) |
 
 ### Composed experiences (`src/components/sections`)
 
