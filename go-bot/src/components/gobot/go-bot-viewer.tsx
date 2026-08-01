@@ -40,13 +40,13 @@ export function GoBotViewer({ className }: { className?: string }) {
 					alt="Interactive 3D model of Go-Bot"
 					camera-controls
 					auto-rotate
-					auto-rotate-delay="1500"
-					rotation-per-second="18deg"
-					shadow-intensity="0.9"
-					shadow-softness="1"
+					auto-rotate-delay="2500"
+					rotation-per-second="12deg"
+					shadow-intensity="1"
+					shadow-softness="0.9"
 					environment-image="neutral"
 					tone-mapping="aces"
-					exposure="1.05"
+					exposure="0.95"
 					camera-orbit="12deg 82deg 105%"
 					field-of-view="26deg"
 					interaction-prompt="none"

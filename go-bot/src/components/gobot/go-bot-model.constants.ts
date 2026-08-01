@@ -1,23 +1,17 @@
 /**
- * The 3D Go-Bot asset.
+ * The 3D Go-Bot asset — owned by this repository.
  *
- * Provenance: AI multi-view reconstruction (Meshy via Higgsfield) from the
- * two canonical prototype renders, 4K-enhanced, with PBR texturing guided
- * to the brand palette. Approved by ENGAGE GLOBAL as the interactive
- * representation of the prototype.
+ * Provenance: AI multi-view reconstruction (Meshy via Higgsfield) from four
+ * 4K views of the prototype (front/back renders + generated left/right
+ * profiles), 300k triangles, PBR material maps, enforced symmetry.
+ * Approved by ENGAGE GLOBAL 2026-08-01 as the interactive representation.
  *
- * Currently served from the generation CDN. When the file is committed to
- * the repo, point this at `/assets/models/go-bot.glb` instead — nothing
- * else changes. A separate rigged variant exists for future animation
- * (see docs/roadmap.md).
+ * Known texture nits (accepted at ship time; swap the file to upgrade):
+ * some rear-panel detail baked onto the chest, faint speckle noise, plain
+ * strap webbing. Replacing this file upgrades every surface — no code
+ * changes.
  */
-/**
- * Display mesh. Currently the approved rigged model — the first PBR hero
- * attempt mis-registered the rear texture onto the chest (straps on the
- * front) and was rejected; a symmetry-off re-roll is in progress.
- */
-export const GOBOT_MODEL_URL =
-	'https://d3u0tzju9qaucj.cloudfront.net/7d051b5a-7bfe-49fe-a484-24e7b3a9458a/d1fb2741-a1d5-4b2f-b1da-7825918abecb.glb';
+export const GOBOT_MODEL_URL = '/assets/models/go-bot.glb';
 
 /** Rigged variant (humanoid skeleton, standard mesh) — reserved for future animation. */
 export const GOBOT_RIGGED_MODEL_URL =
