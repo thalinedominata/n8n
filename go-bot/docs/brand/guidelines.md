@@ -63,7 +63,7 @@ instructed (icons, diagrams).
 - **His look:** matte graphite shell with darker joints; glossy black visor
   with two glowing orange eyes; the triple-bar chest emblem (lit); a small
   chest camera; soft orange hands; dark boots on orange soles; and the
-  wearable backpack with orange-stitched straps and a glowing spine light —
+  harness straps (orange-stitched, no separate pack) over an integrated back panel with vent and glowing spine light —
   the "wearable" in wearable humanoid robot.
 - **He is always alive** where he appears: breathing, blinking, watching,
   occasionally thinking. A frozen Go-Bot is off-brand.

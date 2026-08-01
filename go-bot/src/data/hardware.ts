@@ -142,7 +142,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'backpack',
 		name: 'Backpack',
 		description:
-			'The wearable backpack carries battery, cooling, and expansion — strapped on with orange-stitched harnesses and a glowing spine light.',
+			'Not a bag — a harness. Orange-stitched straps wrap his shoulders while his integrated back panel carries the battery, spine light, and vent, flush with his body.',
 		specs: [
 			{ label: 'Spine light', value: 'Status + charge indicator' },
 			{ label: 'Straps', value: 'Quick-release harness' },

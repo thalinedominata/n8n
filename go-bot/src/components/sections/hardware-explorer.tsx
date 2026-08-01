@@ -55,7 +55,7 @@ export function HardwareExplorer() {
 				<SectionHeading
 					eyebrow="Hardware Explorer"
 					title="Engineered to be gentle. Built to be everywhere."
-					description="Tap a point on Go-Bot to explore the anatomy underneath his shell — flip him around for the wearable backpack."
+					description="Tap a point on Go-Bot to explore the anatomy underneath his shell — flip him around for the harness straps and back panel."
 				/>
 
 				<div className="mb-8 flex justify-center gap-2">
