@@ -28,7 +28,7 @@ export function PrototypeShowcase() {
 				<SectionHeading
 					eyebrow="The Prototype"
 					title="This is Go-Bot."
-					description="Not a concept sketch — the real design. Matte graphite, a glowing gaze, the triple-bar heartbeat, and the harness straps that make him wearable tech. Spin him around."
+					description="Not a concept sketch — the real design. Matte graphite, a glowing gaze, the triple-bar heartbeat, and the straps that let you wear him like a backpack. Spin him around."
 				/>
 
 				<div className="mb-8 flex flex-wrap justify-center gap-2">

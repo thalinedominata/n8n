@@ -140,13 +140,13 @@ export const hardwareModules: HardwareModule[] = [
 	},
 	{
 		id: 'backpack',
-		name: 'Backpack',
+		name: 'Carry Straps',
 		description:
-			'Not a bag — a harness. Orange-stitched straps wrap his shoulders while his integrated back panel carries the battery, spine light, and vent, flush with his body.',
+			'The straps aren\'t his — they\'re yours. Fold him in, sling him on, and wear Go-Bot like a backpack. That\'s the “wearable” in wearable humanoid robot.',
 		specs: [
 			{ label: 'Spine light', value: 'Status + charge indicator' },
-			{ label: 'Straps', value: 'Quick-release harness' },
-			{ label: 'Function', value: 'The “wearable” in wearable robot' },
+			{ label: 'Straps', value: 'Human-wearable, quick-release' },
+			{ label: 'Carry weight', value: 'Balanced backpack-grade fit' },
 		],
 		hotspot: { x: 78, y: 56 },
 	},

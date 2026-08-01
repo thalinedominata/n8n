@@ -51,7 +51,7 @@ export function GoBotFigure({ media, className, bare = false, priority = false }
 				src={still.src}
 				width={still.width}
 				height={still.height}
-				alt={media === 'front' ? 'Go-Bot, front view' : 'Go-Bot, rear view with harness straps and integrated back panel'}
+				alt={media === 'front' ? 'Go-Bot, front view' : 'Go-Bot, rear view showing the human carry straps'}
 				priority={priority}
 				className="h-full w-full object-cover"
 			/>
