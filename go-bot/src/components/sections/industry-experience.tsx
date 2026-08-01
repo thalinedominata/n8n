@@ -6,7 +6,7 @@ import { ArrowLeft, Check } from 'lucide-react';
 import { Badge, Container, StatCard } from '@/components/ui';
 import { CapabilityCard } from '@/components/cards';
 import { RevealGroup, RevealItem, Reveal } from '@/components/motion/reveal';
-import { GoBot } from '@/components/gobot';
+import { GoBotFigure } from '@/components/gobot';
 import { industries } from '@/data/industries';
 import { capabilities } from '@/data/capabilities';
 import { heroReveal, staggerChildren } from '@/animations/variants';
@@ -71,12 +71,7 @@ export function IndustryExperience({ industryId }: { industryId: string }) {
 						transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
 						className="flex justify-center"
 					>
-						<GoBot
-							size={300}
-							role={industry.role}
-							mood="happy"
-							label={`Go-Bot, dressed for ${industry.name}`}
-						/>
+						<GoBotFigure media="film" className="w-full max-w-md" />
 					</motion.div>
 				</Container>
 			</section>

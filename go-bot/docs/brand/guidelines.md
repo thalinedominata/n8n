@@ -44,6 +44,16 @@ a slanted base bar (`public/assets/images/logo-mark.png`, vector component
 chest — brand and character are one system. Use it in ink on white, white on
 orange, or orange as an accent; never distort or re-proportion the bars.
 
+## Representing Go-Bot
+
+**Go-Bot is always shown 3D-realistic** — the prototype renders
+(`public/assets/gobot/go-bot-front.jpg` / `go-bot-back.jpg`) and film
+(`go-bot-wave.mp4`), rendered via the `GoBotFigure` component. The
+interactive R3F stage joins this tier when the prototype's glTF export
+lands. The flat vector `GoBot` illustration is NOT a site-surface
+representation: it serves only as a loading fallback or when explicitly
+instructed (icons, diagrams).
+
 ## The character
 
 - **Proportions are canon** — encoded in `go-bot.constants.ts` on a 200×250

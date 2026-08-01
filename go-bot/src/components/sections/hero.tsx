@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Badge, Button, Container, Modal } from '@/components/ui';
-import { GoBot } from '@/components/gobot';
+import { GoBotFigure } from '@/components/gobot';
 import { heroReveal, staggerChildren } from '@/animations/variants';
 
 function scrollToSection(id: string) {
@@ -59,7 +59,8 @@ export function Hero() {
 					transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
 					className="flex justify-center"
 				>
-					<GoBot size={320} />
+					{/* The real Go-Bot, waving — muted ambient loop */}
+					<GoBotFigure media="film" priority className="w-full max-w-lg" />
 				</motion.div>
 			</Container>
 

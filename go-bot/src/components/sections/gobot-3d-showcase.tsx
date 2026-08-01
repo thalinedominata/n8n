@@ -3,43 +3,38 @@
 import { useState } from 'react';
 import { Container, SectionHeading, Chip } from '@/components/ui';
 import { Reveal } from '@/components/motion/reveal';
-import { GoBot3D } from '@/components/gobot/go-bot-3d';
-import type { GoBotMood } from '@/components/gobot';
+import { GoBotFigure, type GoBotFigureProps } from '@/components/gobot';
 
-const SHOWCASE_MOODS: Array<{ mood: GoBotMood; label: string }> = [
-	{ mood: 'idle', label: 'Idle' },
-	{ mood: 'thinking', label: 'Thinking' },
-	{ mood: 'listening', label: 'Listening' },
-	{ mood: 'talking', label: 'Talking' },
-	{ mood: 'happy', label: 'Happy' },
-	{ mood: 'scanning', label: 'Scanning' },
-	{ mood: 'charging', label: 'Charging' },
-	{ mood: 'walking', label: 'Walking' },
+const VIEWS: Array<{ media: GoBotFigureProps['media']; label: string }> = [
+	{ media: 'film', label: 'Say hello' },
+	{ media: 'front', label: 'Front' },
+	{ media: 'back', label: 'Backpack' },
 ];
 
 /**
- * Version 2 flagship: Go-Bot in three dimensions, driven by the same mood
- * engine as the SVG character. Drag to orbit; pick a mood and watch the
- * one behavior state machine express itself in a second renderer.
+ * The prototype gallery — Go-Bot as himself, in 3D-realistic renders and
+ * film (brand rule: never the flat cartoon unless instructed). The
+ * interactive R3F stage in src/three/ stays wired for the day the glTF
+ * export of this prototype lands.
  */
 export function GoBot3DShowcase() {
-	const [mood, setMood] = useState<GoBotMood>('idle');
+	const [media, setMedia] = useState<GoBotFigureProps['media']>('film');
 
 	return (
 		<section id="gobot-3d" className="bg-surface-warm py-28">
 			<Container>
 				<SectionHeading
-					eyebrow="Version 2 Preview"
-					title="Meet him in three dimensions."
-					description="The same Go-Bot — same proportions, same personality, same mood engine — now with depth. Drag to look around him; pick a mood and watch him live it."
+					eyebrow="The Prototype"
+					title="This is Go-Bot."
+					description="Not a concept sketch — the real design. Matte graphite, a glowing gaze, the triple-bar heartbeat, and the wearable backpack that gives him his name."
 				/>
 
 				<div className="mb-8 flex flex-wrap justify-center gap-2">
-					{SHOWCASE_MOODS.map((entry) => (
+					{VIEWS.map((entry) => (
 						<Chip
-							key={entry.mood}
-							selected={mood === entry.mood}
-							onClick={() => setMood(entry.mood)}
+							key={entry.media}
+							selected={media === entry.media}
+							onClick={() => setMedia(entry.media)}
 						>
 							{entry.label}
 						</Chip>
@@ -47,11 +42,9 @@ export function GoBot3DShowcase() {
 				</div>
 
 				<Reveal className="mx-auto max-w-3xl">
-					<div className="h-[26rem] overflow-hidden rounded-2xl border border-border-subtle bg-surface shadow-e3 sm:h-[30rem]">
-						<GoBot3D mood={mood} className="h-full w-full" />
-					</div>
+					<GoBotFigure media={media} className="max-h-[32rem] w-full" />
 					<p className="mt-4 text-center text-overline text-ink-tertiary">
-						Drag to orbit · Built with React Three Fiber · glTF prototype swaps in without code changes
+						Interactive 3D arrives when the prototype&apos;s model export lands — same views, full orbit
 					</p>
 				</Reveal>
 			</Container>

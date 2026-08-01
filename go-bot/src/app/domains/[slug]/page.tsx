@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Badge, Container } from '@/components/ui';
-import { GoBot } from '@/components/gobot';
+import { GoBotFigure } from '@/components/gobot';
 import { DomainDetails } from '@/components/sections/domain-details';
 import { lifeDomains } from '@/data/life-domains';
 
@@ -72,7 +72,7 @@ export default async function DomainPage({ params }: DomainPageProps) {
 							) : null}
 						</div>
 						<div className="hidden justify-center lg:flex">
-							<GoBot size={260} label={`Go-Bot, ready to help with ${domain.title}`} />
+							<GoBotFigure media="front" className="w-full max-w-sm" />
 						</div>
 					</Container>
 				</section>

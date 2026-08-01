@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useInView } from 'motion/react';
 import { RotateCcw, Sparkles } from 'lucide-react';
 import { Container, SectionHeading, Logo, Chip } from '@/components/ui';
-import { GoBot, type GoBotMood } from '@/components/gobot';
+import { GoBotFigure, type GoBotMood } from '@/components/gobot';
 import { aiDemoScenarios } from '@/data/ai-demo';
 import { usePrefersReducedMotion } from '@/hooks';
 import { duration, ease } from '@/animations/tokens';
@@ -99,10 +99,13 @@ export function AiDemo() {
 					ref={stageRef}
 					className="mx-auto grid max-w-4xl items-end gap-8 lg:grid-cols-[0.4fr_1fr]"
 				>
-					{/* Go-Bot reacts to the conversation */}
+					{/* Go-Bot presides over the conversation; the pill reads out his state */}
 					<div className="hidden flex-col items-center gap-3 lg:flex">
-						<GoBot size={200} mood={mood} label={`Go-Bot, currently ${mood}`} />
-						<span className="rounded-pill bg-surface px-4 py-1.5 text-overline font-semibold uppercase tracking-(--text-overline--letter-spacing) text-gobot-600 shadow-e1">
+						<GoBotFigure media="front" className="w-full max-w-56" />
+						<span
+							aria-label={`Go-Bot is ${mood}`}
+							className="rounded-pill bg-surface px-4 py-1.5 text-overline font-semibold uppercase tracking-(--text-overline--letter-spacing) text-gobot-600 shadow-e1"
+						>
 							{mood}
 						</span>
 					</div>
