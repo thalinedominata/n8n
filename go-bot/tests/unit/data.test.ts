@@ -92,13 +92,20 @@ describe('experience databases', () => {
 		}
 	});
 
-	it('domains with details are fully populated', () => {
-		const detailed = lifeDomains.filter((domain) => domain.details);
-		expect(detailed.length).toBeGreaterThanOrEqual(6);
-		for (const domain of detailed) {
+	it('every life domain has fully populated details', () => {
+		for (const domain of lifeDomains) {
+			expect(domain.details, `${domain.id} is missing details`).toBeDefined();
 			expect(domain.details?.features.length).toBeGreaterThan(0);
+			expect(domain.details?.sensors.length).toBeGreaterThan(0);
 			expect(domain.details?.faq.length).toBeGreaterThan(0);
 			expect(domain.details?.roadmap.length).toBeGreaterThan(0);
+		}
+	});
+
+	it('every life domain is served by at least one capability', () => {
+		const covered = new Set(capabilities.flatMap((capability) => capability.domains));
+		for (const domain of lifeDomains) {
+			expect(covered.has(domain.id), `${domain.id} has no capabilities`).toBe(true);
 		}
 	});
 

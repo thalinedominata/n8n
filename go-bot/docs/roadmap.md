@@ -20,9 +20,10 @@ phases sorted into platform layers.
 - [x] Go-Bot component library: 9 moods + 9 role variants as presets
 - [x] Capability engine: searchable database at /capabilities with
       cross-references into domains and industries
-- [x] Life-domain database: rich schema, 6 flagship domains populated
+- [x] Life-domain database: rich schema, all 20 domains fully populated
 - [x] Industry engine: transformed experiences at /industries/[slug]
-- [ ] Vercel deployment + analytics
+- [x] Vercel deployment configuration (docs/deployment.md; project
+      connection and analytics opt-in pending)
 
 ## Version 2 — Immersion
 

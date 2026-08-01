@@ -39,7 +39,7 @@ graph TD
 | 1 | Foundation repository | ✅ Shipped | Whole repo — see [folder structure](folder-structure.md) |
 | 2 | Design system | ✅ Shipped | `src/components/ui` + [docs](../design-system/README.md) |
 | 3 | Go-Bot component library | ✅ Shipped | `src/components/gobot` — moods, roles, presets |
-| 4 | Life domain database | ✅ Schema + 6 flagship domains | `src/data/life-domains.ts` + `life-domain-details.ts` |
+| 4 | Life domain database | ✅ All 20 domains populated | `src/data/life-domains.ts` + `life-domain-details.ts` |
 | 5 | Capability engine | ✅ Engine + seed set | `src/data/capabilities.ts` + `/capabilities` |
 | 6 | Hardware explorer (16 parts) | ✅ Shipped (2D); 3D in V2 | `src/data/hardware.ts` + homepage |
 | 7 | Industry engine | ✅ Shipped | `src/data/industries.ts` + `/industries/[slug]` |
