@@ -8,9 +8,11 @@ is the engineering view.
 - [x] Enterprise repository architecture & documentation
 - [x] Design system (tokens, primitives, motion vocabulary)
 - [x] Animated Go-Bot character (breathing, blinking, gaze, thinking)
-- [x] Homepage: Hero, Problem, Architecture, Life Domains, Hardware
-      Explorer, Industries, Roadmap, Footer
-- [ ] Prototype asset integration (`public/assets/gobot/`)
+- [x] Prototype asset integration — character rebuilt to the supplied
+      prototype (graphite shell, glowing eyes, chest emblem, backpack)
+- [x] Homepage: Hero, Problem, Architecture, Life Domains (20 domains with
+      placeholder pages), Hardware Explorer (anatomy modals), Industries,
+      AI Demo (scripted), Roadmap, Footer
 - [ ] Vercel deployment + analytics
 
 ## Version 2 — Immersion
@@ -19,6 +21,9 @@ is the engineering view.
   same behavior state machine as the SVG character)
 - GSAP ScrollTrigger deep-dives: pinned hardware exploded view, scroll-scrubbed
   architecture story
+- Immersive per-domain experiences (replacing the V1 domain placeholders)
+- Additional primitives as sections need them: Tabs, Accordion, Search,
+  Command Palette
 - Capability demo interactions; localization (i18n layer); a11y audit pass
 
 ## Version 3 — Intelligence

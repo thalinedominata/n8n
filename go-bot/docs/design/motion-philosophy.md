@@ -49,10 +49,10 @@ One vocabulary, many tools: all of them consume the same timing tokens.
 
 | Behavior | Timing | Feel |
 | --- | --- | --- |
-| Breathing | 4.2s cycle, 4px bob, 1.2% squash | Calm, always present |
+| Breathing | 4.2s cycle, 4px bob, 1.2% squash; chest emblem glows in rhythm | Calm, always present |
 | Blinking | Random 2.6–6.8s gaps, 130ms close, 22% double-blink | Organic, never metronomic |
 | Gaze | Springs at stiffness 120, ±7px eye travel, ±3° head tilt | Soft pursuit, not a stare |
-| Thinking | Every 9–18s, 2.6s hold, glance up + 3 thought dots | Curious, has an inner life |
+| Thinking | Every 9–18s, 2.6s hold: eyes glance up, thought dots cascade, emblem pulses faster | Curious, has an inner life |
 
 These constants are the character bible (`go-bot.constants.ts`). Tuning them
 changes Go-Bot's personality — treat changes like a brand decision, not a

@@ -6,4 +6,5 @@ export type {
 	ArchitectureLayer,
 	Capability,
 	NavItem,
+	AiDemoMessage,
 } from './content';

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { Menu, X } from 'lucide-react';
-import { Button, Container } from '@/components/ui';
+import { Button, Container, Logo } from '@/components/ui';
 import { mainNavigation } from '@/data/navigation';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -32,12 +32,9 @@ export function Navbar() {
 			)}
 		>
 			<Container className="flex h-16 items-center justify-between">
-				<Link href="#hero" className="flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
-					<span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gobot-500">
-						<span className="flex gap-1">
-							<span className="h-2.5 w-1 rounded-full bg-white" />
-							<span className="h-2.5 w-1 rounded-full bg-white" />
-						</span>
+				<Link href="/#hero" className="flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
+					<span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gobot-500 text-white">
+						<Logo size={16} color="#ffffff" />
 					</span>
 					<span className="text-title font-semibold tracking-tight">{siteConfig.name}</span>
 				</Link>

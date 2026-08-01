@@ -89,10 +89,17 @@ Design mobile-first; the page column is `max-w-6xl` (wide) / `max-w-3xl`
 | Badge | `ui/badge.tsx` | `orange` · `neutral` · `inverse` |
 | Container | `ui/container.tsx` | `wide` · `narrow` |
 | SectionHeading | `ui/section-heading.tsx` | `left` · `center` align; eyebrow + title + description |
+| Logo | `ui/logo.tsx` | The triple-bar ENGAGE GLOBAL mark; any size/color |
+| Modal | `ui/modal.tsx` | Centered dialog, blurred backdrop, Escape/backdrop close |
+| AnimatedCounter | `ui/animated-counter.tsx` | In-view count-up with prefix/suffix |
 | Navigation | `layout/navbar.tsx` | Transparent → frosted on scroll; mobile disclosure |
 | Hero | `sections/hero.tsx` | Mission copy + living Go-Bot; staggered cinematic entrance |
 | Timeline | `sections/roadmap.tsx` | Horizontal (desktop) roadmap with active-phase glow |
-| Go-Bot | `gobot/go-bot.tsx` | The character — see his spec in `go-bot.constants.ts` |
+| AI Demo | `sections/ai-demo.tsx` | Scripted conversation stage with typing indicator |
+| Go-Bot | `gobot/go-bot.tsx` | The character (prototype-faithful) — spec in `go-bot.constants.ts` |
+
+Planned for V2 as needs materialize: Tabs, Accordion, Search, Command
+Palette (listed in the roadmap; not built speculatively).
 
 **Rule:** new UI starts as a variant of an existing primitive. A new
 component is added only when no primitive can express it — and it lands in

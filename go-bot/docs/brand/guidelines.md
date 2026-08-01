@@ -36,14 +36,29 @@ Go-Bot's brand speaks like Go-Bot acts: warm, clear, quietly confident.
 Orange is Go-Bot's voice: eyes, chest light, primary actions, key highlights.
 Keep it scarce (≈5–10% of any screen). Never use it for errors or warnings.
 
+## The logo
+
+The ENGAGE GLOBAL mark is the **triple bar**: two inward-tapering bars over
+a slanted base bar (`public/assets/images/logo-mark.png`, vector component
+`src/components/ui/logo.tsx`). It is the same emblem Go-Bot wears on his
+chest — brand and character are one system. Use it in ink on white, white on
+orange, or orange as an accent; never distort or re-proportion the bars.
+
 ## The character
 
-- **Proportions are canon** — encoded in `go-bot.constants.ts` on a 200×240
-  canvas from the supplied prototype. Never stretch, recolor, or re-proportion him.
+- **Proportions are canon** — encoded in `go-bot.constants.ts` on a 200×250
+  canvas measured from the supplied prototype
+  (`public/assets/gobot/go-bot-prototype-front.jpg` / `-back.jpg`). Never
+  stretch, recolor, or re-proportion him.
+- **His look:** matte graphite shell with darker joints; glossy black visor
+  with two glowing orange eyes; the triple-bar chest emblem (lit); a small
+  chest camera; soft orange hands; dark boots on orange soles; and the
+  wearable backpack with orange-stitched straps and a glowing spine light —
+  the "wearable" in wearable humanoid robot.
 - **He is always alive** where he appears: breathing, blinking, watching,
   occasionally thinking. A frozen Go-Bot is off-brand.
-- **His face:** dark visor, orange rounded eyes, soft smile, antenna with
-  orange tip, orange ear caps, orange chest light.
+- **The site stays white-first.** Go-Bot's graphite body is the dark
+  element on the bright stage — dark UI sections remain off-brand.
 
 ## Typography
 

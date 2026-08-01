@@ -7,6 +7,7 @@ import {
 	LifeDomains,
 	HardwareExplorer,
 	Industries,
+	AiDemo,
 	Roadmap,
 } from '@/components/sections';
 
@@ -22,6 +23,7 @@ export default function HomePage() {
 				<LifeDomains />
 				<HardwareExplorer />
 				<Industries />
+				<AiDemo />
 				<Roadmap />
 			</main>
 			<Footer />

@@ -1,64 +1,128 @@
 import type { HardwareModule } from '@/types';
 
+/**
+ * Go-Bot anatomy — hotspot coordinates are percentages over the character
+ * figure (200×250 canonical canvas, see go-bot.constants.ts).
+ */
 export const hardwareModules: HardwareModule[] = [
 	{
-		id: 'vision',
-		name: 'Vision System',
+		id: 'head',
+		name: 'Head & Visor',
 		description:
-			'Stereo depth cameras and a 180° field of view give Go-Bot spatial awareness and warm, expressive eye contact.',
+			'A rounded graphite shell with a glossy protective visor — impact-resistant, glare-free, and unmistakably friendly.',
 		specs: [
-			{ label: 'Cameras', value: 'Dual 4K stereo' },
-			{ label: 'Field of view', value: '180°' },
-			{ label: 'Depth range', value: '0.2 – 10 m' },
+			{ label: 'Shell', value: 'Matte polymer composite' },
+			{ label: 'Visor', value: 'Optical-grade, anti-glare' },
+			{ label: 'Articulation', value: '3-axis neck' },
 		],
-		hotspot: { x: 50, y: 12 },
+		hotspot: { x: 50, y: 10 },
 	},
 	{
-		id: 'voice',
-		name: 'Voice & Hearing',
+		id: 'eyes',
+		name: 'Eyes',
 		description:
-			'A far-field microphone array and studio-quality speaker make conversation natural from across the room.',
+			'Glowing expressive eyes that blink, focus, and make warm contact — the visor face is how Go-Bot shows he’s listening.',
+		specs: [
+			{ label: 'Display', value: 'Micro-LED expressive array' },
+			{ label: 'Expressions', value: '200+ micro-states' },
+			{ label: 'Gaze', value: 'Person-aware tracking' },
+		],
+		hotspot: { x: 59, y: 20 },
+	},
+	{
+		id: 'audio',
+		name: 'Microphones & Speakers',
+		description:
+			'A far-field microphone array and warm full-range speaker make conversation natural from across the room.',
 		specs: [
 			{ label: 'Microphones', value: '6-mic beamforming array' },
 			{ label: 'Wake latency', value: '< 200 ms' },
 			{ label: 'Languages', value: '40+' },
 		],
-		hotspot: { x: 50, y: 26 },
+		hotspot: { x: 34, y: 22 },
 	},
 	{
-		id: 'core',
-		name: 'Compute Core',
+		id: 'chest-light',
+		name: 'Chest Emblem',
 		description:
-			'On-device neural processing keeps perception private and responses instant — no round-trip required.',
+			'The triple-bar emblem is Go-Bot’s heartbeat — it breathes with him, pulses when he thinks, and signals his state at a glance.',
+		specs: [
+			{ label: 'Element', value: 'Edge-lit light guide' },
+			{ label: 'States', value: 'Idle · Listening · Thinking · Alert' },
+			{ label: 'Brightness', value: 'Ambient-adaptive' },
+		],
+		hotspot: { x: 50, y: 50 },
+	},
+	{
+		id: 'camera',
+		name: 'Camera',
+		description:
+			'A single chest-mounted depth camera gives Go-Bot spatial understanding — processed on-device, with a physical shutter.',
+		specs: [
+			{ label: 'Sensor', value: '4K stereo depth' },
+			{ label: 'Field of view', value: '150°' },
+			{ label: 'Privacy', value: 'Hardware shutter + LED' },
+		],
+		hotspot: { x: 50, y: 61 },
+	},
+	{
+		id: 'compute',
+		name: 'Processor & Cooling',
+		description:
+			'On-device neural processing keeps perception private and responses instant — cooled silently through the backpack vent.',
 		specs: [
 			{ label: 'Neural engine', value: '48 TOPS on-device' },
 			{ label: 'Memory', value: '32 GB unified' },
-			{ label: 'Privacy', value: 'On-device first' },
+			{ label: 'Cooling', value: 'Silent passive hex-vent' },
 		],
-		hotspot: { x: 50, y: 48 },
+		hotspot: { x: 36, y: 54 },
+	},
+	{
+		id: 'backpack',
+		name: 'Backpack & Battery',
+		description:
+			'The wearable backpack carries the battery and glowing spine light, straps on with orange-stitched harnesses, and charges over USB-C.',
+		specs: [
+			{ label: 'Runtime', value: '12 h active use' },
+			{ label: 'Charging', value: 'USB-C fast charge' },
+			{ label: 'Spine light', value: 'Status + charge indicator' },
+		],
+		hotspot: { x: 74, y: 46 },
 	},
 	{
 		id: 'arms',
-		name: 'Expressive Arms',
+		name: 'Arms & Hands',
 		description:
-			'Compliant actuators deliver gentle, human-safe motion with the dexterity for everyday assistance.',
+			'Chunky compliant arms with soft orange hands deliver gentle, human-safe motion and everyday dexterity.',
 		specs: [
 			{ label: 'Degrees of freedom', value: '7 per arm' },
 			{ label: 'Payload', value: '2.5 kg per arm' },
 			{ label: 'Safety', value: 'Force-limited, ISO 15066' },
 		],
-		hotspot: { x: 22, y: 46 },
+		hotspot: { x: 21, y: 56 },
 	},
 	{
-		id: 'mobility',
-		name: 'Mobility Base',
+		id: 'expansion',
+		name: 'Sensors & Expansion Ports',
 		description:
-			'Omnidirectional wheels and terrain-adaptive suspension let Go-Bot glide smoothly through human spaces.',
+			'Body-wide proximity and balance sensors, plus expansion ports in the backpack for future capability modules.',
 		specs: [
-			{ label: 'Drive', value: 'Omnidirectional' },
-			{ label: 'Top speed', value: '1.8 m/s' },
-			{ label: 'Runtime', value: '12 h active use' },
+			{ label: 'Sensors', value: 'IMU, proximity, terrain' },
+			{ label: 'Ports', value: '2× modular expansion' },
+			{ label: 'Updates', value: 'Over-the-air' },
 		],
-		hotspot: { x: 50, y: 84 },
+		hotspot: { x: 68, y: 71 },
+	},
+	{
+		id: 'legs',
+		name: 'Legs & Feet',
+		description:
+			'Short, stable legs and grippy boots on orange soles let Go-Bot walk human spaces smoothly and safely.',
+		specs: [
+			{ label: 'Gait', value: 'Dynamic balanced walking' },
+			{ label: 'Speed', value: '1.8 m/s' },
+			{ label: 'Soles', value: 'High-grip, floor-safe' },
+		],
+		hotspot: { x: 43, y: 86 },
 	},
 ];

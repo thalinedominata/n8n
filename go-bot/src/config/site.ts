@@ -4,7 +4,7 @@ export const siteConfig = {
 	company: 'ENGAGE GLOBAL',
 	title: 'Go-Bot — The wearable humanoid robot',
 	description:
-		'Go-Bot by ENGAGE GLOBAL is an intelligent robotic companion designed to improve every aspect of human life.',
+		'Go-Bot by ENGAGE GLOBAL — your intelligent companion for every stage of life. A wearable humanoid robot designed to improve every aspect of human life.',
 	url: 'https://gobot.engageglobal.com',
 	mission: 'Create intelligent robotic companions that improve every aspect of human life.',
 	social: {

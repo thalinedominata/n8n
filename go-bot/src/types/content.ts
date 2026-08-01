@@ -72,3 +72,10 @@ export interface NavItem {
 	label: string;
 	href: string;
 }
+
+/** One turn in the scripted AI demo conversation. */
+export interface AiDemoMessage {
+	id: string;
+	role: 'visitor' | 'gobot';
+	text: string;
+}
