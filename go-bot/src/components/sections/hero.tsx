@@ -1,8 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
-import { Badge, Button, Container } from '@/components/ui';
+import { Badge, Button, Container, Modal } from '@/components/ui';
 import { GoBot } from '@/components/gobot';
 import { heroReveal, staggerChildren } from '@/animations/variants';
 
@@ -12,6 +13,8 @@ function scrollToSection(id: string) {
 
 /** Above-the-fold hero: mission statement beside a living, watching Go-Bot. */
 export function Hero() {
+	const [demoOpen, setDemoOpen] = useState(false);
+
 	return (
 		<section id="hero" className="relative flex min-h-svh items-center overflow-hidden pb-20 pt-28">
 			{/* Warm radial glow behind Go-Bot */}
@@ -23,7 +26,7 @@ export function Hero() {
 			<Container className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 				<motion.div variants={staggerChildren} initial="hidden" animate="visible">
 					<motion.div variants={heroReveal}>
-						<Badge>ENGAGE GLOBAL · Version 1</Badge>
+						<Badge>ENGAGE GLOBAL · Version 2 Preview</Badge>
 					</motion.div>
 					<motion.h1
 						variants={heroReveal}
@@ -43,7 +46,7 @@ export function Hero() {
 							Explore Go-Bot
 							<ArrowRight className="h-4 w-4" />
 						</Button>
-						<Button size="lg" variant="outline" onClick={() => scrollToSection('ai-demo')}>
+						<Button size="lg" variant="outline" onClick={() => setDemoOpen(true)}>
 							<Play className="h-4 w-4" />
 							Watch Demo
 						</Button>
@@ -59,6 +62,26 @@ export function Hero() {
 					<GoBot size={320} />
 				</motion.div>
 			</Container>
+
+			{/* Demo film — opened by a click, so autoplay with sound is allowed */}
+			<Modal
+				open={demoOpen}
+				onClose={() => setDemoOpen(false)}
+				title="Go-Bot says hello"
+				className="max-w-3xl"
+			>
+				{demoOpen ? (
+					<video
+						src="/assets/video/go-bot-wave.mp4"
+						poster="/assets/video/go-bot-wave-poster.jpg"
+						autoPlay
+						loop
+						controls
+						playsInline
+						className="aspect-video w-full rounded-xl bg-surface-sunken object-cover"
+					/>
+				) : null}
+			</Modal>
 		</section>
 	);
 }

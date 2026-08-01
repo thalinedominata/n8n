@@ -8,6 +8,7 @@ Canonical reference assets for the Go-Bot character.
 | --- | --- |
 | `go-bot-prototype-front.jpg` | Supplied prototype, front view — source of truth for proportions and materials |
 | `go-bot-prototype-back.jpg` | Supplied prototype, rear view — backpack, straps, spine light, vent |
+| `../video/go-bot-wave.mp4` | Supplied hero film: Go-Bot waves with happy arc-eyes (canon for the `happy` mood); plays from the hero's Watch Demo button |
 
 The animated character (`src/components/gobot/`) is a vector recreation of
 these renders; the brand logo lives at `public/assets/images/logo-mark.png`
