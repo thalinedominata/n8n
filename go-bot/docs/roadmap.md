@@ -25,16 +25,19 @@ phases sorted into platform layers.
 - [x] Vercel deployment configuration (docs/deployment.md; project
       connection and analytics opt-in pending)
 
-## Version 2 — Immersion
+## Version 2 — Immersion *(active)*
 
-- Full 3D Go-Bot (glTF prototype → R3F stage in `src/three/`, driven by the
-  same behavior state machine as the SVG character)
-- GSAP ScrollTrigger deep-dives: pinned hardware exploded view, scroll-scrubbed
-  architecture story
-- Immersive per-domain experiences (replacing the V1 domain placeholders)
-- Additional primitives as sections need them: Tabs, Accordion, Search,
-  Command Palette
-- Capability demo interactions; localization (i18n layer); a11y audit pass
+- [x] 3D Go-Bot: procedural R3F model in `src/three/go-bot-model.tsx`,
+      driven by the same MOODS state machine and character constants as
+      the SVG — one behavior engine, two renderers. Homepage showcase
+      (`#gobot-3d`) with live mood switching and orbit controls; loads
+      lazily so three.js never enters the initial bundle.
+- [ ] glTF prototype swap-in (geometry replaces primitives; animation
+      contract in go-bot-model.tsx stays identical)
+- [ ] GSAP ScrollTrigger deep-dives: pinned hardware exploded view,
+      scroll-scrubbed architecture story
+- [ ] 3D hardware explorer: anatomy hotspots move onto the 3D model
+- [ ] Capability demo interactions; localization (i18n layer); a11y audit
 
 ## Version 3 — Intelligence
 

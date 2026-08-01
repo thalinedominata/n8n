@@ -6,6 +6,7 @@ import {
 	Architecture,
 	LifeDomains,
 	HardwareExplorer,
+	GoBot3DShowcase,
 	Industries,
 	AiDemo,
 	Roadmap,
@@ -22,6 +23,7 @@ export default function HomePage() {
 				<Architecture />
 				<LifeDomains />
 				<HardwareExplorer />
+				<GoBot3DShowcase />
 				<Industries />
 				<AiDemo />
 				<Roadmap />
