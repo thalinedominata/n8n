@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { SmoothScrollProvider } from '@/components/motion/smooth-scroll-provider';
+import { CommandPalette } from '@/components/ui';
+import { searchRegistry } from '@/data/search';
 import { siteConfig } from '@/config/site';
 import './globals.css';
 
@@ -30,6 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 		<html lang="en">
 			<body>
 				<SmoothScrollProvider>{children}</SmoothScrollProvider>
+				<CommandPalette items={searchRegistry} />
 			</body>
 		</html>
 	);

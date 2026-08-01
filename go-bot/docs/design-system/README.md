@@ -82,24 +82,51 @@ Design mobile-first; the page column is `max-w-6xl` (wide) / `max-w-3xl`
 
 ## Components
 
-| Component | File | Variants |
-| --- | --- | --- |
-| Button | `ui/button.tsx` | `primary` (orange) · `secondary` (ink) · `outline` · `ghost`; sizes `sm/md/lg` |
-| Card | `ui/card.tsx` | `elevated` · `outlined` · `soft`; padding `none/md/lg` |
-| Badge | `ui/badge.tsx` | `orange` · `neutral` · `inverse` |
-| Container | `ui/container.tsx` | `wide` · `narrow` |
-| SectionHeading | `ui/section-heading.tsx` | `left` · `center` align; eyebrow + title + description |
-| Logo | `ui/logo.tsx` | The triple-bar ENGAGE GLOBAL mark; any size/color |
-| Modal | `ui/modal.tsx` | Centered dialog, blurred backdrop, Escape/backdrop close |
-| AnimatedCounter | `ui/animated-counter.tsx` | In-view count-up with prefix/suffix |
-| Navigation | `layout/navbar.tsx` | Transparent → frosted on scroll; mobile disclosure |
-| Hero | `sections/hero.tsx` | Mission copy + living Go-Bot; staggered cinematic entrance |
-| Timeline | `sections/roadmap.tsx` | Horizontal (desktop) roadmap with active-phase glow |
-| AI Demo | `sections/ai-demo.tsx` | Scripted conversation stage with typing indicator |
-| Go-Bot | `gobot/go-bot.tsx` | The character (prototype-faithful) — spec in `go-bot.constants.ts` |
+### Primitives (`src/components/ui`)
 
-Planned for V2 as needs materialize: Tabs, Accordion, Search, Command
-Palette (listed in the roadmap; not built speculatively).
+| Component | Variants / behavior |
+| --- | --- |
+| Button | `primary` (orange) · `secondary` (ink) · `outline` · `ghost`; sizes `sm/md/lg` |
+| Card | `elevated` · `outlined` · `soft`; padding `none/md/lg` |
+| Badge | `orange` · `neutral` · `inverse` |
+| Chip | Filter chip (`selected`) or static label (`readOnly`) |
+| Container | `wide` · `narrow` page columns |
+| Section | Anchor id + vertical rhythm + `default`/`warm` tone |
+| SectionHeading | `left`/`center`; eyebrow + title + description, staggered reveal |
+| Logo | The triple-bar ENGAGE GLOBAL mark; any size/color |
+| Modal | Centered dialog, blurred backdrop, Escape/backdrop close, scroll lock |
+| Drawer | Right slide-over for rich detail views; same close semantics |
+| Tabs | Sliding active indicator, ARIA tablist |
+| Accordion | Single-open, animated height; FAQ standard |
+| Carousel | Scroll-snap track + prev/next controls |
+| Tooltip | CSS hover/focus tooltip for short labels |
+| Progress | In-view animated bar (confidence scores) |
+| AnimatedCounter | In-view count-up with prefix/suffix |
+| StatCard / StatValue | Counting stat tile; parses "24/7", "95%", "3×" |
+| CommandPalette | Global ⌘K search over the content databases |
+
+### Cards (`src/components/cards`)
+
+| Component | Purpose |
+| --- | --- |
+| FeatureCard | Icon + title + description tile |
+| CapabilityCard | Capability engine tile: confidence bar + hardware generations |
+| IndustryCard | Industry tile linking to the transformed experience |
+
+### Character (`src/components/gobot`)
+
+| Export | Purpose |
+| --- | --- |
+| GoBot | The engine: `mood` + `role` props, autonomous idle life by default |
+| GoBotIdle/Thinking/Listening/Talking/Happy/Concerned/Scanning/Charging/Walking | Mood presets |
+| GoBotHero | Hero-scale preset |
+| GoBotMedical/Security/Police/Education/Construction/Firefighter/ChildCare/ElderCare/Developer | Role presets |
+
+### Composed experiences (`src/components/sections`)
+
+Hero · Problem · Architecture (interactive flow) · LifeDomains ·
+HardwareExplorer (16-part anatomy) · Industries · AiDemo (playground) ·
+Roadmap (timeline) · CapabilityExplorer · IndustryExperience · DomainDetails.
 
 **Rule:** new UI starts as a variant of an existing primitive. A new
 component is added only when no primitive can express it — and it lands in

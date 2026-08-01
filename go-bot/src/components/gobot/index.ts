@@ -1,2 +1,24 @@
-export { GoBot, type GoBotProps, type GoBotMood } from './go-bot';
+export { GoBot, type GoBotProps } from './go-bot';
+export { MOODS, type GoBotMood, type GoBotRole } from './go-bot.moods';
 export { PALETTE as GOBOT_PALETTE } from './go-bot.constants';
+export {
+	GoBotIdle,
+	GoBotThinking,
+	GoBotListening,
+	GoBotTalking,
+	GoBotHappy,
+	GoBotConcerned,
+	GoBotScanning,
+	GoBotCharging,
+	GoBotWalking,
+	GoBotHero,
+	GoBotMedical,
+	GoBotSecurity,
+	GoBotPolice,
+	GoBotEducation,
+	GoBotConstruction,
+	GoBotFirefighter,
+	GoBotChildCare,
+	GoBotElderCare,
+	GoBotDeveloper,
+} from './go-bot.presets';

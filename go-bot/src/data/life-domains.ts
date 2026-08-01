@@ -21,14 +21,16 @@ import {
 	Wallet,
 } from 'lucide-react';
 import type { LifeDomain } from '@/types';
+import { lifeDomainDetails } from './life-domain-details';
 
 const accents = ['orange', 'amber', 'warm'] as const;
 
-/** Every domain gets an accent by rotation so the grid stays balanced. */
-function withAccents(domains: Array<Omit<LifeDomain, 'accent'>>): LifeDomain[] {
+/** Rotate accents for grid balance and attach rich details where they exist. */
+function withAccents(domains: Array<Omit<LifeDomain, 'accent' | 'details'>>): LifeDomain[] {
 	return domains.map((domain, index) => ({
 		...domain,
 		accent: accents[index % accents.length] ?? 'orange',
+		details: lifeDomainDetails[domain.id],
 	}));
 }
 

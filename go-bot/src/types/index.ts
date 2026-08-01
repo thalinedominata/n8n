@@ -1,10 +1,15 @@
 export type {
 	LifeDomain,
+	LifeDomainDetails,
+	FaqItem,
 	Industry,
 	RoadmapPhase,
 	HardwareModule,
+	HardwareGeneration,
 	ArchitectureLayer,
 	Capability,
 	NavItem,
+	CommandItem,
 	AiDemoMessage,
+	AiDemoScenario,
 } from './content';

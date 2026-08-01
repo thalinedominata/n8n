@@ -1,14 +1,19 @@
 'use client';
 
-import { Container, SectionHeading, Card } from '@/components/ui';
-import { RevealGroup, RevealItem } from '@/components/motion/reveal';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { Container, SectionHeading } from '@/components/ui';
+import { FeatureCard } from '@/components/cards';
+import { RevealGroup, RevealItem, Reveal } from '@/components/motion/reveal';
 import { capabilities } from '@/data/capabilities';
 
 /**
  * The problem framing: technology demands attention instead of giving care —
- * and the capabilities that make Go-Bot the answer.
+ * answered by the featured capabilities from the capability engine.
  */
 export function Problem() {
+	const featured = capabilities.filter((capability) => capability.featured).slice(0, 6);
+
 	return (
 		<section id="problem" className="bg-surface-warm py-28">
 			<Container>
@@ -19,16 +24,26 @@ export function Problem() {
 				/>
 
 				<RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-					{capabilities.map((capability) => (
+					{featured.map((capability) => (
 						<RevealItem key={capability.id}>
-							<Card variant="outlined" padding="lg" className="h-full bg-surface">
-								<capability.icon className="h-7 w-7 text-gobot-500" aria-hidden />
-								<h3 className="mt-4 text-title font-semibold">{capability.name}</h3>
-								<p className="mt-2 text-caption text-ink-secondary">{capability.description}</p>
-							</Card>
+							<FeatureCard
+								icon={capability.icon}
+								title={capability.name}
+								description={capability.description}
+							/>
 						</RevealItem>
 					))}
 				</RevealGroup>
+
+				<Reveal className="mt-10 text-center">
+					<Link
+						href="/capabilities"
+						className="inline-flex items-center gap-1.5 text-body font-medium text-gobot-600 transition-colors duration-(--duration-fast) hover:text-gobot-700"
+					>
+						Explore all {capabilities.length}+ capabilities
+						<ArrowRight className="h-4 w-4" aria-hidden />
+					</Link>
+				</Reveal>
 			</Container>
 		</section>
 	);

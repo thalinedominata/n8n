@@ -1,9 +1,9 @@
 import type { NavItem } from '@/types';
 
 export const mainNavigation: NavItem[] = [
-	{ label: 'Why Go-Bot', href: '#problem' },
 	{ label: 'Platform', href: '#architecture' },
 	{ label: 'Life Domains', href: '#life-domains' },
+	{ label: 'Capabilities', href: '/capabilities' },
 	{ label: 'Hardware', href: '#hardware' },
 	{ label: 'Industries', href: '#industries' },
 	{ label: 'AI Demo', href: '#ai-demo' },
@@ -23,6 +23,7 @@ export const footerNavigation: Array<{ heading: string; items: NavItem[] }> = [
 		heading: 'Solutions',
 		items: [
 			{ label: 'Life Domains', href: '#life-domains' },
+			{ label: 'Capabilities', href: '/capabilities' },
 			{ label: 'Industries', href: '#industries' },
 		],
 	},

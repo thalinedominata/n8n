@@ -1,17 +1,11 @@
 'use client';
 
-import { AnimatedCounter, Container, SectionHeading, Card } from '@/components/ui';
+import { Container, SectionHeading } from '@/components/ui';
+import { IndustryCard } from '@/components/cards';
 import { RevealGroup, RevealItem } from '@/components/motion/reveal';
 import { industries } from '@/data/industries';
 
-/** Renders a stat value, counting up its leading number when present. */
-function StatValue({ value }: { value: string }) {
-	const match = /^(\d+)(.*)$/.exec(value);
-	if (!match) return <>{value}</>;
-	return <AnimatedCounter value={Number(match[1])} suffix={match[2] ?? ''} />;
-}
-
-/** Industry verticals Go-Bot serves. */
+/** Industry verticals — each card opens the industry-transformed experience. */
 export function Industries() {
 	return (
 		<section id="industries" className="py-28">
@@ -19,25 +13,13 @@ export function Industries() {
 				<SectionHeading
 					eyebrow="Industries"
 					title="One companion. Every industry."
-					description="The same warmth that helps at home transforms how organizations care for the people they serve."
+					description="Pick an industry and the whole experience transforms — Go-Bot's role, his capabilities, and the stories he tells."
 				/>
 
 				<RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					{industries.map((industry) => (
 						<RevealItem key={industry.id}>
-							<Card variant="outlined" className="group h-full">
-								<div className="flex items-center justify-between">
-									<industry.icon className="h-7 w-7 text-gobot-500" aria-hidden />
-									<div className="text-right">
-										<p className="text-title font-semibold text-gobot-600">
-											<StatValue value={industry.stat.value} />
-										</p>
-										<p className="text-overline text-ink-tertiary">{industry.stat.label}</p>
-									</div>
-								</div>
-								<h3 className="mt-5 text-title font-semibold">{industry.name}</h3>
-								<p className="mt-2 text-caption text-ink-secondary">{industry.description}</p>
-							</Card>
+							<IndustryCard industry={industry} />
 						</RevealItem>
 					))}
 				</RevealGroup>

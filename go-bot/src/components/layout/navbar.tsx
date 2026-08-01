@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
-import { Menu, X } from 'lucide-react';
-import { Button, Container, Logo } from '@/components/ui';
+import { Menu, Search, X } from 'lucide-react';
+import { Button, Container, Logo, OPEN_COMMAND_PALETTE_EVENT } from '@/components/ui';
 import { mainNavigation } from '@/data/navigation';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -43,7 +43,7 @@ export function Navbar() {
 					{mainNavigation.map((item) => (
 						<Link
 							key={item.href}
-							href={item.href}
+							href={item.href.startsWith('#') ? `/${item.href}` : item.href}
 							className="rounded-pill px-3.5 py-2 text-caption font-medium text-ink-secondary transition-colors duration-(--duration-fast) hover:bg-surface-sunken hover:text-ink"
 						>
 							{item.label}
@@ -51,7 +51,16 @@ export function Navbar() {
 					))}
 				</nav>
 
-				<div className="hidden lg:block">
+				<div className="hidden items-center gap-2 lg:flex">
+					<button
+						type="button"
+						onClick={() => window.dispatchEvent(new Event(OPEN_COMMAND_PALETTE_EVENT))}
+						aria-label="Search (Command+K)"
+						className="flex items-center gap-2 rounded-pill border border-border-subtle px-3 py-2 text-caption text-ink-tertiary transition-colors duration-(--duration-fast) hover:border-border-strong hover:text-ink"
+					>
+						<Search className="h-3.5 w-3.5" aria-hidden />
+						<kbd className="text-overline">⌘K</kbd>
+					</button>
 					<Button size="sm">Reserve Go-Bot</Button>
 				</div>
 
@@ -77,7 +86,7 @@ export function Navbar() {
 						{mainNavigation.map((item) => (
 							<li key={item.href}>
 								<Link
-									href={item.href}
+									href={item.href.startsWith('#') ? `/${item.href}` : item.href}
 									onClick={() => setMobileOpen(false)}
 									className="block rounded-md px-3 py-2.5 text-body font-medium text-ink-secondary hover:bg-surface-sunken hover:text-ink"
 								>

@@ -6,6 +6,7 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Badge, Container } from '@/components/ui';
 import { GoBot } from '@/components/gobot';
+import { DomainDetails } from '@/components/sections/domain-details';
 import { lifeDomains } from '@/data/life-domains';
 
 interface DomainPageProps {
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }: DomainPageProps): Promise<Met
 }
 
 /**
- * Immersive life-domain experience — Version 1 placeholder. The full
- * scroll-driven experience per domain ships in Version 2 (docs/roadmap.md).
+ * Life-domain experience. The hero renders for every domain; the rich body
+ * (DomainDetails) lights up for domains with database details, and others
+ * show the Version 2 placeholder note.
  */
 export default async function DomainPage({ params }: DomainPageProps) {
 	const { slug } = await params;
@@ -38,8 +40,8 @@ export default async function DomainPage({ params }: DomainPageProps) {
 	return (
 		<>
 			<Navbar />
-			<main className="flex min-h-svh flex-col">
-				<section className="relative flex flex-1 items-center overflow-hidden pb-24 pt-36">
+			<main>
+				<section className="relative overflow-hidden pb-16 pt-36">
 					<div
 						aria-hidden
 						className="pointer-events-none absolute right-[-12%] top-[8%] h-[30rem] w-[30rem] rounded-full bg-gobot-100/50 blur-3xl"
@@ -63,15 +65,19 @@ export default async function DomainPage({ params }: DomainPageProps) {
 							<p className="mt-6 max-w-xl text-body-lg text-ink-secondary text-pretty">
 								{domain.description}
 							</p>
-							<p className="mt-10 inline-flex rounded-pill bg-surface-sunken px-5 py-3 text-caption text-ink-secondary">
-								The immersive {domain.title} experience arrives in Version 2.
-							</p>
+							{!domain.details ? (
+								<p className="mt-10 inline-flex rounded-pill bg-surface-sunken px-5 py-3 text-caption text-ink-secondary">
+									The immersive {domain.title} experience arrives in Version 2.
+								</p>
+							) : null}
 						</div>
 						<div className="hidden justify-center lg:flex">
 							<GoBot size={260} label={`Go-Bot, ready to help with ${domain.title}`} />
 						</div>
 					</Container>
 				</section>
+
+				<DomainDetails domainId={domain.id} />
 			</main>
 			<Footer />
 		</>

@@ -5,8 +5,8 @@ import { motion, useTransform } from 'motion/react';
 import { useInterval, usePointerOffset, usePrefersReducedMotion } from '@/hooks';
 import { cn } from '@/lib/utils';
 import { BLINK, BREATH, GAZE, THINK, PALETTE } from './go-bot.constants';
-
-export type GoBotMood = 'idle' | 'thinking';
+import { MOODS, type GoBotMood, type GoBotRole } from './go-bot.moods';
+import { GoBotRoleBadge } from './go-bot-role-badge';
 
 export interface GoBotProps {
 	className?: string;
@@ -14,35 +14,49 @@ export interface GoBotProps {
 	size?: number;
 	/** Accessible label announced to screen readers. */
 	label?: string;
+	/**
+	 * Controlled mood. When omitted, Go-Bot runs his autonomous idle life:
+	 * mostly `idle`, with occasional `thinking` moments.
+	 */
+	mood?: GoBotMood;
+	/** Optional profession accessory (see go-bot.presets.tsx). */
+	role?: GoBotRole;
 }
 
 /**
  * Go-Bot — the animated character, faithful to the supplied prototype:
  * graphite shell, glossy black visor with glowing orange eyes, the
  * triple-bar chest emblem, camera dot, orange hands, and boots on orange
- * soles. Proportions and behavior timing live in go-bot.constants.ts.
+ * soles. Proportions live in go-bot.constants.ts; the expression
+ * vocabulary lives in go-bot.moods.ts.
  *
- * Four idle behaviors make him feel alive and aware of the visitor:
+ * Always-on idle behaviors (any mood): breathing with a subtle body
+ * squash, randomized double-tap blinks, and — when the mood allows —
+ * pointer-tracking gaze. Moods layer expression on top: thinking (glance
+ * up + thought dots), listening (wide eyes), talking (equalizer emblem),
+ * happy (arc eyes), concerned, scanning, charging, walking.
  *
- *  1. Breathing  — a slow vertical bob with subtle squash on the body.
- *  2. Blinking   — randomized double-tap blinks of the glowing eyes.
- *  3. Gaze       — eyes and head softly track the visitor's pointer.
- *  4. Thinking   — an occasional glance up-and-away while thought dots
- *                  cascade beside his head and the chest emblem pulses.
- *
- * All behaviors pause when the user prefers reduced motion; Go-Bot then
- * holds a friendly static pose.
+ * All animation pauses under prefers-reduced-motion; Go-Bot holds a
+ * friendly static pose in the requested mood.
  */
-export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic companion' }: GoBotProps) {
+export function GoBot({
+	className,
+	size = 320,
+	label = 'Go-Bot, your robotic companion',
+	mood,
+	role,
+}: GoBotProps) {
 	const rootRef = useRef<HTMLDivElement>(null);
 	const reducedMotion = usePrefersReducedMotion();
 	const pointer = usePointerOffset(rootRef);
 
 	const [isBlinking, setIsBlinking] = useState(false);
-	const [mood, setMood] = useState<GoBotMood>('idle');
+	const [autoMood, setAutoMood] = useState<GoBotMood>('idle');
 
 	const animate = !reducedMotion;
-	const thinking = animate && mood === 'thinking';
+	const activeMood: GoBotMood = mood ?? autoMood;
+	const cfg = MOODS[activeMood];
+	const showDots = animate && cfg.dots;
 
 	// --- Blinking: randomized cadence, occasionally a quick double blink. ---
 	useInterval(
@@ -54,16 +68,16 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 				setTimeout(() => setIsBlinking(false), BLINK.closeMs * 2 + 90);
 			}
 		},
-		animate ? [BLINK.minGapMs, BLINK.maxGapMs] : null,
+		animate && !cfg.happyArc ? [BLINK.minGapMs, BLINK.maxGapMs] : null,
 	);
 
-	// --- Thinking: an occasional moment of visible contemplation. ---
+	// --- Autonomous inner life (only when the mood is not controlled). ---
 	useInterval(
 		() => {
-			setMood('thinking');
-			setTimeout(() => setMood('idle'), THINK.holdMs);
+			setAutoMood('thinking');
+			setTimeout(() => setAutoMood('idle'), THINK.holdMs);
 		},
-		animate ? [THINK.minGapMs, THINK.maxGapMs] : null,
+		animate && mood === undefined ? [THINK.minGapMs, THINK.maxGapMs] : null,
 	);
 
 	// --- Gaze: pointer offset → eye travel and gentle head language. ---
@@ -71,6 +85,11 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 	const eyeY = useTransform(pointer.y, [-1, 1], [-GAZE.eyeTravelY, GAZE.eyeTravelY]);
 	const headX = useTransform(pointer.x, [-1, 1], [-GAZE.headTravelX, GAZE.headTravelX]);
 	const headRotate = useTransform(pointer.x, [-1, 1], [-GAZE.headTiltDeg, GAZE.headTiltDeg]);
+	const gazeActive = animate && cfg.gaze;
+
+	const eyeOpen = isBlinking ? 0.08 : cfg.eyeOpenness;
+	const breathTransition = { duration: BREATH.periodS, repeat: Infinity, ease: 'easeInOut' } as const;
+	const legSwing = animate && cfg.walk;
 
 	return (
 		<div
@@ -84,11 +103,7 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 				viewBox="0 0 200 250"
 				className="h-full w-full overflow-visible"
 				animate={animate ? { y: [0, -BREATH.bobPx, 0] } : undefined}
-				transition={
-					animate
-						? { duration: BREATH.periodS, repeat: Infinity, ease: 'easeInOut' }
-						: undefined
-				}
+				transition={animate ? breathTransition : undefined}
 			>
 				<defs>
 					<radialGradient id="gobot-eye-glow" cx="50%" cy="50%" r="50%">
@@ -102,7 +117,7 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 					</linearGradient>
 				</defs>
 
-				{/* ---------- Thought dots (thinking state) ---------- */}
+				{/* ---------- Thought dots (thinking) ---------- */}
 				{[0, 1, 2].map((i) => (
 					<motion.circle
 						key={i}
@@ -112,64 +127,89 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 						fill={PALETTE.orange}
 						initial={false}
 						animate={{
-							opacity: thinking ? [0, 1, 1, 0] : 0,
-							scale: thinking ? [0.5, 1, 1, 0.5] : 0.5,
+							opacity: showDots ? [0, 1, 1, 0] : 0,
+							scale: showDots ? [0.5, 1, 1, 0.5] : 0.5,
 						}}
 						transition={
-							thinking
-								? { duration: THINK.holdMs / 1000, delay: i * 0.18, ease: 'easeInOut' }
+							showDots
+								? { duration: THINK.holdMs / 1000, delay: i * 0.18, ease: 'easeInOut', repeat: mood ? Infinity : 0 }
 								: { duration: 0.2 }
 						}
 					/>
 				))}
 
+				{/* ---------- Charging bolt ---------- */}
+				{cfg.bolt ? (
+					<motion.path
+						d="M 160 96 l -7 12 h 6 l -5 11 l 12 -14 h -6 l 6 -9 z"
+						fill={PALETTE.orange}
+						animate={animate ? { opacity: [0.4, 1, 0.4] } : undefined}
+						transition={animate ? { duration: 1.4, repeat: Infinity, ease: 'easeInOut' } : undefined}
+					/>
+				) : null}
+
 				{/* ---------- Ground shadow ---------- */}
 				<ellipse cx="100" cy="244" rx="52" ry="6" fill={PALETTE.shadow} />
 
 				{/* ---------- Legs & boots ---------- */}
-				<g>
+				<motion.g
+					style={{ originX: '83px', originY: '180px' }}
+					animate={legSwing ? { rotate: [7, -7, 7] } : { rotate: 0 }}
+					transition={legSwing ? { duration: 0.9, repeat: Infinity, ease: 'easeInOut' } : { duration: 0.3 }}
+				>
 					<rect x="70" y="176" width="26" height="52" rx="12" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2" />
-					<rect x="104" y="176" width="26" height="52" rx="12" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2" />
-					{/* Knee seams */}
 					<line x1="73" y1="202" x2="93" y2="202" stroke={PALETTE.seam} strokeWidth="2" strokeLinecap="round" />
-					<line x1="107" y1="202" x2="127" y2="202" stroke={PALETTE.seam} strokeWidth="2" strokeLinecap="round" />
-					{/* Boots on orange soles */}
 					<rect x="62" y="222" width="40" height="18" rx="9" fill={PALETTE.shellDark} />
-					<rect x="98" y="222" width="40" height="18" rx="9" fill={PALETTE.shellDark} />
 					<path d="M 62 234 h 40 v 3 a 6 6 0 0 1 -6 6 h -28 a 6 6 0 0 1 -6 -6 z" fill={PALETTE.orange} />
-					<path d="M 98 234 h 40 v 3 a 6 6 0 0 1 -6 6 h -28 a 6 6 0 0 1 -6 -6 z" fill={PALETTE.orange} />
-					{/* Orange toe caps */}
 					<path d="M 62 231 a 9 9 0 0 1 9 -9 h 2 v 12 h -11 z" fill={PALETTE.orange} opacity="0.9" />
+				</motion.g>
+				<motion.g
+					style={{ originX: '117px', originY: '180px' }}
+					animate={legSwing ? { rotate: [-7, 7, -7] } : { rotate: 0 }}
+					transition={legSwing ? { duration: 0.9, repeat: Infinity, ease: 'easeInOut' } : { duration: 0.3 }}
+				>
+					<rect x="104" y="176" width="26" height="52" rx="12" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2" />
+					<line x1="107" y1="202" x2="127" y2="202" stroke={PALETTE.seam} strokeWidth="2" strokeLinecap="round" />
+					<rect x="98" y="222" width="40" height="18" rx="9" fill={PALETTE.shellDark} />
+					<path d="M 98 234 h 40 v 3 a 6 6 0 0 1 -6 6 h -28 a 6 6 0 0 1 -6 -6 z" fill={PALETTE.orange} />
 					<path d="M 98 231 a 9 9 0 0 1 9 -9 h 2 v 12 h -11 z" fill={PALETTE.orange} opacity="0.9" />
-				</g>
+				</motion.g>
 
 				{/* ---------- Body (breathing squash) ---------- */}
 				<motion.g
 					style={{ originX: '100px', originY: '176px' }}
 					animate={animate ? { scaleY: [1, 1 + BREATH.squash, 1] } : undefined}
-					transition={
-						animate
-							? { duration: BREATH.periodS, repeat: Infinity, ease: 'easeInOut' }
-							: undefined
-					}
+					transition={animate ? breathTransition : undefined}
 				>
 					{/* Backpack silhouette peeking out behind the shoulders */}
 					<rect x="54" y="104" width="92" height="60" rx="24" fill={PALETTE.shellDark} />
 
 					{/* Arms with orange hands */}
 					<motion.g
-						animate={animate ? { rotate: [0, 2, 0] } : undefined}
+						animate={animate ? { rotate: legSwing ? [-6, 6, -6] : [0, 2, 0] } : undefined}
 						style={{ originX: '47px', originY: '116px' }}
-						transition={animate ? { duration: BREATH.periodS, repeat: Infinity, ease: 'easeInOut' } : undefined}
+						transition={
+							animate
+								? legSwing
+									? { duration: 0.9, repeat: Infinity, ease: 'easeInOut' }
+									: breathTransition
+								: undefined
+						}
 					>
 						<rect x="34" y="108" width="24" height="62" rx="12" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2" />
 						<line x1="38" y1="140" x2="54" y2="140" stroke={PALETTE.seam} strokeWidth="2" strokeLinecap="round" />
 						<ellipse cx="46" cy="176" rx="9" ry="10" fill={PALETTE.orange} />
 					</motion.g>
 					<motion.g
-						animate={animate ? { rotate: [0, -2, 0] } : undefined}
+						animate={animate ? { rotate: legSwing ? [6, -6, 6] : [0, -2, 0] } : undefined}
 						style={{ originX: '153px', originY: '116px' }}
-						transition={animate ? { duration: BREATH.periodS, repeat: Infinity, ease: 'easeInOut' } : undefined}
+						transition={
+							animate
+								? legSwing
+									? { duration: 0.9, repeat: Infinity, ease: 'easeInOut' }
+									: breathTransition
+								: undefined
+						}
 					>
 						<rect x="142" y="108" width="24" height="62" rx="12" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2" />
 						<line x1="146" y1="140" x2="162" y2="140" stroke={PALETTE.seam} strokeWidth="2" strokeLinecap="round" />
@@ -180,30 +220,50 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 					<rect x="60" y="102" width="80" height="80" rx="30" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2.5" />
 
 					{/* Chest emblem — the triple-bar mark, glowing (his heartbeat) */}
-					<motion.g
-						animate={
-							animate
-								? { opacity: thinking ? [1, 0.45, 1] : [1, 0.7, 1] }
-								: undefined
-						}
-						transition={
-							animate
-								? {
-										duration: thinking ? 0.7 : BREATH.periodS / 2,
-										repeat: Infinity,
-										ease: 'easeInOut',
+					{cfg.equalizer && animate ? (
+						<g>
+							{[0, 1, 2].map((i) => (
+								<motion.polygon
+									key={i}
+									points={
+										i === 0
+											? '88,118 112,118 107,123 93,123'
+											: i === 1
+												? '88,127 112,127 107,132 93,132'
+												: '93,136 112,136 107,141 88,141'
 									}
-								: undefined
-						}
-					>
-						<polygon points="88,118 112,118 107,123 93,123" fill={PALETTE.orange} />
-						<polygon points="88,127 112,127 107,132 93,132" fill={PALETTE.orange} />
-						<polygon points="93,136 112,136 107,141 88,141" fill={PALETTE.orange} />
-					</motion.g>
+									fill={PALETTE.orange}
+									animate={{ opacity: [0.35, 1, 0.35] }}
+									transition={{ duration: 0.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.14 }}
+								/>
+							))}
+						</g>
+					) : (
+						<motion.g
+							animate={animate ? { opacity: [1, cfg.emblemMin, 1] } : undefined}
+							transition={
+								animate ? { duration: cfg.emblemPeriod, repeat: Infinity, ease: 'easeInOut' } : undefined
+							}
+						>
+							<polygon points="88,118 112,118 107,123 93,123" fill={PALETTE.orange} />
+							<polygon points="88,127 112,127 107,132 93,132" fill={PALETTE.orange} />
+							<polygon points="93,136 112,136 107,141 88,141" fill={PALETTE.orange} />
+						</motion.g>
+					)}
+
+					{/* Role accessory */}
+					{role ? <GoBotRoleBadge role={role} /> : null}
 
 					{/* Camera dot */}
 					<circle cx="100" cy="156" r="6.5" fill={PALETTE.shellDark} stroke={PALETTE.seam} strokeWidth="1.5" />
-					<circle cx="100" cy="156" r="3" fill="#3a3a42" />
+					<motion.circle
+						cx="100"
+						cy="156"
+						r="3"
+						fill="#3a3a42"
+						animate={animate && cfg.sweep ? { fill: ['#3a3a42', PALETTE.orange, '#3a3a42'] } : undefined}
+						transition={animate && cfg.sweep ? { duration: 1.6, repeat: Infinity, ease: 'easeInOut' } : undefined}
+					/>
 					<circle cx="101.5" cy="154.5" r="1" fill="#8a8a95" />
 				</motion.g>
 
@@ -211,10 +271,15 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 				<rect x="90" y="90" width="20" height="14" rx="6" fill={PALETTE.shellDark} />
 
 				{/* ---------- Head (gaze-driven) ---------- */}
-				<motion.g style={{ x: headX, rotate: headRotate, originX: '100px', originY: '92px' }}>
+				<motion.g
+					style={
+						gazeActive
+							? { x: headX, rotate: headRotate, originX: '100px', originY: '92px' }
+							: { originX: '100px', originY: '92px' }
+					}
+				>
 					{/* Head shell */}
 					<rect x="54" y="12" width="92" height="80" rx="32" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2.5" />
-					{/* Side panel seams */}
 					<circle cx="63" cy="46" r="7" fill="none" stroke={PALETTE.seam} strokeWidth="1.5" opacity="0.7" />
 					<circle cx="137" cy="46" r="7" fill="none" stroke={PALETTE.seam} strokeWidth="1.5" opacity="0.7" />
 
@@ -222,32 +287,46 @@ export function GoBot({ className, size = 320, label = 'Go-Bot, your robotic com
 					<rect x="66" y="28" width="68" height="50" rx="18" fill={PALETTE.visor} />
 					<rect x="66" y="28" width="68" height="50" rx="18" fill="url(#gobot-visor-sheen)" />
 
-					{/* Eyes: glow + gaze travel + blink + thinking glance */}
-					<motion.g style={{ x: eyeX, y: eyeY }}>
+					{/* Eyes: glow + gaze/glance/sweep + blink + mood shape */}
+					<motion.g style={gazeActive ? { x: eyeX, y: eyeY } : undefined}>
 						<motion.g
 							initial={false}
-							animate={{
-								x: thinking ? THINK.glance.x : 0,
-								y: thinking ? THINK.glance.y : 0,
-							}}
-							transition={{ type: 'spring', stiffness: 120, damping: 16 }}
+							animate={
+								animate && cfg.sweep
+									? { x: [-6, 6, -6], y: 0 }
+									: { x: cfg.glance?.x ?? 0, y: cfg.glance?.y ?? 0 }
+							}
+							transition={
+								animate && cfg.sweep
+									? { duration: 1.6, repeat: Infinity, ease: 'easeInOut' }
+									: { type: 'spring', stiffness: 120, damping: 16 }
+							}
 						>
 							<circle cx="88" cy="53" r="12" fill="url(#gobot-eye-glow)" />
 							<circle cx="112" cy="53" r="12" fill="url(#gobot-eye-glow)" />
-							<motion.ellipse
-								cx="88" cy="53" rx="5" ry="7.5"
-								fill={PALETTE.orange}
-								animate={{ scaleY: isBlinking ? 0.08 : 1 }}
-								style={{ originX: '88px', originY: '53px' }}
-								transition={{ duration: 0.09 }}
-							/>
-							<motion.ellipse
-								cx="112" cy="53" rx="5" ry="7.5"
-								fill={PALETTE.orange}
-								animate={{ scaleY: isBlinking ? 0.08 : 1 }}
-								style={{ originX: '112px', originY: '53px' }}
-								transition={{ duration: 0.09 }}
-							/>
+							{cfg.happyArc ? (
+								<g stroke={PALETTE.orange} strokeWidth="4" strokeLinecap="round" fill="none">
+									<path d="M 81 56 Q 88 47 95 56" />
+									<path d="M 105 56 Q 112 47 119 56" />
+								</g>
+							) : (
+								<>
+									<motion.ellipse
+										cx="88" cy="53" rx="5" ry="7.5"
+										fill={PALETTE.orange}
+										animate={{ scaleY: eyeOpen, scale: cfg.eyeScale }}
+										style={{ originX: '88px', originY: '53px' }}
+										transition={{ duration: 0.09 }}
+									/>
+									<motion.ellipse
+										cx="112" cy="53" rx="5" ry="7.5"
+										fill={PALETTE.orange}
+										animate={{ scaleY: eyeOpen, scale: cfg.eyeScale }}
+										style={{ originX: '112px', originY: '53px' }}
+										transition={{ duration: 0.09 }}
+									/>
+								</>
+							)}
 						</motion.g>
 					</motion.g>
 				</motion.g>

@@ -1,37 +1,49 @@
-import { Brain, Cpu, Radio, ShieldCheck } from 'lucide-react';
+import { Hand, HeartHandshake, Layers, Radar, Sparkles } from 'lucide-react';
 import type { ArchitectureLayer } from '@/types';
 
+/**
+ * The Go-Bot platform flow, top to bottom: human needs in, helpful action
+ * out. Rendered as the interactive architecture explorer on the homepage.
+ */
 export const architectureLayers: ArchitectureLayer[] = [
 	{
-		id: 'intelligence',
-		name: 'Intelligence Layer',
+		id: 'life-domains',
+		name: 'Life Domains',
 		description:
-			'Multimodal AI that perceives, reasons, and converses — tuned for warmth, safety, and usefulness.',
-		technologies: ['Multimodal perception', 'Conversational reasoning', 'Continuous learning'],
-		icon: Brain,
+			'Everything starts with human needs: health, home, learning, safety — twenty domains of daily life that define what Go-Bot is for.',
+		technologies: ['20 life domains', 'Human-centered design', 'Owner-defined priorities'],
+		icon: HeartHandshake,
 	},
 	{
-		id: 'embodiment',
-		name: 'Embodiment Layer',
+		id: 'capability-modules',
+		name: 'Capability Modules',
 		description:
-			'Real-time motion control that translates intent into smooth, human-safe physical expression.',
-		technologies: ['Compliant actuation', 'Gesture synthesis', 'Balance & navigation'],
-		icon: Cpu,
+			'Each domain is served by capabilities — detect falls, translate live, guide navigation. Modular, searchable, and growing toward thousands.',
+		technologies: ['Capability engine', 'Confidence scoring', 'Per-generation hardware map'],
+		icon: Layers,
 	},
 	{
-		id: 'connection',
-		name: 'Connection Layer',
+		id: 'sensors',
+		name: 'Sensors',
 		description:
-			'A secure fabric linking Go-Bot to your home, devices, and the ENGAGE GLOBAL cloud.',
-		technologies: ['Smart-home protocols', 'Companion apps', 'Over-the-air updates'],
-		icon: Radio,
+			'Capabilities perceive through the body: stereo vision, lidar, far-field audio, thermal, balance — fused into one picture of the moment.',
+		technologies: ['Lidar + stereo depth', '6-mic array', 'Thermal & air quality', '1 kHz sensor fusion'],
+		icon: Radar,
 	},
 	{
-		id: 'trust',
-		name: 'Trust Layer',
+		id: 'reasoning-engine',
+		name: 'Reasoning Engine',
 		description:
-			'Privacy and safety engineered into every level — on-device processing, transparent controls, hard guarantees.',
-		technologies: ['On-device first', 'Explainable actions', 'Physical safety limits'],
-		icon: ShieldCheck,
+			'On-device intelligence decides what matters and what to do — private by default, explainable always, warm by design.',
+		technologies: ['48 TOPS on-device', 'Multi-step planning', 'Explainable actions'],
+		icon: Sparkles,
+	},
+	{
+		id: 'actions',
+		name: 'Actions',
+		description:
+			'Reasoning becomes gentle, human-safe motion and speech: a steadying arm, a translated sentence, a calm call for help.',
+		technologies: ['Force-limited motion', 'Expressive voice', 'Smart-home control'],
+		icon: Hand,
 	},
 ];

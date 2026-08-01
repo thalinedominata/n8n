@@ -1,7 +1,9 @@
 # Platform Roadmap
 
 The public-facing summary renders from `src/data/roadmap.ts`; this document
-is the engineering view.
+is the engineering view. The master plan lives in
+[architecture/gxp-platform.md](architecture/gxp-platform.md) — the ten GXP
+phases sorted into platform layers.
 
 ## Version 1 — Foundation *(current)*
 
@@ -10,9 +12,16 @@ is the engineering view.
 - [x] Animated Go-Bot character (breathing, blinking, gaze, thinking)
 - [x] Prototype asset integration — character rebuilt to the supplied
       prototype (graphite shell, glowing eyes, chest emblem, backpack)
-- [x] Homepage: Hero, Problem, Architecture, Life Domains (20 domains with
-      placeholder pages), Hardware Explorer (anatomy modals), Industries,
-      AI Demo (scripted), Roadmap, Footer
+- [x] Homepage: Hero, Problem, Architecture (interactive flow), Life
+      Domains, Hardware Explorer (17-part anatomy), Industries, AI
+      Playground (scripted scenarios), Roadmap, Footer
+- [x] Complete design-system component set (incl. Tabs, Accordion, Drawer,
+      Carousel, Tooltip, Progress, StatCard, Chip, Command Palette)
+- [x] Go-Bot component library: 9 moods + 9 role variants as presets
+- [x] Capability engine: searchable database at /capabilities with
+      cross-references into domains and industries
+- [x] Life-domain database: rich schema, 6 flagship domains populated
+- [x] Industry engine: transformed experiences at /industries/[slug]
 - [ ] Vercel deployment + analytics
 
 ## Version 2 — Immersion
