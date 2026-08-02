@@ -1,5 +1,18 @@
 @import 'tailwindcss';
 
+/* Brand wordmark face — used only for the GO-BOT name in the top bar */
+@font-face {
+	font-family: 'Arabic Riyad';
+	src: url('/fonts/arabic-riyad.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-wordmark {
+	font-family: 'Arabic Riyad', var(--font-sans, sans-serif);
+}
+
 /* ============================================================
    Go-Bot Design System — Tokens
    White-first · Black typography · Go-Bot orange accents
