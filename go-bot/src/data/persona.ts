@@ -22,12 +22,12 @@ export const personaFeatures: PersonaFeature[] = [
 			'Black bootcut denim breaking over the signature orange feet',
 			'Visor equalizer — the eyes become the music',
 		],
-		image: {
+		images: [{
 			src: '/assets/gobot/persona/lil-durk-the-voice.jpg',
 			width: 1800,
 			height: 1350,
 			alt: 'The Voice — Go-Bot styled after Lil Durk in a blue varsity jacket, blonde dreadlocks, GO-BOT cap, and an iced-out THE VOICE pendant',
-		},
+		}],
 	},
 	{
 		id: 'bad-bunny-the-suit',
@@ -43,12 +43,12 @@ export const personaFeatures: PersonaFeature[] = [
 			'Black rectangular shades clipped over the visor',
 			'Cream leather loafers in place of the orange boots',
 		],
-		image: {
+		images: [{
 			src: '/assets/gobot/persona/bad-bunny-the-suit.jpg',
 			width: 376,
 			height: 504,
 			alt: 'The Suit — Go-Bot styled after Bad Bunny in a powder-blue tailored suit, cream polo, black shades, and cream loafers',
-		},
+		}],
 	},
 	{
 		id: 'bad-bunny-the-coat',
@@ -65,12 +65,12 @@ export const personaFeatures: PersonaFeature[] = [
 			'Tinted amber aviators — the eyes glow warm through the lens',
 			'Signature orange boots, front and center',
 		],
-		image: {
+		images: [{
 			src: '/assets/gobot/persona/bad-bunny-the-coat.jpg',
 			width: 376,
 			height: 504,
 			alt: 'The Coat — Go-Bot styled after Bad Bunny in an oversized cream faux-fur coat, white tank, silver cross chain, and amber aviators',
-		},
+		}],
 	},
 	{
 		id: 'bad-bunny-the-fit',
@@ -86,12 +86,12 @@ export const personaFeatures: PersonaFeature[] = [
 			'Black shades over the glowing gaze',
 			'Plain white leather high-tops, unbranded',
 		],
-		image: {
+		images: [{
 			src: '/assets/gobot/persona/bad-bunny-the-fit.jpg',
 			width: 376,
 			height: 504,
 			alt: 'The Fit — Go-Bot styled after Bad Bunny in a brown fleece sweatshirt, tan cargo trousers, bucket hat, gold rope chain, and white high-tops',
-		},
+		}],
 	},
 	{
 		id: 'mo-bot-uae',
@@ -108,12 +108,12 @@ export const personaFeatures: PersonaFeature[] = [
 			'Gold-rimmed tinted glasses — the gaze glows through the lens',
 			'Signature orange boots beneath the hem',
 		],
-		image: {
+		images: [{
 			src: '/assets/gobot/persona/mo-bot-uae.jpg',
 			width: 1800,
 			height: 1350,
 			alt: 'Mo-Bot — Go-Bot in traditional Emirati attire: white kandura and ghutra, black agal, gold-trimmed black bisht, and tinted glasses',
-		},
+		}],
 	},
 	{
 		id: 'lebron-the-king',
@@ -130,11 +130,11 @@ export const personaFeatures: PersonaFeature[] = [
 			'Regulation leather basketball, carried like it lives there',
 			'Signature orange sneakers, hardwood-ready',
 		],
-		image: {
+		images: [{
 			src: '/assets/gobot/persona/lebron-the-king.jpg',
 			width: 1200,
 			height: 896,
 			alt: 'The King — Go-Bot styled after LeBron James in a blue PHILA 23 basketball jersey, white arm sleeve, holding a basketball',
-		},
+		}],
 	},
 ];

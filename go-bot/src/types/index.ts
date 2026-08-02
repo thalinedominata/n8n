@@ -9,6 +9,7 @@ export type {
 	ArchitectureLayer,
 	Capability,
 	PersonaFeature,
+	PersonaImage,
 	NavItem,
 	CommandItem,
 	AiDemoMessage,

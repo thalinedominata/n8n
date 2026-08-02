@@ -116,6 +116,14 @@ export interface Capability {
 	featured?: boolean;
 }
 
+/** A single render in a Person-A feature. */
+export interface PersonaImage {
+	src: string;
+	width: number;
+	height: number;
+	alt: string;
+}
+
 /**
  * A celebrity Go-Bot in the Person-A gallery — the prototype reimagined
  * in a cultural icon's signature look.
@@ -129,7 +137,8 @@ export interface PersonaFeature {
 	description: string;
 	/** The custom fit — what makes this Go-Bot theirs. */
 	fit: string[];
-	image: { src: string; width: number; height: number; alt: string };
+	/** One or more renders; multiple render side by side. */
+	images: PersonaImage[];
 }
 
 /** A top-level navigation entry. */

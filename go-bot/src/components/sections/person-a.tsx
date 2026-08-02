@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Container } from '@/components/ui';
+import { cn } from '@/lib/utils';
 import { Reveal } from '@/components/motion/reveal';
 import { personaFeatures } from '@/data/persona';
 
@@ -27,16 +28,27 @@ export function PersonA() {
 				{personaFeatures.map((feature, index) => (
 					<Reveal key={feature.id} className="mt-20">
 						<article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-							<div className={index % 2 === 1 ? 'lg:order-last' : undefined}>
-								<div className="overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3">
-									<Image
-										src={feature.image.src}
-										width={feature.image.width}
-										height={feature.image.height}
-										alt={feature.image.alt}
-										className="h-full w-full object-cover"
-									/>
-								</div>
+							<div
+								className={cn(
+									'grid gap-4',
+									feature.images.length > 1 && 'grid-cols-2',
+									index % 2 === 1 && 'lg:order-last',
+								)}
+							>
+								{feature.images.map((image) => (
+									<div
+										key={image.src}
+										className="overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3"
+									>
+										<Image
+											src={image.src}
+											width={image.width}
+											height={image.height}
+											alt={image.alt}
+											className="h-full w-full object-cover"
+										/>
+									</div>
+								))}
 							</div>
 
 							<div>
