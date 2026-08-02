@@ -137,4 +137,34 @@ export const personaFeatures: PersonaFeature[] = [
 			alt: 'The King — Go-Bot styled after LeBron James in a blue PHILA 23 basketball jersey, white arm sleeve, holding a basketball',
 		}],
 	},
+	{
+		id: 'brady-bot',
+		name: 'Tom Brady',
+		title: 'Brady Bot',
+		description:
+			'A tribute to the GOAT of the gridiron — shown twice, because he always ' +
+			'had two modes: calm on the sideline with the helmet under his arm, and ' +
+			'apocalyptic in the pocket with the ball cocked back.',
+		fit: [
+			'Navy 12 jersey with silver shoulder yokes and red piping',
+			'Black long-sleeve base layer under the pads',
+			'Silver game pants with a white towel tucked at the waist',
+			'White padded quarterback glove; silver helmet, red facemask',
+			'Signature orange cleats planted for the throw',
+		],
+		images: [
+			{
+				src: '/assets/gobot/persona/brady-bot-sideline.jpg',
+				width: 1200,
+				height: 896,
+				alt: 'Brady Bot — Go-Bot in a navy number 12 football uniform holding a silver helmet under one arm and a football in the other hand',
+			},
+			{
+				src: '/assets/gobot/persona/brady-bot-gameday.jpg',
+				width: 1200,
+				height: 896,
+				alt: 'Brady Bot in full gear — Go-Bot wearing the silver helmet with red facemask, eyes glowing through the cage, cocking a football back to throw',
+			},
+		],
+	},
 ];
