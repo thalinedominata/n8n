@@ -115,4 +115,26 @@ export const personaFeatures: PersonaFeature[] = [
 			alt: 'The Visionary — Go-Bot in traditional Emirati royal attire: white kandura and ghutra, black agal, gold-trimmed black bisht, and tinted glasses',
 		},
 	},
+	{
+		id: 'lebron-the-king',
+		name: 'LeBron James',
+		title: 'The King',
+		description:
+			'A tribute to the greatest to ever do it — game-ready in the PHILA 23, ' +
+			'ball on the hip, sleeve on the shooting arm. Four quarters of battery ' +
+			'left and he wants all of them.',
+		fit: [
+			'Royal-blue PHILA 23 jersey with red-and-white stitched trim',
+			'Matching shorts with striped side panels',
+			'White compression sleeve on the shooting arm, sweat wristband on the other',
+			'Regulation leather basketball, carried like it lives there',
+			'Signature orange sneakers, hardwood-ready',
+		],
+		image: {
+			src: '/assets/gobot/persona/lebron-the-king.jpg',
+			width: 1200,
+			height: 896,
+			alt: 'The King — Go-Bot styled after LeBron James in a blue PHILA 23 basketball jersey, white arm sleeve, holding a basketball',
+		},
+	},
 ];
