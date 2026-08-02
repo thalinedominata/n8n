@@ -6,6 +6,7 @@ import {
 	Architecture,
 	LifeDomains,
 	HardwareExplorer,
+	HardwareStory,
 	PrototypeShowcase,
 	PersonA,
 	Industries,
@@ -24,6 +25,7 @@ export default function HomePage() {
 				<Architecture />
 				<LifeDomains />
 				<HardwareExplorer />
+				<HardwareStory />
 				<PrototypeShowcase />
 				<PersonA />
 				<Industries />

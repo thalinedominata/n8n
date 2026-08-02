@@ -40,8 +40,9 @@ ever wanted, the path is image-to-3D generation or a commissioned model
       launched with Feature 001 — Lil Durk, "The Voice"
 - [ ] More film: mood/expression clips from the same prototype set
       (thinking, walking, head-turn) to extend GoBotFigure
-- [ ] GSAP ScrollTrigger deep-dives: pinned hardware exploded story,
-      scroll-scrubbed architecture narrative
+- [x] GSAP ScrollTrigger guided tour: pinned, scroll-scrubbed hardware
+      story (`hardware-story.tsx`, beats in `src/data/hardware-story.ts`)
+- [ ] GSAP scroll-scrubbed architecture narrative
 - [ ] Capability demo interactions; localization (i18n layer); a11y audit
 
 ## Version 3 — Intelligence

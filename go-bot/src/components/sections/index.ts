@@ -3,6 +3,7 @@ export { Problem } from './problem';
 export { Architecture } from './architecture';
 export { LifeDomains } from './life-domains';
 export { HardwareExplorer } from './hardware-explorer';
+export { HardwareStory } from './hardware-story';
 export { PrototypeShowcase } from './prototype-showcase';
 export { PersonA } from './person-a';
 export { Industries } from './industries';

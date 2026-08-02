@@ -3,6 +3,7 @@ import { lifeDomains } from '@/data/life-domains';
 import { industries } from '@/data/industries';
 import { roadmap } from '@/data/roadmap';
 import { hardwareModules } from '@/data/hardware';
+import { hardwareStory } from '@/data/hardware-story';
 import { architectureLayers } from '@/data/architecture';
 import { capabilities } from '@/data/capabilities';
 import { aiDemoScenarios } from '@/data/ai-demo';
@@ -106,6 +107,18 @@ describe('experience databases', () => {
 		const covered = new Set(capabilities.flatMap((capability) => capability.domains));
 		for (const domain of lifeDomains) {
 			expect(covered.has(domain.id), `${domain.id} has no capabilities`).toBe(true);
+		}
+	});
+
+	it('hardware story beats reference real modules within figure bounds', () => {
+		const ids = new Set(hardwareModules.map((module) => module.id));
+		expect(hardwareStory.length).toBeGreaterThanOrEqual(6);
+		for (const beat of hardwareStory) {
+			expect(ids.has(beat.moduleId), `unknown story module: ${beat.moduleId}`).toBe(true);
+			expect(beat.x).toBeGreaterThan(0);
+			expect(beat.x).toBeLessThan(100);
+			expect(beat.y).toBeGreaterThan(0);
+			expect(beat.y).toBeLessThan(100);
 		}
 	});
 
