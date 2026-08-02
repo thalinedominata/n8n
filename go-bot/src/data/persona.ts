@@ -156,22 +156,23 @@ export const personaFeatures: PersonaFeature[] = [
 		name: 'Licensing Concept',
 		title: 'Iron-Bot',
 		description:
-			'A superhero homage with a Go-Bot twist: crimson-and-gold plating over ' +
-			'his own shell, his own visor instead of a faceplate, and his triple-bar ' +
-			'heartbeat burning white-hot as the power core. Shown as a concept for ' +
-			'potential character-licensing partnerships.',
+			'A superhero homage with a Go-Bot twist: crimson-and-gold armor ' +
+			'smoothed into his own rounded shell language, his own black visor under ' +
+			'a red-and-gold helmet, and his triple-bar heartbeat burning white-hot ' +
+			'as the power core. Shown as a concept for potential character-licensing ' +
+			'partnerships.',
 		fit: [
-			'Crimson armor plating with polished gold accent panels',
+			'Rounded matte-crimson shell with polished gold accent bands — his silhouette, not a movie suit',
+			'Red-and-gold helmet around the black visor, eyes locked in hero mode',
 			'Triple-bar emblem glowing white as the chest core',
 			'Armored gauntlets, repulsor charged in the raised palm',
-			'His own head and visor — no faceplate needed',
 			'Signature orange boots, because heroes land on their feet',
 		],
 		images: [{
 			src: '/assets/gobot/persona/iron-bot.jpg',
-			width: 1290,
-			height: 2304,
-			alt: 'Iron-Bot — Go-Bot in crimson and gold superhero armor with a glowing triple-bar chest core and a glowing repulsor in his raised palm',
+			width: 2294,
+			height: 4096,
+			alt: 'Iron-Bot — Go-Bot in rounded crimson-and-gold armor with a red-and-gold helmet, fierce glowing eyes on a black visor, a glowing triple-bar chest core, and a glowing repulsor in his raised palm',
 		}],
 	},
 	{
