@@ -22,12 +22,20 @@ export const personaFeatures: PersonaFeature[] = [
 			'Black bootcut denim breaking over the signature orange feet',
 			'Visor equalizer — the eyes become the music',
 		],
-		images: [{
-			src: '/assets/gobot/persona/lil-durk-the-voice.jpg',
-			width: 1800,
-			height: 1350,
-			alt: 'The Voice — Go-Bot styled after Lil Durk in a blue varsity jacket, blonde dreadlocks, GO-BOT cap, and an iced-out THE VOICE pendant',
-		}],
+		images: [
+			{
+				src: '/assets/gobot/persona/lil-durk-the-voice.jpg',
+				width: 1800,
+				height: 1350,
+				alt: 'The Voice — Go-Bot styled after Lil Durk in a blue varsity jacket, blonde dreadlocks, GO-BOT cap, and an iced-out THE VOICE pendant',
+			},
+			{
+				src: '/assets/gobot/persona/lil-durk-all-black.jpg',
+				width: 955,
+				height: 720,
+				alt: 'The Voice, all-black edition — Go-Bot with long dark hair streaked orange, layered silver chains, a patterned black shirt, leather flares, and white sneakers',
+			},
+		],
 	},
 	{
 		id: 'bad-bunny-the-suit',
