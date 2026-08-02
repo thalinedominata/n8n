@@ -114,7 +114,7 @@ export function CapabilityExplorer() {
 								<h4 className="text-overline font-semibold uppercase tracking-(--text-overline--letter-spacing) text-ink-tertiary">
 									Confidence
 								</h4>
-								<span className="text-caption font-semibold text-gobot-600">{selected.confidence}%</span>
+								<span className="text-caption font-semibold text-gobot-700">{selected.confidence}%</span>
 							</div>
 							<Progress value={selected.confidence} label={`${selected.name} confidence`} className="mt-2" />
 						</div>

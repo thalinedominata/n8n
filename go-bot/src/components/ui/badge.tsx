@@ -7,7 +7,7 @@ const badgeVariants = cva(
 	{
 		variants: {
 			variant: {
-				orange: 'bg-gobot-50 text-gobot-600',
+				orange: 'bg-gobot-50 text-gobot-700',
 				neutral: 'bg-surface-sunken text-ink-secondary',
 				inverse: 'bg-ink text-ink-inverse',
 			},

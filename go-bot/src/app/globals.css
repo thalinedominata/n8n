@@ -16,7 +16,7 @@
 	/* ---------- Color · Ink (black typography) ---------- */
 	--color-ink: #0a0a0a;
 	--color-ink-secondary: #52525b;
-	--color-ink-tertiary: #a1a1aa;
+	--color-ink-tertiary: #71717a;
 	--color-ink-inverse: #ffffff;
 
 	/* ---------- Color · Go-Bot Orange ---------- */
@@ -149,4 +149,11 @@ body {
 /* Anchored sections land below the fixed navbar */
 section[id] {
 	scroll-margin-top: 4.5rem;
+}
+
+/* Faster taps, intentional highlight behavior on touch devices */
+a,
+button {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
 }

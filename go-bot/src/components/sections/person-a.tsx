@@ -18,7 +18,7 @@ export function PersonA() {
 				<Reveal className="mx-auto max-w-2xl text-center">
 					<p className="text-overline text-gobot-500">Person-A</p>
 					<h2 className="mt-3 text-headline font-semibold">Celebrity Go-Bots.</h2>
-					<p className="mt-4 text-body-lg text-ink-tertiary">
+					<p className="mt-4 text-body-lg text-ink-inverse/70">
 						Go-Bot doesn&rsquo;t just live in homes — he lives in culture. Person-A
 						restyles the real prototype in the signature look of the icons who
 						shape it, one feature at a time.
@@ -53,13 +53,13 @@ export function PersonA() {
 							</div>
 
 							<div>
-								<p className="text-overline text-ink-tertiary">
+								<p className="text-overline text-ink-inverse/60">
 									Feature {String(index + 1).padStart(3, '0')} · {feature.name}
 								</p>
 								<h3 className="mt-4 text-display font-bold uppercase leading-none tracking-tight">
 									{feature.title}
 								</h3>
-								<p className="mt-6 max-w-xl text-body-lg text-ink-tertiary">
+								<p className="mt-6 max-w-xl text-body-lg text-ink-inverse/70">
 									{feature.description}
 								</p>
 								<ul className="mt-8 space-y-3">
@@ -79,7 +79,7 @@ export function PersonA() {
 				))}
 
 				<Reveal className="mt-16">
-					<p className="text-center text-overline text-ink-tertiary">
+					<p className="text-center text-overline text-ink-inverse/60">
 						More features docking soon · Person-A is an ENGAGE GLOBAL tribute series
 					</p>
 				</Reveal>

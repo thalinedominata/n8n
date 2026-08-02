@@ -40,7 +40,7 @@ export function Carousel({ children, label, className }: CarouselProps) {
 					type="button"
 					onClick={() => scrollBy(-1)}
 					aria-label="Previous"
-					className="rounded-pill border border-border-strong p-2 text-ink-secondary transition-[border-color,color] duration-(--duration-fast) hover:border-ink hover:text-ink"
+					className="rounded-pill border border-border-strong p-3 text-ink-secondary transition-[border-color,color] duration-(--duration-fast) hover:border-ink hover:text-ink"
 				>
 					<ChevronLeft className="h-4 w-4" />
 				</button>
@@ -48,7 +48,7 @@ export function Carousel({ children, label, className }: CarouselProps) {
 					type="button"
 					onClick={() => scrollBy(1)}
 					aria-label="Next"
-					className="rounded-pill border border-border-strong p-2 text-ink-secondary transition-[border-color,color] duration-(--duration-fast) hover:border-ink hover:text-ink"
+					className="rounded-pill border border-border-strong p-3 text-ink-secondary transition-[border-color,color] duration-(--duration-fast) hover:border-ink hover:text-ink"
 				>
 					<ChevronRight className="h-4 w-4" />
 				</button>

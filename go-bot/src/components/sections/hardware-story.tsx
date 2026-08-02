@@ -71,7 +71,7 @@ export function HardwareStory() {
 		>
 			<Container>
 				<div className="mb-8 text-center">
-					<p className="text-overline text-gobot-500">The Guided Tour</p>
+					<p className="text-overline text-gobot-700">The Guided Tour</p>
 					<h2 className="mt-3 text-headline font-semibold">
 						{pinned ? 'Keep scrolling — he explains himself.' : 'Walk the anatomy, beat by beat.'}
 					</h2>
@@ -116,7 +116,7 @@ export function HardwareStory() {
 						</p>
 						<h3 className="mt-3 text-title font-semibold">{module.name}</h3>
 						<p className="mt-3 max-w-xl text-body-lg text-ink-secondary">{module.description}</p>
-						<p className="mt-4 max-w-xl text-body italic text-gobot-600">{step.line}</p>
+						<p className="mt-4 max-w-xl text-body italic text-gobot-700">{step.line}</p>
 
 						<dl className="mt-6 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2">
 							{module.specs.slice(0, 4).map((spec) => (

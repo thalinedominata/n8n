@@ -38,7 +38,7 @@ export function Problem() {
 				<Reveal className="mt-10 text-center">
 					<Link
 						href="/capabilities"
-						className="inline-flex items-center gap-1.5 text-body font-medium text-gobot-600 transition-colors duration-(--duration-fast) hover:text-gobot-700"
+						className="inline-flex items-center gap-1.5 text-body font-medium text-gobot-700 transition-colors duration-(--duration-fast) hover:text-gobot-800"
 					>
 						Explore all {capabilities.length}+ capabilities
 						<ArrowRight className="h-4 w-4" aria-hidden />

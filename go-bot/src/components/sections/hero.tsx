@@ -35,7 +35,7 @@ export function Hero() {
 						variants={heroReveal}
 						className="mt-6 text-display font-semibold text-balance sm:text-display-xl"
 					>
-						Meet <span className="text-gobot-500">Go-Bot</span>
+						Meet <span className="text-gobot-600">Go-Bot</span>
 					</motion.h1>
 					<motion.p
 						variants={heroReveal}

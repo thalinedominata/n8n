@@ -104,7 +104,7 @@ export function AiDemo() {
 						<GoBotFigure media="front" className="w-full max-w-56" />
 						<span
 							aria-label={`Go-Bot is ${mood}`}
-							className="rounded-pill bg-surface px-4 py-1.5 text-overline font-semibold uppercase tracking-(--text-overline--letter-spacing) text-gobot-600 shadow-e1"
+							className="rounded-pill bg-surface px-4 py-1.5 text-overline font-semibold uppercase tracking-(--text-overline--letter-spacing) text-gobot-700 shadow-e1"
 						>
 							{mood}
 						</span>

@@ -115,7 +115,7 @@ export function DomainDetails({ domainId }: { domainId: string }) {
 									className="w-[85%] shrink-0 snap-start sm:w-96"
 								>
 									<p className="text-body text-ink text-pretty">“{story.quote}”</p>
-									<p className="mt-4 text-caption font-medium text-gobot-600">{story.author}</p>
+									<p className="mt-4 text-caption font-medium text-gobot-700">{story.author}</p>
 								</Card>
 							))}
 						</Carousel>

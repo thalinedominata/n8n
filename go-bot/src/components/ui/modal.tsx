@@ -67,7 +67,7 @@ export function Modal({ open, onClose, title, children, className }: ModalProps)
 								type="button"
 								onClick={onClose}
 								aria-label="Close dialog"
-								className="rounded-pill p-1.5 text-ink-tertiary transition-colors duration-(--duration-fast) hover:bg-surface-sunken hover:text-ink"
+								className="-m-1 rounded-pill p-2.5 text-ink-tertiary transition-colors duration-(--duration-fast) hover:bg-surface-sunken hover:text-ink"
 							>
 								<X className="h-5 w-5" />
 							</button>
