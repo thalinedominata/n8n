@@ -65,6 +65,37 @@ export function HardwareStory() {
 								<span className="absolute inset-0 animate-ping rounded-full border border-gobot-500" />
 							</span>
 						</div>
+
+						{/* Controls live right under the figure: previous/next + jump-anywhere beat rail */}
+						<div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+							<div className="flex gap-2">
+								<Button
+									variant="outline"
+									size="sm"
+									onClick={() => setActive(Math.max(0, active - 1))}
+									disabled={active === 0}
+									aria-label="Previous stop"
+								>
+									<ChevronLeft className="h-4 w-4" aria-hidden />
+								</Button>
+								<Button
+									variant="outline"
+									size="sm"
+									onClick={() => setActive(Math.min(last, active + 1))}
+									disabled={active === last}
+									aria-label="Next stop"
+								>
+									<ChevronRight className="h-4 w-4" aria-hidden />
+								</Button>
+							</div>
+							<div className="flex flex-wrap justify-center gap-2">
+								{hardwareStory.map((beat, index) => (
+									<Chip key={beat.moduleId} selected={index === active} onClick={() => setActive(index)}>
+										{String(index + 1).padStart(2, '0')}
+									</Chip>
+								))}
+							</div>
+						</div>
 					</Reveal>
 
 					{/* The narration card */}
@@ -89,37 +120,6 @@ export function HardwareStory() {
 								</div>
 							))}
 						</dl>
-
-						{/* Controls: previous/next + jump-anywhere beat rail */}
-						<div className="mt-8 flex flex-wrap items-center gap-4">
-							<div className="flex gap-2">
-								<Button
-									variant="outline"
-									size="sm"
-									onClick={() => setActive(Math.max(0, active - 1))}
-									disabled={active === 0}
-									aria-label="Previous stop"
-								>
-									<ChevronLeft className="h-4 w-4" aria-hidden />
-								</Button>
-								<Button
-									variant="outline"
-									size="sm"
-									onClick={() => setActive(Math.min(last, active + 1))}
-									disabled={active === last}
-									aria-label="Next stop"
-								>
-									<ChevronRight className="h-4 w-4" aria-hidden />
-								</Button>
-							</div>
-							<div className="flex flex-wrap gap-2">
-								{hardwareStory.map((beat, index) => (
-									<Chip key={beat.moduleId} selected={index === active} onClick={() => setActive(index)}>
-										{String(index + 1).padStart(2, '0')}
-									</Chip>
-								))}
-							</div>
-						</div>
 					</Reveal>
 				</div>
 			</Container>
