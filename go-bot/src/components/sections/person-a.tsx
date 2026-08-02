@@ -31,7 +31,8 @@ export function PersonA() {
 							<div
 								className={cn(
 									'grid gap-4',
-									feature.images.length > 1 && 'grid-cols-2',
+									feature.images.length === 2 && 'grid-cols-2',
+									feature.images.length >= 3 && 'grid-cols-3',
 									index % 2 === 1 && 'lg:order-last',
 								)}
 							>
