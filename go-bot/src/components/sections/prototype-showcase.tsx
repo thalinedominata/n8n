@@ -15,10 +15,7 @@ const VIEWS: Array<{ media: ShowcaseMedia; label: string }> = [
 	{ media: 'back', label: 'Backpack' },
 ];
 
-// Streams from the render CDN until the master file is committed at
-// /assets/video/launch-film.mp4.
-const LAUNCH_FILM_SRC =
-	'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260802_154435_2f8a152b-b74b-4ae4-847d-a7923633788f.mp4';
+const LAUNCH_FILM_SRC = '/assets/video/launch-film.mp4';
 
 /**
  * The prototype gallery — Go-Bot as himself. The interactive 3D view is
