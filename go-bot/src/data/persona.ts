@@ -177,12 +177,13 @@ export const personaFeatures: PersonaFeature[] = [
 	},
 	{
 		id: 'iron-bot',
-		name: 'The Armored Hero',
+		name: 'Licensing Concept',
 		title: 'Iron-Bot',
 		description:
 			'A superhero homage with a Go-Bot twist: crimson-and-gold plating over ' +
 			'his own shell, his own visor instead of a faceplate, and his triple-bar ' +
-			'heartbeat burning white-hot as the power core. Repulsor up, boots on.',
+			'heartbeat burning white-hot as the power core. Shown as a concept for ' +
+			'potential character-licensing partnerships.',
 		fit: [
 			'Crimson armor plating with polished gold accent panels',
 			'Triple-bar emblem glowing white as the chest core',
