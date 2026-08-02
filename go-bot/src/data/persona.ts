@@ -94,13 +94,13 @@ export const personaFeatures: PersonaFeature[] = [
 		},
 	},
 	{
-		id: 'mbr-the-visionary',
-		name: 'Mohammed bin Rashid Al Maktoum',
-		title: 'The Visionary',
+		id: 'mo-bot-uae',
+		name: 'United Arab Emirates',
+		title: 'Mo-Bot',
 		description:
-			'A tribute to the ruler of Dubai — the prototype in full ceremonial ' +
-			'dress, gold trim catching the studio light, eyes glowing calmly ' +
-			'through tinted lenses. Built like a city that looks fifty years ahead.',
+			'A salute to the Emirates — the prototype in ceremonial Gulf dress, ' +
+			'gold trim catching the studio light, eyes glowing calmly through ' +
+			'tinted lenses. Built like Dubai: fifty years ahead of schedule.',
 		fit: [
 			'Pristine white kandura with the knotted kerkusha collar tassel',
 			'White ghutra draped over the shoulders, black double-coiled agal',
@@ -109,10 +109,10 @@ export const personaFeatures: PersonaFeature[] = [
 			'Signature orange boots beneath the hem',
 		],
 		image: {
-			src: '/assets/gobot/persona/mbr-the-visionary.jpg',
+			src: '/assets/gobot/persona/mo-bot-uae.jpg',
 			width: 1800,
 			height: 1350,
-			alt: 'The Visionary — Go-Bot in traditional Emirati royal attire: white kandura and ghutra, black agal, gold-trimmed black bisht, and tinted glasses',
+			alt: 'Mo-Bot — Go-Bot in traditional Emirati attire: white kandura and ghutra, black agal, gold-trimmed black bisht, and tinted glasses',
 		},
 	},
 	{
