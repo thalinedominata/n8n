@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { Chip, Drawer, Progress } from '@/components/ui';
 import { CapabilityCard } from '@/components/cards';
@@ -21,8 +21,9 @@ const generationLabel: Record<string, string> = {
  */
 export function CapabilityExplorer() {
 	const searchParams = useSearchParams();
-	const [query, setQuery] = useState('');
-	const [category, setCategory] = useState<string | null>(null);
+	const router = useRouter();
+	const [query, setQuery] = useState(() => searchParams.get('q') ?? '');
+	const [category, setCategory] = useState<string | null>(() => searchParams.get('cat'));
 	const [selected, setSelected] = useState<Capability | null>(null);
 
 	// Deep link: /capabilities?c=detect-falls opens that capability's drawer.
@@ -30,6 +31,17 @@ export function CapabilityExplorer() {
 		const id = searchParams.get('c');
 		if (id) setSelected(capabilities.find((capability) => capability.id === id) ?? null);
 	}, [searchParams]);
+
+	// Filters live in the URL, so filtered views are shareable and survive reload.
+	useEffect(() => {
+		const params = new URLSearchParams(window.location.search);
+		if (query) params.set('q', query);
+		else params.delete('q');
+		if (category) params.set('cat', category);
+		else params.delete('cat');
+		const qs = params.toString();
+		router.replace(qs ? `/capabilities?${qs}` : '/capabilities', { scroll: false });
+	}, [query, category, router]);
 
 	const results = useMemo(() => {
 		const q = query.trim().toLowerCase();
@@ -49,6 +61,9 @@ export function CapabilityExplorer() {
 				<label className="flex items-center gap-3 rounded-pill border border-border-strong bg-surface px-5 shadow-e1 focus-within:border-gobot-500">
 					<Search className="h-4 w-4 text-ink-tertiary" aria-hidden />
 					<input
+						name="capability-search"
+						autoComplete="off"
+						spellCheck={false}
 						value={query}
 						onChange={(event) => setQuery(event.target.value)}
 						placeholder="Search capabilities — “falls”, “translate”, “seniors”…"

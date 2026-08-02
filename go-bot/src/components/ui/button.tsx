@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const buttonVariants = cva(
 	[
 		'inline-flex items-center justify-center gap-2 font-medium whitespace-nowrap select-none',
-		'rounded-pill transition-all duration-(--duration-fast) ease-(--ease-out-soft)',
+		'rounded-pill transition-[background-color,border-color,color,box-shadow,transform] duration-(--duration-fast) ease-(--ease-out-soft)',
 		'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gobot-500',
 		'disabled:pointer-events-none disabled:opacity-40',
 		'active:scale-[0.97]',

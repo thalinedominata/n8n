@@ -25,7 +25,7 @@ export function Navbar() {
 	return (
 		<header
 			className={cn(
-				'fixed inset-x-0 top-0 z-50 transition-all duration-(--duration-base) ease-(--ease-out-soft)',
+				'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-(--duration-base) ease-(--ease-out-soft)',
 				scrolled
 					? 'border-b border-border-subtle bg-surface/85 shadow-e1 backdrop-blur-xl'
 					: 'bg-transparent',

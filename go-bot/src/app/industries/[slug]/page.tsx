@@ -31,7 +31,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 	return (
 		<>
 			<Navbar />
-			<main>
+			<main id="main-content">
 				<IndustryExperience industryId={slug} />
 			</main>
 			<Footer />

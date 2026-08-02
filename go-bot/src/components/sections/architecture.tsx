@@ -35,7 +35,7 @@ export function Architecture() {
 								) : null}
 								<div
 									className={cn(
-										'w-full rounded-xl border bg-surface transition-all duration-(--duration-base)',
+										'w-full rounded-xl border bg-surface transition-[border-color,background-color,box-shadow] duration-(--duration-base)',
 										open ? 'border-gobot-300 shadow-e2' : 'border-border-subtle hover:border-border-strong',
 									)}
 								>

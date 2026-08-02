@@ -75,7 +75,7 @@ export function HardwareExplorer() {
 									type="button"
 									onClick={() => open(module.id)}
 									aria-label={`Explore ${module.name}`}
-									className="absolute flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-pill border-2 border-gobot-300 bg-surface/90 transition-all duration-(--duration-fast) ease-(--ease-out-soft) hover:scale-110 hover:border-gobot-500 hover:shadow-glow"
+									className="absolute flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-pill border-2 border-gobot-300 bg-surface/90 transition-[transform,border-color,box-shadow] duration-(--duration-fast) ease-(--ease-out-soft) hover:scale-110 hover:border-gobot-500 hover:shadow-glow"
 									style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
 								>
 									<span className="h-2 w-2 animate-pulse-soft rounded-pill bg-gobot-500" />

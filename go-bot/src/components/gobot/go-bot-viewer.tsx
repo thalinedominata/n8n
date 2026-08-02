@@ -58,6 +58,8 @@ export function GoBotViewer({ className }: { className?: string }) {
 				<img
 					src="/assets/gobot/go-bot-front.jpg"
 					alt="Go-Bot, front view"
+					width={1000}
+					height={764}
 					className="h-full w-full object-contain"
 				/>
 			)}

@@ -71,7 +71,7 @@ export function Drawer({ open, onClose, title, children, className }: DrawerProp
 								<X className="h-5 w-5" />
 							</button>
 						</div>
-						<div className="flex-1 overflow-y-auto p-6">{children}</div>
+						<div className="flex-1 overflow-y-auto overscroll-contain p-6">{children}</div>
 					</motion.aside>
 				</motion.div>
 			) : null}

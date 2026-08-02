@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const cardVariants = cva(
-	'rounded-xl bg-surface-raised transition-all duration-(--duration-base) ease-(--ease-out-soft)',
+	'rounded-xl bg-surface-raised transition-[border-color,box-shadow,transform] duration-(--duration-base) ease-(--ease-out-soft)',
 	{
 		variants: {
 			variant: {

@@ -18,7 +18,7 @@ export function IndustryCard({ industry, className }: IndustryCardProps) {
 		<Link href={`/industries/${industry.id}`} className={cn('group block h-full', className)}>
 			<Card
 				variant="outlined"
-				className="h-full bg-surface transition-all duration-(--duration-base) group-hover:border-gobot-300 group-hover:shadow-e2"
+				className="h-full bg-surface transition-[border-color,box-shadow] duration-(--duration-base) group-hover:border-gobot-300 group-hover:shadow-e2"
 			>
 				<div className="flex items-center justify-between">
 					<industry.icon className="h-7 w-7 text-gobot-500" aria-hidden />

@@ -57,7 +57,7 @@ export function Modal({ open, onClose, title, children, className }: ModalProps)
 						transition={{ duration: duration.base, ease: ease.outExpo }}
 						onClick={(event) => event.stopPropagation()}
 						className={cn(
-							'w-full max-w-lg rounded-2xl bg-surface p-8 shadow-e4',
+							'max-h-[85svh] w-full max-w-lg overflow-y-auto overscroll-contain rounded-2xl bg-surface p-8 shadow-e4',
 							className,
 						)}
 					>

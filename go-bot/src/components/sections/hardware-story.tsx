@@ -99,7 +99,7 @@ export function HardwareStory() {
 							{/* Highlight ring riding the active hotspot */}
 							<span
 								aria-hidden
-								className="absolute z-10 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-gobot-500 bg-gobot-500/20 transition-all duration-500"
+								className="absolute z-10 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-gobot-500 bg-gobot-500/20 transition-[left,top,opacity] duration-500"
 								style={{ left: `${step.x}%`, top: `${step.y}%` }}
 							>
 								<span className="absolute inset-0 animate-ping rounded-full border border-gobot-500" />

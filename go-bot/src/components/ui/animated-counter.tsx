@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, useInView } from 'motion/react';
 import { usePrefersReducedMotion } from '@/hooks';
+import { cn } from '@/lib/utils';
 import { duration as durationTokens, ease } from '@/animations/tokens';
 
 export interface AnimatedCounterProps {
@@ -46,7 +47,7 @@ export function AnimatedCounter({
 	}, [inView, reducedMotion, value, duration]);
 
 	return (
-		<span ref={ref} className={className}>
+		<span ref={ref} className={cn('tabular-nums', className)}>
 			{prefix}
 			{display}
 			{suffix}

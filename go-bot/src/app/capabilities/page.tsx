@@ -16,7 +16,7 @@ export default function CapabilitiesPage() {
 	return (
 		<>
 			<Navbar />
-			<main className="pb-28 pt-36">
+			<main id="main-content" className="pb-28 pt-36">
 				<Container>
 					<header className="mb-14 flex flex-col items-center gap-4 text-center">
 						<Badge>Capability Engine</Badge>

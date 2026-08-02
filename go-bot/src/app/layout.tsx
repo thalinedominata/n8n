@@ -45,6 +45,12 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 	return (
 		<html lang="en">
 			<body>
+				<a
+					href="#main-content"
+					className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-pill focus:bg-ink focus:px-5 focus:py-2.5 focus:text-body focus:text-ink-inverse"
+				>
+					Skip to Content
+				</a>
 				<SmoothScrollProvider>{children}</SmoothScrollProvider>
 				<CommandPalette items={searchRegistry} />
 			</body>

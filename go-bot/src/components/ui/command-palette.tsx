@@ -87,10 +87,13 @@ export function CommandPalette({ items }: CommandPaletteProps) {
 						onClick={(event) => event.stopPropagation()}
 						className="w-full max-w-xl overflow-hidden rounded-2xl bg-surface shadow-e4"
 					>
-						<div className="flex items-center gap-3 border-b border-border-subtle px-5">
+						<div className="flex items-center gap-3 border-b border-border-subtle px-5 transition-colors duration-(--duration-fast) focus-within:border-gobot-500">
 							<Search className="h-4 w-4 text-ink-tertiary" aria-hidden />
 							<input
 								autoFocus
+								name="command-search"
+								autoComplete="off"
+								spellCheck={false}
 								value={query}
 								onChange={(event) => {
 									setQuery(event.target.value);

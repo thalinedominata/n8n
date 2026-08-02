@@ -40,7 +40,7 @@ export default async function DomainPage({ params }: DomainPageProps) {
 	return (
 		<>
 			<Navbar />
-			<main>
+			<main id="main-content">
 				<section className="relative overflow-hidden pb-16 pt-36">
 					<div
 						aria-hidden
