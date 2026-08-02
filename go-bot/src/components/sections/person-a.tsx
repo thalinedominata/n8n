@@ -29,58 +29,89 @@ export function PersonA() {
 					</p>
 				</Reveal>
 
-				{personaFeatures.map((feature, index) => (
-					<Reveal key={feature.id} className="mt-20">
-						<article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-							<div
-								className={cn(
-									'grid gap-4',
-									feature.images.length === 2 && 'grid-cols-2',
-									feature.images.length >= 3 && 'grid-cols-3',
-									index % 2 === 1 && 'lg:order-last',
-								)}
-							>
-								{feature.images.map((image) => (
-									<div
-										key={image.src}
-										className="overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3"
-									>
-										<Image
-											src={image.src}
-											width={image.width}
-											height={image.height}
-											alt={image.alt}
-											className="h-full w-full object-cover"
-										/>
-									</div>
-								))}
-							</div>
+				{personaFeatures.map((feature, index) => {
+					const multiImage = feature.images.length > 1;
 
-							<div>
-								<p className="text-overline text-ink-inverse/60">
-									Feature {String(index + 1).padStart(3, '0')} · {feature.name}
-								</p>
-								<h3 className="mt-4 text-display font-bold uppercase leading-none tracking-tight">
-									{feature.title}
-								</h3>
-								<p className="mt-6 max-w-xl text-body-lg text-ink-inverse/70">
-									{feature.description}
-								</p>
-								<ul className="mt-8 space-y-3">
-									{feature.fit.map((line) => (
-										<li key={line} className="flex items-start gap-3 text-body">
-											<span
-												aria-hidden
-												className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gobot-500"
-											/>
-											{line}
-										</li>
-									))}
-								</ul>
-							</div>
-						</article>
-					</Reveal>
-				))}
+					const textBlock = (
+						<div>
+							<p className="text-overline text-ink-inverse/60">
+								Feature {String(index + 1).padStart(3, '0')} · {feature.name}
+							</p>
+							<h3 className="mt-4 text-display font-bold uppercase leading-none tracking-tight">
+								{feature.title}
+							</h3>
+							<p className="mt-6 max-w-xl text-body-lg text-ink-inverse/70">
+								{feature.description}
+							</p>
+						</div>
+					);
+
+					const fitList = (
+						<ul className="mt-8 space-y-3">
+							{feature.fit.map((line) => (
+								<li key={line} className="flex items-start gap-3 text-body">
+									<span
+										aria-hidden
+										className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gobot-500"
+									/>
+									{line}
+								</li>
+							))}
+						</ul>
+					);
+
+					const imageTiles = feature.images.map((image) => (
+						<div
+							key={image.src}
+							className="overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3"
+						>
+							<Image
+								src={image.src}
+								width={image.width}
+								height={image.height}
+								alt={image.alt}
+								className="h-full w-full object-cover"
+							/>
+						</div>
+					));
+
+					// Multi-render features go full-bleed: the renders take the
+					// entire container width so each one stays large.
+					if (multiImage) {
+						return (
+							<Reveal key={feature.id} className="mt-20">
+								<article>
+									<div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
+										{textBlock}
+										<div className="lg:self-center">{fitList}</div>
+									</div>
+									<div
+										className={cn(
+											'mt-10 grid gap-4',
+											feature.images.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3',
+										)}
+									>
+										{imageTiles}
+									</div>
+								</article>
+							</Reveal>
+						);
+					}
+
+					return (
+						<Reveal key={feature.id} className="mt-20">
+							<article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+								<div className={cn('grid gap-4', index % 2 === 1 && 'lg:order-last')}>
+									{imageTiles}
+								</div>
+								<div>
+									{textBlock}
+									{fitList}
+								</div>
+							</article>
+						</Reveal>
+					);
+				})}
 
 				<Reveal className="mt-16">
 					<p className="text-center text-overline text-ink-inverse/60">
