@@ -5,14 +5,20 @@ import { Container, SectionHeading, Chip } from '@/components/ui';
 import { Reveal } from '@/components/motion/reveal';
 import { GoBotFigure, GoBotViewer, type GoBotFigureProps } from '@/components/gobot';
 
-type ShowcaseMedia = GoBotFigureProps['media'] | '3d';
+type ShowcaseMedia = GoBotFigureProps['media'] | '3d' | 'launch';
 
 const VIEWS: Array<{ media: ShowcaseMedia; label: string }> = [
 	{ media: '3d', label: 'Interactive 3D' },
+	{ media: 'launch', label: 'Launch Film' },
 	{ media: 'film', label: 'Say hello' },
 	{ media: 'front', label: 'Front' },
 	{ media: 'back', label: 'Backpack' },
 ];
+
+// Streams from the render CDN until the master file is committed at
+// /assets/video/launch-film.mp4.
+const LAUNCH_FILM_SRC =
+	'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260802_154435_2f8a152b-b74b-4ae4-847d-a7923633788f.mp4';
 
 /**
  * The prototype gallery — Go-Bot as himself. The interactive 3D view is
@@ -48,13 +54,27 @@ export function PrototypeShowcase() {
 						<div className="h-[26rem] overflow-hidden rounded-2xl border border-border-subtle bg-surface-sunken shadow-e3 sm:h-[30rem]">
 							<GoBotViewer className="h-full w-full" />
 						</div>
+					) : media === 'launch' ? (
+						<div className="overflow-hidden rounded-2xl border border-border-subtle bg-surface-sunken shadow-e3">
+							<video
+								src={LAUNCH_FILM_SRC}
+								poster="/assets/gobot/go-bot-prototype-front.jpg"
+								controls
+								playsInline
+								preload="none"
+								aria-label="Go-Bot launch film — he introduces himself, sound on"
+								className="aspect-video w-full object-cover"
+							/>
+						</div>
 					) : (
 						<GoBotFigure media={media} className="max-h-[32rem] w-full" />
 					)}
 					<p className="mt-4 text-center text-overline text-ink-tertiary">
 						{media === '3d'
 							? 'Drag to orbit · Reconstructed from the prototype in full PBR'
-							: 'Captured on the prototype film set — every pixel is the real design'}
+							: media === 'launch'
+								? 'Sound on — the official launch film, and his first hello'
+								: 'Captured on the prototype film set — every pixel is the real design'}
 					</p>
 				</Reveal>
 			</Container>
