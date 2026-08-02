@@ -93,4 +93,26 @@ export const personaFeatures: PersonaFeature[] = [
 			alt: 'The Fit — Go-Bot styled after Bad Bunny in a brown fleece sweatshirt, tan cargo trousers, bucket hat, gold rope chain, and white high-tops',
 		},
 	},
+	{
+		id: 'mbr-the-visionary',
+		name: 'Mohammed bin Rashid Al Maktoum',
+		title: 'The Visionary',
+		description:
+			'A tribute to the ruler of Dubai — the prototype in full ceremonial ' +
+			'dress, gold trim catching the studio light, eyes glowing calmly ' +
+			'through tinted lenses. Built like a city that looks fifty years ahead.',
+		fit: [
+			'Pristine white kandura with the knotted kerkusha collar tassel',
+			'White ghutra draped over the shoulders, black double-coiled agal',
+			'Sheer black bisht with gold-embroidered trim, worn open',
+			'Gold-rimmed tinted glasses — the gaze glows through the lens',
+			'Signature orange boots beneath the hem',
+		],
+		image: {
+			src: '/assets/gobot/persona/mbr-the-visionary.jpg',
+			width: 1800,
+			height: 1350,
+			alt: 'The Visionary — Go-Bot in traditional Emirati royal attire: white kandura and ghutra, black agal, gold-trimmed black bisht, and tinted glasses',
+		},
+	},
 ];
