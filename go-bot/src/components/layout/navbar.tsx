@@ -62,10 +62,8 @@ export function Navbar() {
 	return (
 		<header
 			className={cn(
-				'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-(--duration-base) ease-(--ease-out-soft)',
-				scrolled
-					? 'border-b border-border-subtle bg-surface/85 shadow-e1 backdrop-blur-xl'
-					: 'bg-transparent',
+				'fixed inset-x-0 top-0 z-50 border-b-2 border-gobot-500 bg-ink text-ink-inverse transition-shadow duration-(--duration-base) ease-(--ease-out-soft)',
+				scrolled && 'shadow-e2',
 			)}
 		>
 			<Container className="flex h-16 items-center justify-between">
@@ -81,7 +79,7 @@ export function Navbar() {
 						<Link
 							key={item.href}
 							href={item.href.startsWith('#') ? `/${item.href}` : item.href}
-							className="rounded-pill px-3.5 py-2 text-caption font-medium text-ink-secondary transition-colors duration-(--duration-fast) hover:bg-surface-sunken hover:text-ink"
+							className="rounded-pill px-3.5 py-2 text-caption font-medium text-ink-inverse/75 transition-colors duration-(--duration-fast) hover:bg-ink-inverse/10 hover:text-ink-inverse"
 						>
 							{item.label}
 						</Link>
@@ -93,7 +91,7 @@ export function Navbar() {
 						type="button"
 						onClick={() => window.dispatchEvent(new Event(OPEN_COMMAND_PALETTE_EVENT))}
 						aria-label="Search (Command+K)"
-						className="flex items-center gap-2 rounded-pill border border-border-subtle px-3 py-2 text-caption text-ink-tertiary transition-colors duration-(--duration-fast) hover:border-border-strong hover:text-ink"
+						className="flex items-center gap-2 rounded-pill border border-ink-inverse/25 px-3 py-2 text-caption text-ink-inverse/60 transition-colors duration-(--duration-fast) hover:border-ink-inverse/50 hover:text-ink-inverse"
 					>
 						<Search className="h-3.5 w-3.5" aria-hidden />
 						<kbd className="text-overline">⌘K</kbd>
@@ -124,7 +122,7 @@ export function Navbar() {
 						initial="closed"
 						animate="open"
 						exit="closed"
-						className="overflow-hidden border-b border-border-subtle bg-surface lg:hidden"
+						className="overflow-hidden border-b border-ink-secondary/40 bg-ink lg:hidden"
 						style={{ transformPerspective: 900 }}
 						aria-label="Mobile"
 					>
@@ -138,7 +136,7 @@ export function Navbar() {
 									<Link
 										href={item.href.startsWith('#') ? `/${item.href}` : item.href}
 										onClick={() => setMobileOpen(false)}
-										className="block rounded-md px-3 py-2.5 text-body font-medium text-ink-secondary hover:bg-surface-sunken hover:text-ink"
+										className="block rounded-md px-3 py-2.5 text-body font-medium text-ink-inverse/80 hover:bg-ink-inverse/10 hover:text-ink-inverse"
 									>
 										{item.label}
 									</Link>
