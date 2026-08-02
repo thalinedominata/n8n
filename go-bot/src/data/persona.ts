@@ -175,4 +175,26 @@ export const personaFeatures: PersonaFeature[] = [
 			},
 		],
 	},
+	{
+		id: 'iron-bot',
+		name: 'The Armored Hero',
+		title: 'Iron-Bot',
+		description:
+			'A superhero homage with a Go-Bot twist: crimson-and-gold plating over ' +
+			'his own shell, his own visor instead of a faceplate, and his triple-bar ' +
+			'heartbeat burning white-hot as the power core. Repulsor up, boots on.',
+		fit: [
+			'Crimson armor plating with polished gold accent panels',
+			'Triple-bar emblem glowing white as the chest core',
+			'Armored gauntlets, repulsor charged in the raised palm',
+			'His own head and visor — no faceplate needed',
+			'Signature orange boots, because heroes land on their feet',
+		],
+		images: [{
+			src: '/assets/gobot/persona/iron-bot.jpg',
+			width: 1290,
+			height: 2304,
+			alt: 'Iron-Bot — Go-Bot in crimson and gold superhero armor with a glowing triple-bar chest core and a glowing repulsor in his raised palm',
+		}],
+	},
 ];
