@@ -1,5 +1,14 @@
 @import 'tailwindcss';
 
+/* Site typeface — Monoglyphic variable (weights 100–900) */
+@font-face {
+	font-family: 'Monoglyphic';
+	src: url('/fonts/monoglyphic-vf.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
 /* Brand wordmark face — used only for the GO-BOT name in the top bar */
 @font-face {
 	font-family: 'Mawlid';
@@ -51,9 +60,9 @@
 
 	/* ---------- Typography ---------- */
 	--font-sans:
-		'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, sans-serif;
-	--font-mono: 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
+		'Monoglyphic', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI',
+		Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--font-mono: 'Monoglyphic', 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
 
 	--text-display-xl: 4.5rem;
 	--text-display-xl--line-height: 1.05;
