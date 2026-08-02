@@ -47,6 +47,21 @@ import type { Capability } from '@/types';
  */
 export const capabilities: Capability[] = [
 	{
+		id: 'personal-assistant',
+		name: 'Personal Assistant',
+		description:
+			'Knows you and everything you do — your schedule, your messages, your travel, even those old notes you forgot about — and handles it before you ask.',
+		icon: NotebookPen,
+		category: 'cognition',
+		uses: ['AtlasOS link', 'Calendar & inbox connectors', 'Personal memory', 'Voice'],
+		worksFor: ['Professionals', 'Families', 'Travelers', 'Anyone with a full plate'],
+		domains: ['business', 'travel', 'home', 'finance'],
+		industries: ['hospitality', 'travel'],
+		confidence: 90,
+		hardware: ['gen-1', 'gen-2'],
+		featured: true,
+	},
+	{
 		id: 'detect-falls',
 		name: 'Detect Falls',
 		description:
@@ -60,7 +75,6 @@ export const capabilities: Capability[] = [
 		confidence: 95,
 		hardware: ['gen-1', 'gen-2'],
 		safetyNotes: 'Escalation contacts and thresholds are owner-configured. Never a substitute for medical alert systems where prescribed.',
-		featured: true,
 	},
 	{
 		id: 'call-for-help',
@@ -513,21 +527,6 @@ export const capabilities: Capability[] = [
 		industries: ['healthcare'],
 		confidence: 95,
 		hardware: ['gen-1', 'gen-2'],
-	},
-	{
-		id: 'personal-assistant',
-		name: 'Personal Assistant',
-		description:
-			'Knows you and everything you do — your schedule, your messages, your travel, even those old notes you forgot about — and handles it before you ask.',
-		icon: NotebookPen,
-		category: 'cognition',
-		uses: ['AtlasOS link', 'Calendar & inbox connectors', 'Personal memory', 'Voice'],
-		worksFor: ['Professionals', 'Families', 'Travelers', 'Anyone with a full plate'],
-		domains: ['business', 'travel', 'home', 'finance'],
-		industries: ['hospitality', 'travel'],
-		confidence: 90,
-		hardware: ['gen-1', 'gen-2'],
-		featured: true,
 	},
 	{
 		id: 'atlas-os',
