@@ -27,10 +27,10 @@ export function IndustryExperience({ industryId }: { industryId: string }) {
 	return (
 		<>
 			{/* Transformed hero */}
-			<section className="relative overflow-hidden pb-20 pt-36">
+			<section className="relative isolate overflow-hidden pb-20 pt-36">
 				<div
 					aria-hidden
-					className="pointer-events-none absolute right-[-10%] top-[8%] h-[32rem] w-[32rem] rounded-full bg-gobot-100/60 blur-3xl"
+					className="pointer-events-none absolute right-[-10%] top-[8%] -z-10 h-[32rem] w-[32rem] rounded-full bg-gobot-100/60 blur-3xl"
 				/>
 				<Container className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 					<motion.div variants={staggerChildren} initial="hidden" animate="visible">

@@ -16,11 +16,14 @@ export function Hero() {
 	const [demoOpen, setDemoOpen] = useState(false);
 
 	return (
-		<section id="hero" className="relative flex min-h-svh items-center overflow-hidden pb-20 pt-28">
-			{/* Warm radial glow behind Go-Bot */}
+		<section
+			id="hero"
+			className="relative isolate flex min-h-svh items-center overflow-hidden pb-20 pt-28"
+		>
+			{/* Warm radial glow behind Go-Bot — -z-10 keeps it under the content */}
 			<div
 				aria-hidden
-				className="pointer-events-none absolute right-[-10%] top-[10%] h-[36rem] w-[36rem] rounded-full bg-gobot-100/60 blur-3xl"
+				className="pointer-events-none absolute right-[-10%] top-[10%] -z-10 h-[36rem] w-[36rem] rounded-full bg-gobot-100/60 blur-3xl"
 			/>
 
 			<Container className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
