@@ -82,10 +82,13 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'cpu',
 		name: 'CPU & Neural Engine',
 		description:
-			'On-device neural processing keeps perception private and responses instant — no round-trip required.',
+			'On-device neural processing keeps perception private and responses instant — no round-trip required. ' +
+			'It runs Engage’s AtlasOS: the personal-assistant brain that knows you and everything you do — ' +
+			'scheduling, messaging, travel, even those old notes you forgot about — while your data stays yours.',
 		specs: [
 			{ label: 'Neural engine', value: '48 TOPS on-device' },
 			{ label: 'Memory', value: '32 GB unified' },
+			{ label: 'OS', value: 'Engage AtlasOS' },
 			{ label: 'Privacy', value: 'On-device first' },
 		],
 		hotspot: { x: 38, y: 53 },
