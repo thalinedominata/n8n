@@ -2,6 +2,7 @@
 	"name": "@engage-global/go-bot-platform",
 	"version": "1.0.0",
 	"private": true,
+	"packageManager": "npm@10.9.2",
 	"description": "The digital platform for Go-Bot — the wearable humanoid robot by ENGAGE GLOBAL.",
 	"scripts": {
 		"dev": "next dev",

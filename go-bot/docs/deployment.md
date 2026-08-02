@@ -16,7 +16,12 @@ required for V1.
    branch gets a preview URL automatically.
 
 `vercel.json` in this directory adds security headers and immutable
-caching for `/assets` — it is picked up automatically.
+caching for `/assets` — it is picked up automatically. It also pins
+`installCommand`/`buildCommand` to plain npm: while the platform lives
+inside the n8n monorepo, Vercel would otherwise detect the repo-root
+Turbo + pnpm workspace and run a monorepo-wide `pnpm install`, which
+fails n8n's pnpm engine check. `package.json` declares
+`"packageManager": "npm"` for the same reason.
 
 ## After transfer to a dedicated repository
 
