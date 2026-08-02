@@ -6,6 +6,7 @@ export { HardwareExplorer } from './hardware-explorer';
 export { HardwareStory } from './hardware-story';
 export { PrototypeShowcase } from './prototype-showcase';
 export { PersonA } from './person-a';
+export { PersonATeaser } from './person-a-teaser';
 export { Industries } from './industries';
 export { AiDemo } from './ai-demo';
 export { Roadmap } from './roadmap';

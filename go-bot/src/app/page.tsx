@@ -9,7 +9,7 @@ import {
 	HardwareExplorer,
 	HardwareStory,
 	PrototypeShowcase,
-	PersonA,
+	PersonATeaser,
 	Industries,
 	AiDemo,
 	Roadmap,
@@ -31,7 +31,7 @@ export default function HomePage() {
 				<HardwareExplorer />
 				<HardwareStory />
 				<PrototypeShowcase />
-				<PersonA />
+				<PersonATeaser />
 				<Industries />
 				<AiDemo />
 				<Roadmap />
