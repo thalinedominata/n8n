@@ -30,7 +30,8 @@ Directory override (set it back to the repo root). Nothing else changes.
 
 ## Checklist before going live
 
-- [ ] `npm run typecheck && npm run test && npm run build` green locally
+- [x] `npm run typecheck && npm run test && npm run build` green locally
 - [ ] Custom domain attached and `siteConfig.url` updated to match
-- [ ] Open Graph image added (`public/assets/images/og.png` + metadata)
+      (currently the vercel.app production URL)
+- [x] Open Graph image added (`public/assets/images/og.png` + metadata)
 - [ ] Analytics decision made (Vercel Analytics is a one-line opt-in)

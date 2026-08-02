@@ -5,7 +5,8 @@ export const siteConfig = {
 	title: 'Go-Bot — The wearable humanoid robot',
 	description:
 		'Go-Bot by ENGAGE GLOBAL — your intelligent companion for every stage of life. A wearable humanoid robot designed to improve every aspect of human life.',
-	url: 'https://gobot.engageglobal.com',
+	/** The live production origin (swap when a custom domain is attached). */
+	url: 'https://go-bot-platform.vercel.app',
 	mission: 'Create intelligent robotic companions that improve every aspect of human life.',
 	social: {
 		x: 'https://x.com/engageglobal',
