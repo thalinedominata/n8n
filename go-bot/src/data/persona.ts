@@ -184,7 +184,7 @@ export const personaFeatures: PersonaFeature[] = [
 			'stadium. Shown as a concept for creator partnerships.',
 		fit: [
 			'Wild crown of black freeform twists — the signature',
-			'Crimson kit with gold trim and the number 7 on the chest',
+			'Crimson kit with gold trim, the number 7, and the orange triple-bar crest on the chest',
 			'Green shorts with a gold 7 on the leg',
 			'White socks into the signature orange boots',
 			'Match ball underfoot, celebration mode permanently on',
@@ -193,7 +193,7 @@ export const personaFeatures: PersonaFeature[] = [
 			src: '/assets/gobot/persona/speed-bot-7.jpg',
 			width: 1200,
 			height: 896,
-			alt: 'Speed-BOT-7 — Go-Bot with wild black freeform twists in a red number 7 soccer kit and green shorts, one boot on a soccer ball, arms spread wide',
+			alt: 'Speed-BOT-7 — Go-Bot with wild black freeform twists in a red number 7 soccer kit with the orange triple-bar crest and green shorts, one boot on a soccer ball, arms spread wide',
 		}],
 	},
 ];
