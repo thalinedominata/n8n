@@ -114,6 +114,8 @@ export interface Capability {
 	safetyNotes?: string;
 	/** Featured capabilities appear on the homepage. */
 	featured?: boolean;
+	/** Optional lifestyle photo shown on the homepage card. */
+	image?: PersonaImage;
 }
 
 /** A single render in a Person-A feature. */

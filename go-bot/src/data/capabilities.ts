@@ -160,6 +160,12 @@ export const capabilities: Capability[] = [
 		confidence: 91,
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/dj-mode.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'A laughing woman in a maroon lounge set and floral hair scarf cleans a bathroom while a small Go-Bot in DJ mode pumps an orange equalizer across his visor',
+		},
 	},
 	{
 		id: 'kids-mode',
@@ -175,6 +181,12 @@ export const capabilities: Capability[] = [
 		confidence: 93,
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/kids-mode.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'A high-school student in a tan thobe studies at his laptop while Go-Bot stands on the desk beside it with the quadratic formula glowing on his visor',
+		},
 	},
 	{
 		id: 'hide-and-seek',
@@ -190,6 +202,12 @@ export const capabilities: Capability[] = [
 		confidence: 89,
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/hide-and-seek.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'Go-Bot covers his visor with his hands and counts while three laughing brothers scramble to hide around a cozy living room',
+		},
 	},
 	{
 		id: 'live-translation',

@@ -30,6 +30,7 @@ export function Problem() {
 								icon={capability.icon}
 								title={capability.name}
 								description={capability.description}
+								image={capability.image}
 							/>
 						</RevealItem>
 					))}
