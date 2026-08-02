@@ -40,8 +40,9 @@ ever wanted, the path is image-to-3D generation or a commissioned model
       launched with Feature 001 — Lil Durk, "The Voice"
 - [ ] More film: mood/expression clips from the same prototype set
       (thinking, walking, head-turn) to extend GoBotFigure
-- [x] GSAP ScrollTrigger guided tour: pinned, scroll-scrubbed hardware
-      story (`hardware-story.tsx`, beats in `src/data/hardware-story.ts`)
+- [x] Guided hardware tour: button-driven beat navigation across the
+      prototype renders (`hardware-story.tsx`, beats in
+      `src/data/hardware-story.ts`)
 - [ ] GSAP scroll-scrubbed architecture narrative
 - [ ] Capability demo interactions; localization (i18n layer); a11y audit
 
@@ -67,6 +68,12 @@ ever wanted, the path is image-to-3D generation or a commissioned model
 
 ## Decision log
 
+- **2026-08-02 — Scroll-pinned tour: replaced with buttons.** The GSAP
+  pinned version shipped and was reverted same-day — on mobile it held
+  the viewport for ~5 screen-heights and read as the page being stuck
+  (ENGAGE GLOBAL verdict: "feels sticky"). The tour keeps its beats and
+  crossfade but advances by Previous/Next and the beat rail. Scroll
+  hijacking is now a pattern we avoid platform-wide.
 - **2026-08-01 — 3D wave animation: closed, not shipping.** Auto-rigging
   (Meshy via Higgsfield) was attempted five ways; the best result animates
   but rubber-stretches his rigid shells (soft-blended skin weights).

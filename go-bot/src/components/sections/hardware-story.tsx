@@ -1,85 +1,45 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import { Container, Chip } from '@/components/ui';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Container, Chip, Button, SectionHeading } from '@/components/ui';
+import { Reveal } from '@/components/motion/reveal';
 import { GoBotFigure } from '@/components/gobot';
 import { hardwareModules } from '@/data/hardware';
 import { hardwareStory } from '@/data/hardware-story';
 import { cn } from '@/lib/utils';
 
-if (typeof window !== 'undefined') {
-	gsap.registerPlugin(useGSAP, ScrollTrigger);
-}
-
 const modulesById = new Map(hardwareModules.map((module) => [module.id, module]));
 
-/** Scroll distance per beat, as a fraction of the viewport height. */
-const SCROLL_PER_STEP = 0.7;
-
 /**
- * The guided tour — a pinned, scroll-scrubbed walk through Go-Bot's
- * anatomy. The section pins to the viewport and scrolling advances the
- * beats in `hardwareStory`: the highlight ring moves across the real
- * prototype renders (flipping to the back for the finale) while the spec
- * card narrates. Lenis drives native scroll, so ScrollTrigger tracks it
- * without extra wiring.
- *
- * With reduced motion (or before hydration) nothing pins — the beats
- * become a clickable rail instead, so the content is never gated on the
- * scroll effect.
+ * The guided tour — a button-driven walk through Go-Bot's anatomy.
+ * Previous/Next (and the beat rail) advance the beats in `hardwareStory`:
+ * the highlight ring glides across the real prototype renders, flipping
+ * to the back view for the finale, while the spec card narrates. The
+ * page itself never hijacks scroll.
  */
 export function HardwareStory() {
-	const sectionRef = useRef<HTMLElement>(null);
 	const [active, setActive] = useState(0);
-	const [pinned, setPinned] = useState(false);
-
-	useGSAP(
-		() => {
-			if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-			const section = sectionRef.current;
-			if (!section) return;
-
-			setPinned(true);
-			const steps = hardwareStory.length;
-			ScrollTrigger.create({
-				trigger: section,
-				start: 'top top',
-				end: `+=${Math.round(steps * SCROLL_PER_STEP * 100)}%`,
-				pin: true,
-				anticipatePin: 1,
-				onUpdate: (self) => {
-					setActive(Math.min(steps - 1, Math.floor(self.progress * steps)));
-				},
-			});
-		},
-		{ scope: sectionRef },
-	);
 
 	const step = hardwareStory[active] ?? hardwareStory[0];
 	if (!step) return null;
 	const module = modulesById.get(step.moduleId);
 	if (!module) return null;
 
+	const last = hardwareStory.length - 1;
+
 	return (
-		<section
-			id="hardware-story"
-			ref={sectionRef}
-			className="flex min-h-svh flex-col justify-center overflow-hidden bg-surface py-14"
-		>
+		<section id="hardware-story" className="overflow-hidden bg-surface py-28">
 			<Container>
-				<div className="mb-8 text-center">
-					<p className="text-overline text-gobot-700">The Guided Tour</p>
-					<h2 className="mt-3 text-headline font-semibold">
-						{pinned ? 'Keep scrolling — he explains himself.' : 'Walk the anatomy, beat by beat.'}
-					</h2>
-				</div>
+				<SectionHeading
+					eyebrow="The Guided Tour"
+					title="Walk the anatomy, beat by beat."
+					description="Eight stops through what he's made of — ending on the reason he's called wearable."
+				/>
 
 				<div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
 					{/* The figure: front/back renders stacked, crossfading per beat */}
-					<div className="relative mx-auto w-full max-w-sm">
+					<Reveal className="relative mx-auto w-full max-w-sm">
 						<div className="relative">
 							<GoBotFigure
 								media="front"
@@ -105,10 +65,10 @@ export function HardwareStory() {
 								<span className="absolute inset-0 animate-ping rounded-full border border-gobot-500" />
 							</span>
 						</div>
-					</div>
+					</Reveal>
 
 					{/* The narration card */}
-					<div>
+					<Reveal>
 						<p className="text-overline text-ink-tertiary">
 							{String(active + 1).padStart(2, '0')} / {String(hardwareStory.length).padStart(2, '0')}
 							{' · '}
@@ -130,20 +90,37 @@ export function HardwareStory() {
 							))}
 						</dl>
 
-						{/* Beat rail — indicators while pinned, navigation when not */}
-						<div className="mt-8 flex flex-wrap gap-2">
-							{hardwareStory.map((beat, index) => (
-								<Chip
-									key={beat.moduleId}
-									selected={index === active}
-									readOnly={pinned}
-									onClick={() => setActive(index)}
+						{/* Controls: previous/next + jump-anywhere beat rail */}
+						<div className="mt-8 flex flex-wrap items-center gap-4">
+							<div className="flex gap-2">
+								<Button
+									variant="outline"
+									size="sm"
+									onClick={() => setActive(Math.max(0, active - 1))}
+									disabled={active === 0}
+									aria-label="Previous stop"
 								>
-									{String(index + 1).padStart(2, '0')}
-								</Chip>
-							))}
+									<ChevronLeft className="h-4 w-4" aria-hidden />
+								</Button>
+								<Button
+									variant="outline"
+									size="sm"
+									onClick={() => setActive(Math.min(last, active + 1))}
+									disabled={active === last}
+									aria-label="Next stop"
+								>
+									<ChevronRight className="h-4 w-4" aria-hidden />
+								</Button>
+							</div>
+							<div className="flex flex-wrap gap-2">
+								{hardwareStory.map((beat, index) => (
+									<Chip key={beat.moduleId} selected={index === active} onClick={() => setActive(index)}>
+										{String(index + 1).padStart(2, '0')}
+									</Chip>
+								))}
+							</div>
 						</div>
-					</div>
+					</Reveal>
 				</div>
 			</Container>
 		</section>
