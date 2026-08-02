@@ -171,20 +171,6 @@ export const capabilities: Capability[] = [
 		featured: true,
 	},
 	{
-		id: 'streamer-sidekick',
-		name: 'Streamer Sidekick',
-		description:
-			'A co-host with a face: reads chat aloud, reacts on camera, runs polls, and keeps the energy up between moments — built for creators who stream alone.',
-		icon: Clapperboard,
-		category: 'communication',
-		uses: ['Camera', 'Chat integrations', 'Personality engine', 'Speakers'],
-		worksFor: ['Streamers', 'Creators', 'Podcasters'],
-		domains: ['entertainment', 'business'],
-		industries: ['retail'],
-		confidence: 86,
-		hardware: ['gen-2'],
-	},
-	{
 		id: 'live-translation',
 		name: 'Live Translation',
 		description:
@@ -600,6 +586,21 @@ export const capabilities: Capability[] = [
 		industries: ['hospitality', 'travel', 'retail'],
 		confidence: 88,
 		hardware: ['gen-1', 'gen-2'],
+		featured: true,
+	},
+	{
+		id: 'streamer-sidekick',
+		name: 'Streamer Sidekick',
+		description:
+			'A co-host with a face: reads chat aloud, reacts on camera, runs polls, and keeps the energy up between moments — built for creators who stream alone.',
+		icon: Clapperboard,
+		category: 'communication',
+		uses: ['Camera', 'Chat integrations', 'Personality engine', 'Speakers'],
+		worksFor: ['Streamers', 'Creators', 'Podcasters'],
+		domains: ['entertainment', 'business'],
+		industries: ['retail'],
+		confidence: 86,
+		hardware: ['gen-2'],
 		featured: true,
 	},
 	{
