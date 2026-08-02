@@ -5,6 +5,7 @@ export { Container, type ContainerProps } from './container';
 export { Section, type SectionProps } from './section';
 export { SectionHeading, type SectionHeadingProps } from './section-heading';
 export { Logo, type LogoProps } from './logo';
+export { Marquee, type MarqueeProps } from './marquee';
 export { Modal, type ModalProps } from './modal';
 export { Drawer, type DrawerProps } from './drawer';
 export { AnimatedCounter, type AnimatedCounterProps } from './animated-counter';

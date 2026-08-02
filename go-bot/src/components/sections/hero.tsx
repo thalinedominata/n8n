@@ -20,11 +20,13 @@ export function Hero() {
 			id="hero"
 			className="relative isolate flex min-h-svh items-center overflow-hidden pb-20 pt-28"
 		>
-			{/* Warm radial glow behind Go-Bot — -z-10 keeps it under the content */}
-			<div
-				aria-hidden
-				className="pointer-events-none absolute right-[-10%] top-[10%] -z-10 h-[36rem] w-[36rem] rounded-full bg-gobot-100/60 blur-3xl"
-			/>
+			{/* Ambient stage: faint dot grid + drifting orange/graphite glows, all under the content */}
+			<div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+				<div className="absolute inset-0 bg-dot-grid opacity-40 [mask-image:radial-gradient(70%_60%_at_50%_40%,black,transparent)]" />
+				<div className="animate-drift absolute right-[-10%] top-[10%] h-[36rem] w-[36rem] rounded-full bg-gobot-100/60 blur-3xl" />
+				<div className="animate-drift-slow absolute bottom-[-12%] left-[-12%] h-[28rem] w-[28rem] rounded-full bg-gobot-200/40 blur-3xl" />
+				<div className="animate-drift-slow absolute left-[32%] top-[-14%] h-[20rem] w-[20rem] rounded-full bg-ink/5 blur-3xl" />
+			</div>
 
 			<Container className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 				<motion.div variants={staggerChildren} initial="hidden" animate="visible">
@@ -33,9 +35,9 @@ export function Hero() {
 					</motion.div>
 					<motion.h1
 						variants={heroReveal}
-						className="mt-6 text-display font-semibold text-balance sm:text-display-xl"
+						className="mt-6 text-display font-bold text-balance sm:text-display-xl"
 					>
-						Meet <span className="text-gobot-600">Go-Bot</span>
+						Meet <span className="text-shimmer">Go-Bot</span>
 					</motion.h1>
 					<motion.p
 						variants={heroReveal}

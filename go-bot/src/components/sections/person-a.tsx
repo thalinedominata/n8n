@@ -13,7 +13,11 @@ import { personaFeatures } from '@/data/persona';
  */
 export function PersonA() {
 	return (
-		<section id="person-a" className="bg-ink py-28 text-ink-inverse">
+		<section id="person-a" className="relative isolate overflow-hidden bg-ink py-28 text-ink-inverse">
+			{/* Breathing orange aura behind the gallery heading */}
+			<div aria-hidden className="pointer-events-none absolute inset-x-0 top-[-6rem] -z-10 flex justify-center">
+				<div className="animate-aura h-80 w-[42rem] rounded-full bg-gobot-500/15 blur-3xl" />
+			</div>
 			<Container>
 				<Reveal className="mx-auto max-w-2xl text-center">
 					<p className="text-overline text-gobot-500">Person-A</p>

@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/layout/navbar';
+import { Marquee } from '@/components/ui';
 import { Footer } from '@/components/layout/footer';
 import {
 	Hero,
@@ -22,6 +23,9 @@ export default function HomePage() {
 			<main id="main-content">
 				<Hero />
 				<Problem />
+				<Marquee
+					items={['He sees', 'He listens', 'He learns', 'He cares', 'Wear him like a backpack']}
+				/>
 				<Architecture />
 				<LifeDomains />
 				<HardwareExplorer />
