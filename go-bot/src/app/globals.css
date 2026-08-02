@@ -2,15 +2,15 @@
 
 /* Brand wordmark face — used only for the GO-BOT name in the top bar */
 @font-face {
-	font-family: 'Sabana';
-	src: url('/fonts/sabana.woff2') format('woff2');
+	font-family: 'Mahabbah';
+	src: url('/fonts/mahabbah.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
 }
 
 .font-wordmark {
-	font-family: 'Sabana', var(--font-sans, sans-serif);
+	font-family: 'Mahabbah', var(--font-sans, sans-serif);
 }
 
 /* ============================================================
