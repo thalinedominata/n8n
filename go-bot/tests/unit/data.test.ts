@@ -6,6 +6,7 @@ import { hardwareModules } from '@/data/hardware';
 import { hardwareStory } from '@/data/hardware-story';
 import { architectureLayers } from '@/data/architecture';
 import { capabilities } from '@/data/capabilities';
+import { swagLines } from '@/data/robo-swag';
 import { aiDemoScenarios } from '@/data/ai-demo';
 import { searchRegistry } from '@/data/search';
 
@@ -18,6 +19,7 @@ describe('content data integrity', () => {
 		['architecture layers', architectureLayers],
 		['capabilities', capabilities],
 		['ai demo scenarios', aiDemoScenarios],
+		['robo-swag lines', swagLines],
 	] as const)('%s have unique, kebab-case ids', (_name, items) => {
 		const ids = items.map((item) => item.id);
 		expect(new Set(ids).size).toBe(ids.length);

@@ -10,6 +10,7 @@ export type {
 	Capability,
 	PersonaFeature,
 	PersonaImage,
+	SwagLine,
 	NavItem,
 	CommandItem,
 	AiDemoMessage,

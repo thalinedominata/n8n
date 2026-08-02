@@ -6,6 +6,7 @@ export const mainNavigation: NavItem[] = [
 	{ label: 'Capabilities', href: '/capabilities' },
 	{ label: 'Hardware', href: '#hardware' },
 	{ label: 'Person-A', href: '/person-a' },
+	{ label: 'Robo-Swag', href: '/robo-swag' },
 	{ label: 'Industries', href: '#industries' },
 	{ label: 'AI Demo', href: '#ai-demo' },
 	{ label: 'Roadmap', href: '#roadmap' },
@@ -25,6 +26,7 @@ export const footerNavigation: Array<{ heading: string; items: NavItem[] }> = [
 		items: [
 			{ label: 'Life Domains', href: '#life-domains' },
 			{ label: 'Capabilities', href: '/capabilities' },
+			{ label: 'Robo-Swag', href: '/robo-swag' },
 			{ label: 'Industries', href: '#industries' },
 		],
 	},

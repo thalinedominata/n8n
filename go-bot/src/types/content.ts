@@ -141,6 +141,21 @@ export interface PersonaFeature {
 	images: PersonaImage[];
 }
 
+/**
+ * A Robo-Swag line — a designer-collaboration wardrobe drop that dresses
+ * Go-Bot (and, in twin sizes, his human).
+ */
+export interface SwagLine {
+	id: string;
+	name: string;
+	/** Short positioning line, e.g. "High fashion". */
+	tagline: string;
+	description: string;
+	icon: LucideIcon;
+	/** Example pieces the line ships. */
+	pieces: string[];
+}
+
 /** A top-level navigation entry. */
 export interface NavItem {
 	label: string;
