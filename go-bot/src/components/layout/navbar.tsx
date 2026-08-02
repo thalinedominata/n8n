@@ -2,12 +2,48 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { motion, useMotionValueEvent, useScroll } from 'motion/react';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { Menu, Search, X } from 'lucide-react';
 import { Button, Container, Logo, OPEN_COMMAND_PALETTE_EVENT } from '@/components/ui';
 import { mainNavigation } from '@/data/navigation';
 import { siteConfig } from '@/config/site';
+import { duration, ease, stagger } from '@/animations/tokens';
 import { cn } from '@/lib/utils';
+
+/** The mobile menu unfolds downward, each row tipping in like a card. */
+const menuVariants = {
+	closed: {
+		opacity: 0,
+		height: 0,
+		transition: {
+			when: 'afterChildren' as const,
+			staggerChildren: 0.03,
+			staggerDirection: -1,
+			duration: duration.fast,
+			ease: ease.outSoft,
+		},
+	},
+	open: {
+		opacity: 1,
+		height: 'auto',
+		transition: {
+			when: 'beforeChildren' as const,
+			staggerChildren: stagger.tight,
+			duration: duration.base,
+			ease: ease.outExpo,
+		},
+	},
+};
+
+const menuItemVariants = {
+	closed: { opacity: 0, y: -14, rotateX: -55 },
+	open: {
+		opacity: 1,
+		y: 0,
+		rotateX: 0,
+		transition: { duration: duration.base, ease: ease.outExpo },
+	},
+};
 
 /**
  * Fixed top navigation. Transparent over the hero, then gains a frosted
@@ -16,6 +52,7 @@ import { cn } from '@/lib/utils';
 export function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
 	const [mobileOpen, setMobileOpen] = useState(false);
+	const [menuGlow, setMenuGlow] = useState(false);
 	const { scrollY } = useScroll();
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -66,38 +103,58 @@ export function Navbar() {
 
 				<button
 					type="button"
-					className="rounded-md p-2 lg:hidden"
+					className={cn('rounded-md p-2 lg:hidden', menuGlow && 'animate-click-glow')}
 					aria-expanded={mobileOpen}
 					aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-					onClick={() => setMobileOpen((open) => !open)}
+					onClick={() => {
+						setMobileOpen((open) => !open);
+						setMenuGlow(true);
+					}}
+					onAnimationEnd={() => setMenuGlow(false)}
 				>
 					{mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
 				</button>
 			</Container>
 
-			{mobileOpen ? (
-				<motion.nav
-					initial={{ opacity: 0, y: -8 }}
-					animate={{ opacity: 1, y: 0 }}
-					className="border-b border-border-subtle bg-surface px-6 pb-6 pt-2 lg:hidden"
-					aria-label="Mobile"
-				>
-					<ul className="flex flex-col gap-1">
-						{mainNavigation.map((item) => (
-							<li key={item.href}>
-								<Link
-									href={item.href.startsWith('#') ? `/${item.href}` : item.href}
-									onClick={() => setMobileOpen(false)}
-									className="block rounded-md px-3 py-2.5 text-body font-medium text-ink-secondary hover:bg-surface-sunken hover:text-ink"
+			<AnimatePresence>
+				{mobileOpen ? (
+					<motion.nav
+						key="mobile-menu"
+						variants={menuVariants}
+						initial="closed"
+						animate="open"
+						exit="closed"
+						className="overflow-hidden border-b border-border-subtle bg-surface lg:hidden"
+						style={{ transformPerspective: 900 }}
+						aria-label="Mobile"
+					>
+						<ul className="flex flex-col gap-1 px-6 pt-2">
+							{mainNavigation.map((item) => (
+								<motion.li
+									key={item.href}
+									variants={menuItemVariants}
+									style={{ transformPerspective: 900, transformOrigin: 'top center' }}
 								>
-									{item.label}
-								</Link>
-							</li>
-						))}
-					</ul>
-					<Button className="mt-4 w-full">Reserve Go-Bot</Button>
-				</motion.nav>
-			) : null}
+									<Link
+										href={item.href.startsWith('#') ? `/${item.href}` : item.href}
+										onClick={() => setMobileOpen(false)}
+										className="block rounded-md px-3 py-2.5 text-body font-medium text-ink-secondary hover:bg-surface-sunken hover:text-ink"
+									>
+										{item.label}
+									</Link>
+								</motion.li>
+							))}
+						</ul>
+						<motion.div
+							variants={menuItemVariants}
+							style={{ transformPerspective: 900, transformOrigin: 'top center' }}
+							className="px-6 pb-6 pt-4"
+						>
+							<Button className="w-full">Reserve Go-Bot</Button>
+						</motion.div>
+					</motion.nav>
+				) : null}
+			</AnimatePresence>
 		</header>
 	);
 }
