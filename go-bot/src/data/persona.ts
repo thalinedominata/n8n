@@ -128,6 +128,7 @@ export const personaFeatures: PersonaFeature[] = [
 			'apocalyptic in the pocket with the ball cocked back. Shown as a concept ' +
 			'for potential athlete-licensing partnerships.',
 		fit: [
+			'Pristine white shell — the home colorway',
 			'Navy 12 jersey with silver shoulder yokes and red piping',
 			'Black long-sleeve base layer under the pads',
 			'Silver game pants with a white towel tucked at the waist',
@@ -139,13 +140,13 @@ export const personaFeatures: PersonaFeature[] = [
 				src: '/assets/gobot/persona/brady-bot-sideline.jpg',
 				width: 1200,
 				height: 896,
-				alt: 'Brady Bot — Go-Bot in a navy number 12 football uniform holding a silver helmet under one arm and a football in the other hand',
+				alt: 'Brady Bot — white-shelled Go-Bot in a navy number 12 football uniform holding a silver helmet under one arm and a football in the other hand',
 			},
 			{
 				src: '/assets/gobot/persona/brady-bot-gameday.jpg',
 				width: 1200,
 				height: 896,
-				alt: 'Brady Bot in full gear — Go-Bot wearing the silver helmet with red facemask, eyes glowing through the cage, cocking a football back to throw',
+				alt: 'Brady Bot in full gear — white-shelled Go-Bot wearing the silver helmet with red facemask, eyes glowing through the cage, cocking a football back to throw',
 			},
 		],
 	},
