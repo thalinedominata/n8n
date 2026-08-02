@@ -200,4 +200,26 @@ export const personaFeatures: PersonaFeature[] = [
 			alt: 'Iron-Bot — Go-Bot in crimson and gold superhero armor with a glowing triple-bar chest core and a glowing repulsor in his raised palm',
 		}],
 	},
+	{
+		id: 'speed-bot-7',
+		name: 'iShowSpeed',
+		title: 'Speed-BOT-7',
+		description:
+			'A tribute to the most electric streamer alive — freeform twists to the ' +
+			'sky, the number 7 on his chest, boot on the ball, arms out to the whole ' +
+			'stadium. Shown as a concept for creator partnerships.',
+		fit: [
+			'Wild crown of black freeform twists — the signature',
+			'Crimson kit with gold trim and the number 7 on the chest',
+			'Green shorts with a gold 7 on the leg',
+			'White socks into the signature orange boots',
+			'Match ball underfoot, celebration mode permanently on',
+		],
+		images: [{
+			src: '/assets/gobot/persona/speed-bot-7.jpg',
+			width: 1200,
+			height: 896,
+			alt: 'Speed-BOT-7 — Go-Bot with wild black freeform twists in a red number 7 soccer kit and green shorts, one boot on a soccer ball, arms spread wide',
+		}],
+	},
 ];
