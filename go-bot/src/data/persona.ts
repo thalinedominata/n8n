@@ -100,12 +100,12 @@ export const personaFeatures: PersonaFeature[] = [
 		name: 'LeBron James',
 		title: 'The King',
 		description:
-			'A tribute to the greatest to ever do it — game-ready in the PHILA 23, ' +
+			'A tribute to the greatest to ever do it — game-ready in the KING-BOT 23, ' +
 			'ball on the hip, sleeve on the shooting arm. Four quarters of battery ' +
 			'left and he wants all of them. Shown as a concept for potential ' +
 			'athlete-licensing partnerships.',
 		fit: [
-			'Royal-blue PHILA 23 jersey with red-and-white stitched trim',
+			'Royal-blue KING-BOT 23 jersey with red-and-white stitched trim',
 			'Matching shorts with striped side panels',
 			'White compression sleeve on the shooting arm, sweat wristband on the other',
 			'Regulation leather basketball, carried like it lives there',
@@ -115,7 +115,7 @@ export const personaFeatures: PersonaFeature[] = [
 			src: '/assets/gobot/persona/lebron-the-king.jpg',
 			width: 1200,
 			height: 896,
-			alt: 'The King — Go-Bot styled after LeBron James in a blue PHILA 23 basketball jersey, white arm sleeve, holding a basketball',
+			alt: 'The King — Go-Bot styled after LeBron James in a blue KING-BOT 23 basketball jersey, white arm sleeve, holding a basketball',
 		}],
 	},
 	{
@@ -129,7 +129,8 @@ export const personaFeatures: PersonaFeature[] = [
 			'for potential athlete-licensing partnerships.',
 		fit: [
 			'Pristine white shell — the home colorway',
-			'Navy 12 jersey with silver shoulder yokes and red piping',
+			'Navy BRADY-BOT 12 jersey with silver shoulder yokes and red piping',
+			'Orange triple-bar mark on the helmet and both sleeves',
 			'Black long-sleeve base layer under the pads',
 			'Silver game pants with a white towel tucked at the waist',
 			'White padded quarterback glove; silver helmet, red facemask',
@@ -140,13 +141,13 @@ export const personaFeatures: PersonaFeature[] = [
 				src: '/assets/gobot/persona/brady-bot-sideline.jpg',
 				width: 1200,
 				height: 896,
-				alt: 'Brady Bot — white-shelled Go-Bot in a navy number 12 football uniform holding a silver helmet under one arm and a football in the other hand',
+				alt: 'Brady Bot — white-shelled Go-Bot in a navy BRADY-BOT 12 jersey with orange triple-bar marks, holding a silver helmet under one arm and a football in the other hand',
 			},
 			{
 				src: '/assets/gobot/persona/brady-bot-gameday.jpg',
 				width: 1200,
 				height: 896,
-				alt: 'Brady Bot in full gear — white-shelled Go-Bot wearing the silver helmet with red facemask, eyes glowing through the cage, cocking a football back to throw',
+				alt: 'Brady Bot in full gear — white-shelled Go-Bot in the navy BRADY-BOT 12 jersey, silver helmet with the triple-bar mark and red facemask, cocking a football back to throw',
 			},
 		],
 	},
