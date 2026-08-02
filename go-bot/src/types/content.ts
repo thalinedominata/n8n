@@ -116,6 +116,22 @@ export interface Capability {
 	featured?: boolean;
 }
 
+/**
+ * A celebrity Go-Bot in the Person-A gallery — the prototype reimagined
+ * in a cultural icon's signature look.
+ */
+export interface PersonaFeature {
+	id: string;
+	/** The person the feature pays tribute to. */
+	name: string;
+	/** The feature title, e.g. "The Voice". */
+	title: string;
+	description: string;
+	/** The custom fit — what makes this Go-Bot theirs. */
+	fit: string[];
+	image: { src: string; width: number; height: number; alt: string };
+}
+
 /** A top-level navigation entry. */
 export interface NavItem {
 	label: string;

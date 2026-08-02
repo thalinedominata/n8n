@@ -8,6 +8,7 @@ export type {
 	HardwareGeneration,
 	ArchitectureLayer,
 	Capability,
+	PersonaFeature,
 	NavItem,
 	CommandItem,
 	AiDemoMessage,

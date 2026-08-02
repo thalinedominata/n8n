@@ -4,6 +4,7 @@ export { Architecture } from './architecture';
 export { LifeDomains } from './life-domains';
 export { HardwareExplorer } from './hardware-explorer';
 export { PrototypeShowcase } from './prototype-showcase';
+export { PersonA } from './person-a';
 export { Industries } from './industries';
 export { AiDemo } from './ai-demo';
 export { Roadmap } from './roadmap';

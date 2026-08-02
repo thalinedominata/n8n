@@ -36,6 +36,8 @@ ever wanted, the path is image-to-3D generation or a commissioned model
 
 - [x] Go-Bot as himself site-wide: hero film loop, prototype gallery,
       photo-based hardware explorer with front/back hotspot views
+- [x] Person-A: the celebrity Go-Bot gallery (`src/data/persona.ts`),
+      launched with Feature 001 — Lil Durk, "The Voice"
 - [ ] More film: mood/expression clips from the same prototype set
       (thinking, walking, head-turn) to extend GoBotFigure
 - [ ] GSAP ScrollTrigger deep-dives: pinned hardware exploded story,

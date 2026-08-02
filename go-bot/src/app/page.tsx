@@ -7,12 +7,13 @@ import {
 	LifeDomains,
 	HardwareExplorer,
 	PrototypeShowcase,
+	PersonA,
 	Industries,
 	AiDemo,
 	Roadmap,
 } from '@/components/sections';
 
-/** Version 1 homepage — the complete Go-Bot story in eight movements. */
+/** The homepage — the complete Go-Bot story, hero to roadmap. */
 export default function HomePage() {
 	return (
 		<>
@@ -24,6 +25,7 @@ export default function HomePage() {
 				<LifeDomains />
 				<HardwareExplorer />
 				<PrototypeShowcase />
+				<PersonA />
 				<Industries />
 				<AiDemo />
 				<Roadmap />
