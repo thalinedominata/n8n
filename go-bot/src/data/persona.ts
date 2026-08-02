@@ -130,7 +130,8 @@ export const personaFeatures: PersonaFeature[] = [
 		description:
 			'A tribute to the greatest to ever do it — game-ready in the PHILA 23, ' +
 			'ball on the hip, sleeve on the shooting arm. Four quarters of battery ' +
-			'left and he wants all of them.',
+			'left and he wants all of them. Shown as a concept for potential ' +
+			'athlete-licensing partnerships.',
 		fit: [
 			'Royal-blue PHILA 23 jersey with red-and-white stitched trim',
 			'Matching shorts with striped side panels',
@@ -152,7 +153,8 @@ export const personaFeatures: PersonaFeature[] = [
 		description:
 			'A tribute to the GOAT of the gridiron — shown twice, because he always ' +
 			'had two modes: calm on the sideline with the helmet under his arm, and ' +
-			'apocalyptic in the pocket with the ball cocked back.',
+			'apocalyptic in the pocket with the ball cocked back. Shown as a concept ' +
+			'for potential athlete-licensing partnerships.',
 		fit: [
 			'Navy 12 jersey with silver shoulder yokes and red piping',
 			'Black long-sleeve base layer under the pads',
