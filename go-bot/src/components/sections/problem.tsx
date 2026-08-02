@@ -12,7 +12,7 @@ import { capabilities } from '@/data/capabilities';
  * answered by the featured capabilities from the capability engine.
  */
 export function Problem() {
-	const featured = capabilities.filter((capability) => capability.featured).slice(0, 8);
+	const featured = capabilities.filter((capability) => capability.featured).slice(0, 7);
 
 	return (
 		<section id="problem" className="bg-surface-warm py-28">

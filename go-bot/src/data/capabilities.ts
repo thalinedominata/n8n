@@ -171,7 +171,7 @@ export const capabilities: Capability[] = [
 		id: 'kids-mode',
 		name: 'Kids Mode',
 		description:
-			'The most patient playmate and study buddy ever built — homework help at their level, learning games, story time, and endless answers to "why?".',
+			'The most patient playmate and study buddy ever built — homework help at their level, hide-and-seek and learning games, story time, and endless answers to "why?".',
 		icon: ToyBrick,
 		category: 'cognition',
 		uses: ['Language models', 'Vision', 'Personality engine', 'Display'],
@@ -182,10 +182,10 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: '/assets/gobot/lifestyle/kids-mode.jpg',
+			src: '/assets/gobot/lifestyle/hide-and-seek.jpg',
 			width: 1264,
 			height: 848,
-			alt: 'A high-school student in a tan thobe studies at his laptop while Go-Bot stands on the desk beside it with the quadratic formula glowing on his visor',
+			alt: 'Go-Bot covers his visor with his hands and counts while three laughing brothers scramble to hide around a cozy living room',
 		},
 	},
 	{
@@ -201,13 +201,6 @@ export const capabilities: Capability[] = [
 		industries: ['hospitality', 'education'],
 		confidence: 89,
 		hardware: ['gen-1', 'gen-2'],
-		featured: true,
-		image: {
-			src: '/assets/gobot/lifestyle/hide-and-seek.jpg',
-			width: 1264,
-			height: 848,
-			alt: 'Go-Bot covers his visor with his hands and counts while three laughing brothers scramble to hide around a cozy living room',
-		},
 	},
 	{
 		id: 'live-translation',
