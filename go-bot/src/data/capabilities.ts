@@ -106,6 +106,12 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		safetyNotes: 'Emergency dialing follows regional regulations and owner consent settings.',
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/call-for-help.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'A reassured grandmother in her armchair beside a backpack-sized Go-Bot standing on the side table with a glowing phone-call icon on his visor',
+		},
 	},
 	{
 		id: 'medication-reminders',
