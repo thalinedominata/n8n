@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 				url: '/assets/images/og.png',
 				width: 1200,
 				height: 630,
-				alt: 'Meet Go-Bot — the wearable humanoid robot by ENGAGE GLOBAL',
+				alt: 'Meet Go-Bot, the wearable humanoid robot by ENGAGE GLOBAL',
 			},
 		],
 	},

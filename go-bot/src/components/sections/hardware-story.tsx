@@ -34,7 +34,7 @@ export function HardwareStory() {
 				<SectionHeading
 					eyebrow="The Guided Tour"
 					title="Walk the anatomy, beat by beat."
-					description="Eight stops through what he's made of — ending on the reason he's called wearable."
+					description="Eight stops through what he's made of, ending on the reason he's called wearable."
 				/>
 
 				<div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">

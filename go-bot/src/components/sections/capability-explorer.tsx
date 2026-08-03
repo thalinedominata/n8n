@@ -66,7 +66,7 @@ export function CapabilityExplorer() {
 						spellCheck={false}
 						value={query}
 						onChange={(event) => setQuery(event.target.value)}
-						placeholder="Search capabilities — “falls”, “translate”, “seniors”…"
+						placeholder="Search capabilities: “falls”, “translate”, “seniors”…"
 						aria-label="Search capabilities"
 						className="h-12 flex-1 bg-transparent text-body outline-none placeholder:text-ink-tertiary"
 					/>
@@ -99,7 +99,7 @@ export function CapabilityExplorer() {
 			</div>
 			{results.length === 0 ? (
 				<p className="py-16 text-center text-body text-ink-secondary">
-					Go-Bot searched everywhere — nothing matches yet. He&apos;s taking notes for Version 2.
+					Go-Bot searched everywhere and nothing matches yet. He&apos;s taking notes for Version 2.
 				</p>
 			) : null}
 

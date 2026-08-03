@@ -29,10 +29,10 @@ export const industries: Industry[] = [
 		scenario: {
 			headline: 'A companion on every ward',
 			points: [
-				'Sits with patients between rounds — conversation, orientation, reassurance',
+				'Sits with patients between rounds for conversation, orientation, and reassurance',
 				'Detects falls and distress instantly and briefs the care team with context',
 				'Walks patients to imaging, therapy, and discharge at their own pace',
-				'Reminds, observes, and reports medication adherence — never dispenses',
+				'Reminds, observes, and reports medication adherence, but never dispenses',
 			],
 		},
 	},
@@ -73,7 +73,7 @@ export const industries: Industry[] = [
 			headline: 'The concierge who never clocks out',
 			points: [
 				'Greets arrivals by name and walks them to their room',
-				'Answers every question — restaurants, checkout, the nearest pharmacy',
+				'Answers every question: restaurants, checkout, the nearest pharmacy',
 				'Delivers amenities and handles late-night requests with a smile',
 				'Guides evacuations calmly if the night ever goes wrong',
 			],
@@ -104,7 +104,7 @@ export const industries: Industry[] = [
 		id: 'travel',
 		name: 'Travel & Mobility',
 		description:
-			'Wayfinding, translation, and assistance for travelers — from terminals to city streets.',
+			'Wayfinding, translation, and assistance for travelers, from terminals to city streets.',
 		icon: Plane,
 		stats: [
 			{ value: '100%', label: 'journey coverage' },
@@ -136,7 +136,7 @@ export const industries: Industry[] = [
 		scenario: {
 			headline: 'A safety officer on every site',
 			points: [
-				'Walks the site continuously — hazards flagged before incidents',
+				'Walks the site continuously and flags hazards before they become incidents',
 				'Detects falls and man-down events and raises the alarm instantly',
 				'Guides evacuation drills and real responses with practiced calm',
 				'Fetches tools and materials so hands stay on the work',

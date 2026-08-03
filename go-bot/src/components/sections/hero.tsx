@@ -44,7 +44,7 @@ export function Hero() {
 						className="mt-6 max-w-xl text-body-lg text-ink-secondary text-pretty"
 					>
 						Your intelligent companion for every stage of life. He sees, listens, learns, and
-						cares — and he&apos;s watching you read this right now.
+						cares. And he&apos;s watching you read this right now.
 					</motion.p>
 					<motion.div variants={heroReveal} className="mt-10 flex flex-wrap items-center gap-4">
 						<Button size="lg" onClick={() => scrollToSection('life-domains')}>

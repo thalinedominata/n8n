@@ -21,7 +21,7 @@ export const roadmap: RoadmapPhase[] = [
 		period: 'Now',
 		status: 'active',
 		highlights: [
-			'Go-Bot as himself — prototype film & renders site-wide',
+			'Go-Bot as himself: prototype film and renders site-wide',
 			'Scroll-driven hardware deep-dives',
 			'Interactive capability demos',
 			'Localization & accessibility expansion',

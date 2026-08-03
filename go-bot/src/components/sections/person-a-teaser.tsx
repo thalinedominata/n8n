@@ -31,7 +31,7 @@ export function PersonATeaser() {
 					<h2 className="mt-3 text-headline font-semibold">Celebrity Go-Bots.</h2>
 					<p className="mx-auto mt-4 max-w-2xl text-body-lg text-ink-inverse/70">
 						The prototype, restyled in the signature looks of the icons who shape
-						culture — musicians, athletes, and a hero or two.
+						culture: musicians, athletes, and a hero or two.
 					</p>
 				</Reveal>
 
@@ -40,7 +40,7 @@ export function PersonATeaser() {
 						<Link
 							key={entry.id}
 							href="/person-a"
-							aria-label={`${entry.title} — see the full Person-A gallery`}
+							aria-label={`${entry.title}: see the full Person-A gallery`}
 							className="group overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3"
 						>
 							{entry.image ? (

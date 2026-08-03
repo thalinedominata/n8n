@@ -28,7 +28,7 @@ export const hardwareStory: HardwareStoryStep[] = [
 		view: 'front',
 		x: 47,
 		y: 14,
-		line: 'It starts at the top — the head that sees the room.',
+		line: 'It starts at the top, with the head that sees the room.',
 	},
 	{
 		moduleId: 'eyes',
@@ -49,7 +49,7 @@ export const hardwareStory: HardwareStoryStep[] = [
 		view: 'front',
 		x: 53,
 		y: 39,
-		line: 'The triple-bar heartbeat — status you can read across the room.',
+		line: 'The triple-bar heartbeat: status you can read across the room.',
 	},
 	{
 		moduleId: 'cpu',
@@ -63,14 +63,14 @@ export const hardwareStory: HardwareStoryStep[] = [
 		view: 'front',
 		x: 58,
 		y: 85,
-		line: 'Planted, balanced — and orange, obviously.',
+		line: 'Planted, balanced, and orange, obviously.',
 	},
 	{
 		moduleId: 'battery',
 		view: 'back',
 		x: 59,
 		y: 55,
-		line: 'Flip him around — the all-day battery rides low on his back.',
+		line: 'Flip him around. The all-day battery rides low on his back.',
 	},
 	{
 		moduleId: 'backpack',

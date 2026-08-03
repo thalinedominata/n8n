@@ -83,7 +83,7 @@ export function LifeDomains() {
 								exit={{ opacity: 0 }}
 								className="text-center text-caption text-ink-tertiary"
 							>
-								Twenty doors into daily life — pick one.
+								Twenty doors into daily life. Pick one.
 							</motion.p>
 						)}
 					</AnimatePresence>

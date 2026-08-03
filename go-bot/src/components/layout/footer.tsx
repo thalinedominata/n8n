@@ -38,7 +38,7 @@ export function Footer() {
 					<p>
 						© {new Date().getFullYear()} {siteConfig.company}. All rights reserved.
 					</p>
-					<p>Made with warmth — and a little help from Go-Bot.</p>
+					<p>Made with warmth, and a little help from Go-Bot.</p>
 				</Container>
 			</div>
 		</footer>

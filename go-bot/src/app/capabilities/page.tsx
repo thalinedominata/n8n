@@ -8,7 +8,7 @@ import { CapabilityExplorer } from '@/components/sections/capability-explorer';
 export const metadata: Metadata = {
 	title: 'Capabilities',
 	description:
-		'Every function Go-Bot can perform — searchable by need, audience, sensor, and hardware generation.',
+		'Every function Go-Bot can perform, searchable by need, audience, sensor, and hardware generation.',
 };
 
 /** The capability engine: the searchable database of everything Go-Bot can do. */

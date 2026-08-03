@@ -10,7 +10,7 @@ export const architectureLayers: ArchitectureLayer[] = [
 		id: 'life-domains',
 		name: 'Life Domains',
 		description:
-			'Everything starts with human needs: health, home, learning, safety — twenty domains of daily life that define what Go-Bot is for.',
+			'Everything starts with human needs: health, home, learning, safety: twenty domains of daily life that define what Go-Bot is for.',
 		technologies: ['20 life domains', 'Human-centered design', 'Owner-defined priorities'],
 		icon: HeartHandshake,
 	},
@@ -18,7 +18,7 @@ export const architectureLayers: ArchitectureLayer[] = [
 		id: 'capability-modules',
 		name: 'Capability Modules',
 		description:
-			'Each domain is served by capabilities — detect falls, translate live, guide navigation. Modular, searchable, and growing toward thousands.',
+			'Each domain is served by capabilities like detecting falls, translating live, and guiding navigation. Modular, searchable, and growing toward thousands.',
 		technologies: ['Capability engine', 'Confidence scoring', 'Per-generation hardware map'],
 		icon: Layers,
 	},
@@ -26,7 +26,7 @@ export const architectureLayers: ArchitectureLayer[] = [
 		id: 'sensors',
 		name: 'Sensors',
 		description:
-			'Capabilities perceive through the body: stereo vision, lidar, far-field audio, thermal, balance — fused into one picture of the moment.',
+			'Capabilities perceive through the body: stereo vision, lidar, far-field audio, thermal, and balance, fused into one picture of the moment.',
 		technologies: ['Lidar + stereo depth', '6-mic array', 'Thermal & air quality', '1 kHz sensor fusion'],
 		icon: Radar,
 	},
@@ -34,7 +34,7 @@ export const architectureLayers: ArchitectureLayer[] = [
 		id: 'reasoning-engine',
 		name: 'Reasoning Engine',
 		description:
-			'On-device intelligence decides what matters and what to do — private by default, explainable always, warm by design.',
+			'On-device intelligence decides what matters and what to do. Private by default, explainable always, warm by design.',
 		technologies: ['48 TOPS on-device', 'Multi-step planning', 'Explainable actions'],
 		icon: Sparkles,
 	},

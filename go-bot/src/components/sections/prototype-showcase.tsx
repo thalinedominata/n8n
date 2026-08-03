@@ -20,14 +20,14 @@ const LAUNCH_FILMS = {
 	en: {
 		src: '/assets/video/launch-film.mp4',
 		label: 'EN',
-		aria: 'Go-Bot launch film — English voice with Arabic subtitles, sound on',
-		note: 'Sound on — English voice, Arabic subtitles',
+		aria: 'Go-Bot launch film: English voice with Arabic subtitles, sound on',
+		note: 'Sound on: English voice, Arabic subtitles',
 	},
 	ar: {
 		src: '/assets/video/launch-film-ar.mp4',
 		label: 'عربي',
-		aria: 'Go-Bot launch film — Gulf Arabic voice with English subtitles, sound on',
-		note: 'Sound on — Gulf Arabic voice, English subtitles',
+		aria: 'Go-Bot launch film: Gulf Arabic voice with English subtitles, sound on',
+		note: 'Sound on: Gulf Arabic voice, English subtitles',
 	},
 } as const;
 
@@ -49,7 +49,7 @@ export function PrototypeShowcase() {
 				<SectionHeading
 					eyebrow="The Prototype"
 					title="This is Go-Bot."
-					description="Not a concept sketch — the real design. Matte graphite, a glowing gaze, the triple-bar heartbeat, and the straps that let you wear him like a backpack. Spin him around."
+					description="Not a concept sketch. This is the real design: matte graphite, a glowing gaze, the triple-bar heartbeat, and the straps that let you wear him like a backpack. Spin him around."
 				/>
 
 				<div className="mb-8 flex flex-wrap justify-center gap-2">
@@ -103,7 +103,7 @@ export function PrototypeShowcase() {
 							? 'Drag to orbit · Reconstructed from the prototype in full PBR'
 							: media === 'launch'
 								? launchFilm.note
-								: 'Captured on the prototype film set — every pixel is the real design'}
+								: 'Captured on the prototype film set. Every pixel is the real design'}
 					</p>
 				</Reveal>
 			</Container>

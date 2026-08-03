@@ -79,7 +79,7 @@ export function AiDemo() {
 				<SectionHeading
 					eyebrow="AI Playground"
 					title="Ask him anything. Watch him care."
-					description="Pick a scenario and watch Go-Bot listen, think, and respond. These previews are scripted — the live conversational Go-Bot arrives in Version 3."
+					description="Pick a scenario and watch Go-Bot listen, think, and respond. These previews are scripted; the live conversational Go-Bot arrives in Version 3."
 				/>
 
 				{/* Scenario picker */}

@@ -13,7 +13,7 @@ export function Industries() {
 				<SectionHeading
 					eyebrow="Industries"
 					title="One companion. Every industry."
-					description="Pick an industry and the whole experience transforms — Go-Bot's role, his capabilities, and the stories he tells."
+					description="Pick an industry and the whole experience transforms: Go-Bot's role, his capabilities, and the stories he tells."
 				/>
 
 				<RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -10,7 +10,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'head',
 		name: 'Head',
 		description:
-			'A rounded graphite shell housing the visor, cameras, and audio array — impact-resistant and unmistakably friendly.',
+			'A rounded graphite shell housing the visor, cameras, and audio array. Impact resistant and unmistakably friendly.',
 		specs: [
 			{ label: 'Shell', value: 'Matte polymer composite' },
 			{ label: 'Articulation', value: '3-axis neck' },
@@ -22,7 +22,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'eyes',
 		name: 'Eyes',
 		description:
-			'Glowing expressive eyes that blink, focus, and make warm contact — how Go-Bot shows he\'s listening.',
+			'Glowing expressive eyes that blink, focus, and make warm contact. It\'s how Go-Bot shows he\'s listening.',
 		specs: [
 			{ label: 'Expressions', value: '200+ micro-states' },
 			{ label: 'Gaze', value: 'Person-aware tracking' },
@@ -58,7 +58,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'chest',
 		name: 'Chest & Emblem',
 		description:
-			'The triple-bar emblem is Go-Bot\'s heartbeat — breathing with him, pulsing when he thinks, signaling state at a glance.',
+			'The triple-bar emblem is Go-Bot\'s heartbeat. It breathes with him, pulses when he thinks, and signals state at a glance.',
 		specs: [
 			{ label: 'Element', value: 'Edge-lit light guide' },
 			{ label: 'States', value: 'Idle · Listening · Thinking · Alert' },
@@ -70,7 +70,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'camera',
 		name: 'Camera',
 		description:
-			'A chest-mounted stereo depth camera gives spatial understanding — processed on-device, with a physical shutter.',
+			'A chest-mounted stereo depth camera gives spatial understanding, processed on-device, with a physical shutter.',
 		specs: [
 			{ label: 'Sensor', value: '4K stereo depth' },
 			{ label: 'Field of view', value: '150°' },
@@ -82,9 +82,9 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'cpu',
 		name: 'CPU & Neural Engine',
 		description:
-			'On-device neural processing keeps perception private and responses instant — no round-trip required. ' +
-			'It runs Engage’s AtlasOS: the personal-assistant brain that knows you and everything you do — ' +
-			'scheduling, messaging, travel, even those old notes you forgot about — while your data stays yours.',
+			'On-device neural processing keeps perception private and responses instant, with no round trip required. ' +
+			'It runs Engage’s AtlasOS, the personal-assistant brain that knows you and everything you do: ' +
+			'scheduling, messaging, travel, even those old notes you forgot about. Your data stays yours.',
 		specs: [
 			{ label: 'Neural engine', value: '48 TOPS on-device' },
 			{ label: 'Memory', value: '32 GB unified' },
@@ -101,7 +101,7 @@ export const hardwareModules: HardwareModule[] = [
 		specs: [
 			{ label: 'System', value: 'Passive vapor chamber' },
 			{ label: 'Vent', value: 'Rear hex grille' },
-			{ label: 'Noise', value: '0 dB — no fans' },
+			{ label: 'Noise', value: '0 dB, no fans' },
 		],
 		hotspot: { x: 62, y: 53 },
 	},
@@ -121,7 +121,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'hands',
 		name: 'Hands',
 		description:
-			'Soft orange hands with adaptive grip — firm enough for a grocery bag, gentle enough for a grandmother\'s arm.',
+			'Soft orange hands with adaptive grip: firm enough for a grocery bag, gentle enough for a grandmother\'s arm.',
 		specs: [
 			{ label: 'Grip', value: 'Adaptive soft-touch' },
 			{ label: 'Sensing', value: 'Force + slip detection' },
@@ -145,7 +145,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'backpack',
 		name: 'Carry Straps',
 		description:
-			'The straps aren\'t his — they\'re yours. Fold him in, sling him on, and wear Go-Bot like a backpack. That\'s the “wearable” in wearable humanoid robot.',
+			'The straps aren\'t his, they\'re yours. Fold him in, sling him on, and wear Go-Bot like a backpack. That\'s the “wearable” in wearable humanoid robot.',
 		specs: [
 			{ label: 'Spine light', value: 'Status + charge indicator' },
 			{ label: 'Straps', value: 'Human-wearable, quick-release' },
@@ -169,7 +169,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'legs',
 		name: 'Legs',
 		description:
-			'Short, stable legs with dynamic balance walk human spaces smoothly — stairs, thresholds, and all.',
+			'Short, stable legs with dynamic balance walk human spaces smoothly: stairs, thresholds, and all.',
 		specs: [
 			{ label: 'Gait', value: 'Dynamic balanced walking' },
 			{ label: 'Speed', value: '1.8 m/s' },
@@ -181,7 +181,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'feet',
 		name: 'Feet',
 		description:
-			'Grippy boots on orange soles — floor-safe tread that never marks and never slips.',
+			'Grippy boots on orange soles, with floor-safe tread that never marks and never slips.',
 		specs: [
 			{ label: 'Soles', value: 'High-grip, non-marking' },
 			{ label: 'Sensing', value: 'Ground-contact force' },
@@ -193,7 +193,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'expansion',
 		name: 'Expansion Ports',
 		description:
-			'Two modular bays in the backpack accept future capability hardware — new senses, new skills.',
+			'Two modular bays in the backpack accept future capability hardware: new senses, new skills.',
 		specs: [
 			{ label: 'Bays', value: '2× modular' },
 			{ label: 'Interface', value: 'Power + high-speed data' },

@@ -22,7 +22,7 @@ export function Architecture() {
 				<SectionHeading
 					eyebrow="Platform"
 					title="From human needs to helpful action."
-					description="Life domains define what matters. Capabilities serve them, sensors perceive, the reasoning engine decides, and actions help — one flow, engineered as one system."
+					description="Life domains define what matters. Capabilities serve them, sensors perceive, the reasoning engine decides, and actions help. One flow, engineered as one system."
 				/>
 
 				<Reveal className="mx-auto flex max-w-2xl flex-col items-center">

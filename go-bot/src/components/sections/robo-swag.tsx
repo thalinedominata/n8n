@@ -26,8 +26,8 @@ export function RoboSwag() {
 					<p className="mt-3 text-title font-semibold text-gobot-500">It&rsquo;s your Mini-Me.</p>
 					<p className="mt-6 text-body-lg text-ink-inverse/70">
 						Where the high fashion lives. We work with designers on high-fashion
-						and athletic drops that personalize your robot to your liking — and
-						every drop ships in two sizes, so the fit is yours as much as his.
+						and athletic drops that personalize your robot to your liking. Every
+						drop ships in two sizes, so the fit is yours as much as his.
 					</p>
 				</Reveal>
 
@@ -61,8 +61,8 @@ export function RoboSwag() {
 					<p className="text-overline text-ink-inverse/60">Already on the prototype</p>
 					<h3 className="mt-3 text-headline font-semibold">The wardrobe works.</h3>
 					<p className="mx-auto mt-4 max-w-xl text-body-lg text-ink-inverse/70">
-						These fits were styled onto the real Go-Bot for the Person-A series —
-						proof the drops read exactly as designed, from couture to game day.
+						These fits were styled onto the real Go-Bot for the Person-A series.
+						The drops read exactly as designed, from couture to game day.
 					</p>
 				</Reveal>
 
@@ -93,7 +93,7 @@ export function RoboSwag() {
 				</Reveal>
 
 				<Reveal className="mt-24 rounded-2xl border border-ink-secondary/40 bg-ink-inverse/5 p-10 text-center">
-					<h3 className="text-headline font-semibold">Designers — the mannequin is ready.</h3>
+					<h3 className="text-headline font-semibold">Designers, the mannequin is ready.</h3>
 					<p className="mx-auto mt-4 max-w-xl text-body-lg text-ink-inverse/70">
 						Robo-Swag is a collaboration program. If you design high fashion,
 						athletic wear, or streetwear and want your work walking around on a

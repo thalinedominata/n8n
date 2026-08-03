@@ -13,7 +13,7 @@ export const swagLines: SwagLine[] = [
 		name: 'The Atelier Line',
 		tagline: 'High fashion',
 		description:
-			'Runway tailoring cut for a robot frame — couture silhouettes, statement coats, and jewelry that reads against a matte shell. Designed with fashion houses, drop by drop.',
+			'Runway tailoring cut for a robot frame: couture silhouettes, statement coats, and jewelry that reads against a matte shell. Designed with fashion houses, drop by drop.',
 		icon: Scissors,
 		pieces: [
 			'Tailored two-piece suits and overcoats',
@@ -26,7 +26,7 @@ export const swagLines: SwagLine[] = [
 		name: 'Court & Field',
 		tagline: 'Athletic drops',
 		description:
-			'Game-ready kits built with athletes and athletic brands — jerseys, cleats, and full uniforms with real number treatments and team-grade detailing.',
+			'Game-ready kits built with athletes and athletic brands: jerseys, cleats, and full uniforms with real number treatments and team-grade detailing.',
 		icon: Medal,
 		pieces: [
 			'Basketball, football, and soccer kits',
@@ -39,7 +39,7 @@ export const swagLines: SwagLine[] = [
 		name: 'The Street Series',
 		tagline: 'Everyday fits',
 		description:
-			'The fits that actually leave the house — varsity jackets, fleece and cargos, denim, bucket hats, and sneaker rotations for the daily walk.',
+			'The fits that actually leave the house: varsity jackets, fleece and cargos, denim, bucket hats, and sneaker rotations for the daily walk.',
 		icon: Footprints,
 		pieces: [
 			'Varsity jackets and hoodies',
@@ -52,7 +52,7 @@ export const swagLines: SwagLine[] = [
 		name: 'One-of-One Commissions',
 		tagline: 'Custom',
 		description:
-			'Your design, made real. Commission a one-off fit for your Go-Bot — or bring your own designer and we build it together.',
+			'Your design, made real. Commission a one-off fit for your Go-Bot, or bring your own designer and we build it together.',
 		icon: PenTool,
 		pieces: [
 			'Made-to-order fits from your brief',

@@ -59,7 +59,7 @@ export const capabilities: Capability[] = [
 		id: 'personal-assistant',
 		name: 'Personal Assistant',
 		description:
-			'Knows you and everything you do — your schedule, your messages, your travel, even those old notes you forgot about — and handles it before you ask.',
+			'Knows you and everything you do: your schedule, your messages, your travel, even those old notes you forgot about. He handles it before you ask.',
 		icon: NotebookPen,
 		category: 'cognition',
 		uses: ['AtlasOS link', 'Calendar & inbox connectors', 'Personal memory', 'Voice'],
@@ -80,7 +80,7 @@ export const capabilities: Capability[] = [
 		id: 'detect-falls',
 		name: 'Detect Falls',
 		description:
-			'Recognizes a fall within milliseconds using fused vision, depth, and audio — then checks in, and escalates if needed.',
+			'Recognizes a fall within milliseconds using fused vision, depth, and audio. He checks in, then escalates if needed.',
 		icon: PersonStanding,
 		category: 'safety',
 		uses: ['Lidar', 'Vision', 'Accelerometer', 'Microphones', 'On-device AI'],
@@ -126,7 +126,7 @@ export const capabilities: Capability[] = [
 		industries: ['healthcare'],
 		confidence: 93,
 		hardware: ['gen-1', 'gen-2'],
-		safetyNotes: 'Reminds and observes only — never dispenses or handles medication.',
+		safetyNotes: 'Reminds and observes only. He never dispenses or handles medication.',
 	},
 	{
 		id: 'monitor-vitals',
@@ -168,7 +168,7 @@ export const capabilities: Capability[] = [
 		id: 'dj-mode',
 		name: 'DJ Mode',
 		description:
-			'Runs the party from the middle of it — playlists on request, his visor becomes a live equalizer, and his eyes and emblem pulse to the beat.',
+			'Runs the party from the middle of it. Playlists on request, a visor that turns into a live equalizer, and eyes and emblem pulsing to the beat.',
 		icon: Music,
 		category: 'communication',
 		uses: ['Speakers', 'Visor display', 'Beat detection', 'Streaming services'],
@@ -182,14 +182,14 @@ export const capabilities: Capability[] = [
 			src: '/assets/gobot/lifestyle/dj-mode.jpg',
 			width: 1264,
 			height: 848,
-			alt: 'A Dubai villa pool party at sunset — families swim under a shade sail, two men grill, women relax with drinks, and a backpack-sized Go-Bot DJs from the poolside table with an orange equalizer on his visor',
+			alt: 'A Dubai villa pool party at sunset: families swim under a shade sail, two men grill, women relax with drinks, and a backpack-sized Go-Bot DJs from the poolside table with an orange equalizer on his visor',
 		},
 	},
 	{
 		id: 'kids-mode',
 		name: 'Kids Mode',
 		description:
-			'The most patient playmate and study buddy ever built — homework help at their level, hide-and-seek and learning games, story time, and endless answers to "why?".',
+			'The most patient playmate and study buddy ever built: homework help at their level, hide-and-seek and learning games, story time, and endless answers to "why?".',
 		icon: ToyBrick,
 		category: 'cognition',
 		uses: ['Language models', 'Vision', 'Personality engine', 'Display'],
@@ -266,7 +266,7 @@ export const capabilities: Capability[] = [
 		id: 'guide-navigation',
 		name: 'Guide & Navigate',
 		description:
-			'Leads the way at walking pace through homes, hospitals, terminals, and stores — matching your speed.',
+			'Leads the way at walking pace through homes, hospitals, terminals, and stores, always matching your speed.',
 		icon: MapPin,
 		category: 'mobility',
 		uses: ['Lidar', 'Vision', 'Mapping', 'Mobility base'],
@@ -337,7 +337,7 @@ export const capabilities: Capability[] = [
 		id: 'learn-routines',
 		name: 'Learn Your Routines',
 		description:
-			'Notices patterns — wake times, preferences, favorite music — and quietly gets more helpful.',
+			'Notices patterns like wake times, preferences, and favorite music, and quietly gets more helpful.',
 		icon: Lightbulb,
 		category: 'cognition',
 		uses: ['Memory', 'On-device AI'],
@@ -352,7 +352,7 @@ export const capabilities: Capability[] = [
 		id: 'detect-hazards',
 		name: 'Detect Hazards',
 		description:
-			'Spots smoke, water leaks, left-on stoves, and blocked exits — and acts before they become emergencies.',
+			'Spots smoke, water leaks, left-on stoves, and blocked exits, and acts before they become emergencies.',
 		icon: ShieldAlert,
 		category: 'safety',
 		uses: ['Thermal sensing', 'Vision', 'Air-quality sensors'],
@@ -381,7 +381,7 @@ export const capabilities: Capability[] = [
 		id: 'temperature-comfort',
 		name: 'Comfort Monitoring',
 		description:
-			'Tracks room temperature, air quality, and light — adjusting the home before discomfort registers.',
+			'Tracks room temperature, air quality, and light, then adjusts the home before discomfort registers.',
 		icon: Thermometer,
 		category: 'home',
 		uses: ['Environmental sensors', 'Smart-home protocols'],
@@ -423,7 +423,7 @@ export const capabilities: Capability[] = [
 		id: 'mobility-transfer-assist',
 		name: 'Transfer Assistance',
 		description:
-			'Steadies wheelchair transfers and stands ready with support — strength applied gently, within safe limits.',
+			'Steadies wheelchair transfers and stands ready with support. He applies his strength gently, within safe limits.',
 		icon: Accessibility,
 		category: 'mobility',
 		uses: ['Compliant arms', 'Balance sensors', 'Force sensing'],
@@ -467,7 +467,7 @@ export const capabilities: Capability[] = [
 		id: 'budget-briefing',
 		name: 'Money Briefings',
 		description:
-			'Explains bills, spots forgotten subscriptions, and reminds before due dates — plain language, zero judgment, never advice.',
+			'Explains bills, spots forgotten subscriptions, and reminds before due dates. He keeps it in plain language, skips the judgment, and never gives financial advice.',
 		icon: PiggyBank,
 		category: 'cognition',
 		uses: ['Read-only account feeds', 'Speakers', 'Display', 'Scheduling'],
@@ -482,7 +482,7 @@ export const capabilities: Capability[] = [
 		id: 'scam-shield',
 		name: 'Scam Shield',
 		description:
-			'Recognizes pressure tactics and spoofed identities in calls and messages — warns instantly and can take over the call.',
+			'Recognizes pressure tactics and spoofed identities in calls and messages, warns instantly, and can take over the call.',
 		icon: ShieldAlert,
 		category: 'safety',
 		uses: ['Microphones', 'Connectivity', 'Language models'],
@@ -511,7 +511,7 @@ export const capabilities: Capability[] = [
 		id: 'story-time',
 		name: 'Original Story Time',
 		description:
-			'Generates serialized bedtime stories starring your family — continued nightly, remembered forever.',
+			'Generates serialized bedtime stories starring your family, continued nightly and remembered forever.',
 		icon: Drama,
 		category: 'communication',
 		uses: ['Language models', 'Speakers', 'Memory'],
@@ -554,7 +554,7 @@ export const capabilities: Capability[] = [
 		id: 'guided-calm',
 		name: 'Guided Calm',
 		description:
-			'Breathing exercises, grounding walks, and gentle check-ins when the noise rises — structure without pressure.',
+			'Breathing exercises, grounding walks, and gentle check-ins when the noise rises: structure without pressure.',
 		icon: Wind,
 		category: 'health',
 		uses: ['Speakers', 'Ambient sensing', 'Tone awareness (opt-in)'],
@@ -563,13 +563,13 @@ export const capabilities: Capability[] = [
 		industries: ['healthcare', 'education'],
 		confidence: 92,
 		hardware: ['gen-1', 'gen-2'],
-		safetyNotes: 'Supportive structure only — recognizes crisis language and connects to hotlines and chosen contacts immediately.',
+		safetyNotes: 'Supportive structure only. He recognizes crisis language and connects to hotlines and chosen contacts immediately.',
 	},
 	{
 		id: 'observance-keeper',
 		name: 'Observance Keeper',
 		description:
-			'Prayer times, fasts, festivals, and dietary rules honored faithfully across traditions — with zero commentary.',
+			'Prayer times, fasts, festivals, and dietary rules honored faithfully across traditions, with zero commentary.',
 		icon: CalendarHeart,
 		category: 'home',
 		uses: ['Scheduling', 'Speakers', 'Dietary rule engine'],
@@ -611,7 +611,7 @@ export const capabilities: Capability[] = [
 		id: 'atlas-os',
 		name: 'AtlasOS Integration',
 		description:
-			"Powered by Engage's AtlasOS — the private AI operating system. Connects your data sources, runs custom assistants and 24/7 agents, and stays guard-railed by you, on your infrastructure.",
+			"Powered by Engage's AtlasOS, the private AI operating system. It connects your data sources, runs custom assistants and 24/7 agents, and stays guard-railed by you, on your infrastructure.",
 		icon: Network,
 		category: 'cognition',
 		uses: ['AtlasOS', 'Data pipelines', 'Custom agents', 'Enterprise governance'],
@@ -627,7 +627,7 @@ export const capabilities: Capability[] = [
 		id: 'personal-creator',
 		name: 'Personal Photographer & Videographer',
 		description:
-			'Shoots your life like a creator on staff — tracks the action, frames the shot, films hands-free, then edits the highlights into share-ready photos and clips.',
+			'Shoots your life like a creator on staff: he tracks the action, frames the shot, films hands-free, then edits the highlights into share-ready photos and clips.',
 		icon: Camera,
 		category: 'communication',
 		uses: ['Camera', 'Subject tracking', 'On-device editing AI', 'Storage'],
@@ -648,7 +648,7 @@ export const capabilities: Capability[] = [
 		id: 'streamer-sidekick',
 		name: 'Streamer Sidekick',
 		description:
-			'A co-host with a face: reads chat aloud, reacts on camera, runs polls, and keeps the energy up between moments — built for creators who stream alone.',
+			'A co-host with a face: reads chat aloud, reacts on camera, runs polls, and keeps the energy up between moments. Built for creators who stream alone.',
 		icon: Clapperboard,
 		category: 'communication',
 		uses: ['Camera', 'Chat integrations', 'Personality engine', 'Speakers'],
@@ -669,7 +669,7 @@ export const capabilities: Capability[] = [
 		id: 'karaoke-host',
 		name: 'Karaoke Host',
 		description:
-			'Scrolls the lyrics on his visor, scores generously, and hypes the room between songs — the emcee who never gets tired of your rendition.',
+			'Scrolls the lyrics on his visor, scores generously, and hypes the room between songs, an emcee who never gets tired of your rendition.',
 		icon: Mic,
 		category: 'communication',
 		uses: ['Visor display', 'Speakers', 'Pitch detection', 'Streaming services'],
@@ -683,7 +683,7 @@ export const capabilities: Capability[] = [
 		id: 'dance-partner',
 		name: 'Dance Partner',
 		description:
-			'Dances — badly on purpose or genuinely well — learns trending moves, and mirrors yours through the camera for living-room dance battles.',
+			'Dances badly on purpose or genuinely well, learns trending moves, and mirrors yours through the camera for living-room dance battles.',
 		icon: PartyPopper,
 		category: 'mobility',
 		uses: ['Mobility base', 'Vision', 'Beat detection', 'Motion mirroring'],
@@ -697,7 +697,7 @@ export const capabilities: Capability[] = [
 		id: 'impressions',
 		name: 'Characters & Impressions',
 		description:
-			'Slips into personas on request — pirate storyteller, game-show announcer, opera singer — with matching voice, eyes, and body language.',
+			'Slips into personas on request (pirate storyteller, game-show announcer, opera singer) with matching voice, eyes, and body language.',
 		icon: VenetianMask,
 		category: 'communication',
 		uses: ['Voice synthesis', 'Personality engine', 'Visor display'],
@@ -725,7 +725,7 @@ export const capabilities: Capability[] = [
 		id: 'watch-party',
 		name: 'Watch Party Buddy',
 		description:
-			'Watches the game or the movie with you — reacts in the moment, trash-talks the other team, and pulls up the stats when you argue.',
+			'Watches the game or the movie with you, reacts in the moment, trash-talks the other team, and pulls up the stats when you argue.',
 		icon: Popcorn,
 		category: 'communication',
 		uses: ['Vision', 'Speakers', 'Sports & film data', 'Personality engine'],
@@ -739,7 +739,7 @@ export const capabilities: Capability[] = [
 		id: 'skill-runtime',
 		name: 'Skill Runtime',
 		description:
-			'Runs community-built skills inside strict permission sandboxes — new capabilities without new risks.',
+			'Runs community-built skills inside strict permission sandboxes: new capabilities without new risks.',
 		icon: Blocks,
 		category: 'cognition',
 		uses: ['Skill sandbox', 'Permission engine', 'OTA delivery'],

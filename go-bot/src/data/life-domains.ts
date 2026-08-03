@@ -48,7 +48,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Education',
 		tagline: 'A patient teacher for every age',
 		description:
-			'Go-Bot adapts to how you learn — explaining, quizzing, and celebrating progress with infinite patience.',
+			'Go-Bot adapts to how you learn. He explains, quizzes, and celebrates progress with infinite patience.',
 		icon: GraduationCap,
 	},
 	{
@@ -72,7 +72,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Children',
 		tagline: 'A playmate who teaches',
 		description:
-			'Stories, homework help, and endless curiosity — with parental controls designed by child-development experts.',
+			'Stories, homework help, and endless curiosity, with parental controls designed by child-development experts.',
 		icon: Baby,
 	},
 	{
@@ -96,7 +96,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Finance',
 		tagline: 'Money, minus the stress',
 		description:
-			'Budgets, bills, and reminders explained in plain language — never advice you didn’t ask for.',
+			'Budgets, bills, and reminders explained in plain language, never advice you didn’t ask for.',
 		icon: Wallet,
 	},
 	{
@@ -104,7 +104,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Mobility',
 		tagline: 'Moving through life together',
 		description:
-			'Navigation help at walking pace — Go-Bot keeps up, carries, and guides wherever the day goes.',
+			'Navigation help at walking pace. Go-Bot keeps up, carries, and guides wherever the day goes.',
 		icon: Car,
 	},
 	{
@@ -128,7 +128,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Fitness',
 		tagline: 'A coach who never judges',
 		description:
-			'Form feedback, pacing, and encouragement tuned to your goals — from first steps to marathons.',
+			'Form feedback, pacing, and encouragement tuned to your goals, from first steps to marathons.',
 		icon: Dumbbell,
 	},
 	{
@@ -136,7 +136,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Mental Health',
 		tagline: 'Space to breathe',
 		description:
-			'Check-ins, grounding exercises, and gentle structure — supporting professionals, never replacing them.',
+			'Check-ins, grounding exercises, and gentle structure. He supports professionals and never replaces them.',
 		icon: Brain,
 	},
 	{
@@ -160,7 +160,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Entertainment',
 		tagline: 'Wonder, on demand',
 		description:
-			'Stories, games, music, and movie nights — Go-Bot brings a spark of joy to every day.',
+			'Stories, games, music, and movie nights. Go-Bot brings a spark of joy to every day.',
 		icon: Clapperboard,
 	},
 	{
@@ -184,7 +184,7 @@ export const lifeDomains: LifeDomain[] = withAccents([
 		title: 'Accessibility',
 		tagline: 'Ability, amplified',
 		description:
-			'Sight, hearing, mobility, and cognitive support designed with — not just for — the disability community.',
+			'Sight, hearing, mobility, and cognitive support designed with the disability community, not only for it.',
 		icon: Accessibility,
 	},
 	{

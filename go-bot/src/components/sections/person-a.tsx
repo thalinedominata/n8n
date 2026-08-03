@@ -23,7 +23,7 @@ export function PersonA() {
 					<p className="text-overline text-gobot-500">Person-A</p>
 					<h2 className="mt-3 text-headline font-semibold">Celebrity Go-Bots.</h2>
 					<p className="mt-4 text-body-lg text-ink-inverse/70">
-						Go-Bot doesn&rsquo;t just live in homes — he lives in culture. Person-A
+						Go-Bot lives in culture as much as in homes. Person-A
 						restyles the real prototype in the signature look of the icons who
 						shape it, one feature at a time.
 					</p>
