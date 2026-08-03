@@ -26,6 +26,15 @@ with a vector version in `src/components/ui/logo.tsx`.
 - **Proportions are canon.** `src/components/gobot/go-bot.constants.ts`
   encodes the prototype's proportions on a 200×250 canvas. Any new asset
   must map onto that canvas — never stretch or re-proportion Go-Bot.
+- **The bot never changes in generated imagery.** Design, proportions,
+  head size, colors, face — all locked to the prototype renders unless a
+  change is explicitly requested. He is always backpack-sized and always
+  has his backpack straps.
+- **Generate fresh, don't stack edits.** Chained image edits degrade the
+  bot (heads warp, proportions drift). When a lifestyle scene needs a
+  revision, regenerate it in one pass from the prototype reference with
+  every requirement baked into the prompt, and verify the bot against the
+  front/back renders before publishing.
 - **Personality is canon.** Warm, curious, optimistic. Idle behavior timing
   lives in the same constants file and applies to every representation
   (SVG, 3D, video).
