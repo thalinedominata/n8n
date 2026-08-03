@@ -8,8 +8,6 @@ export const mainNavigation: NavItem[] = [
 	{ label: 'Person-A', href: '/person-a' },
 	{ label: 'Robo-Swag', href: '/robo-swag' },
 	{ label: 'Industries', href: '#industries' },
-	{ label: 'AI Demo', href: '#ai-demo' },
-	{ label: 'Roadmap', href: '#roadmap' },
 ];
 
 export const footerNavigation: Array<{ heading: string; items: NavItem[] }> = [
@@ -18,6 +16,7 @@ export const footerNavigation: Array<{ heading: string; items: NavItem[] }> = [
 		items: [
 			{ label: 'Hardware', href: '#hardware' },
 			{ label: 'Platform', href: '#architecture' },
+			{ label: 'AI Demo', href: '#ai-demo' },
 			{ label: 'Roadmap', href: '#roadmap' },
 		],
 	},

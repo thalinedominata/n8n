@@ -49,6 +49,7 @@ export function FeatureCard({ icon: Icon, title, description, image, className }
 	}
 
 	return (
+		<Tilt className="h-full">
 		<Card
 			variant="outlined"
 			padding="lg"
@@ -58,5 +59,6 @@ export function FeatureCard({ icon: Icon, title, description, image, className }
 			<h3 className={cn('text-title font-semibold', Icon && 'mt-4')}>{title}</h3>
 			<p className="mt-2 text-caption text-ink-secondary">{description}</p>
 		</Card>
+		</Tilt>
 	);
 }

@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useReducedMotion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 export interface GoBotFigureProps {
@@ -23,6 +26,7 @@ const stills = {
  * remains only as a loading fallback / explicitly-requested illustration.
  */
 export function GoBotFigure({ media, className, bare = false, priority = false }: GoBotFigureProps) {
+	const reduceMotion = useReducedMotion();
 	const chrome = bare
 		? ''
 		: 'overflow-hidden rounded-2xl border border-border-subtle bg-surface-sunken shadow-e3';
@@ -30,10 +34,11 @@ export function GoBotFigure({ media, className, bare = false, priority = false }
 	if (media === 'film') {
 		return (
 			<div className={cn(chrome, className)}>
+				{/* Honors prefers-reduced-motion: the poster frame holds instead of looping */}
 				<video
 					src="/assets/video/go-bot-wave.mp4"
 					poster="/assets/video/go-bot-wave-poster.jpg"
-					autoPlay
+					autoPlay={!reduceMotion}
 					muted
 					loop
 					playsInline

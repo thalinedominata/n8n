@@ -47,8 +47,8 @@
 
 	/* ---------- Typography ---------- */
 	--font-sans:
-		'Monoglyphic', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI',
-		Roboto, 'Helvetica Neue', Arial, sans-serif;
+		'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
 	--font-mono: 'Monoglyphic', 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
 
 	--text-display-xl: 4.5rem;
@@ -133,6 +133,17 @@ body {
 	font-family: var(--font-sans);
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+}
+
+/* Headings and technical labels keep the Monoglyphic display face;
+   paragraphs stay on the system sans stack for readability. */
+h1,
+h2,
+h3,
+h4,
+.text-overline,
+kbd {
+	font-family: 'Monoglyphic', var(--font-sans);
 }
 
 ::selection {

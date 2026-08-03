@@ -19,7 +19,7 @@ export function Problem() {
 			<Container>
 				<SectionHeading
 					eyebrow="Why Go-Bot"
-					title="Technology asks for your attention. It should offer you its care."
+					title="Technology should care back."
 					description="Screens interrupt. Apps demand. Go-Bot flips the relationship. Life gets lighter."
 				/>
 

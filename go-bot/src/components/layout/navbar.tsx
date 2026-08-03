@@ -81,7 +81,7 @@ export function Navbar() {
 						<Link
 							key={item.href}
 							href={item.href.startsWith('#') ? `/${item.href}` : item.href}
-							className="rounded-pill px-3.5 py-2 text-caption font-medium text-ink-inverse/75 transition-colors duration-(--duration-fast) hover:bg-ink-inverse/10 hover:text-ink-inverse"
+							className="whitespace-nowrap rounded-pill px-3.5 py-2 text-caption font-medium text-ink-inverse/75 transition-colors duration-(--duration-fast) hover:bg-ink-inverse/10 hover:text-ink-inverse"
 						>
 							{item.label}
 						</Link>

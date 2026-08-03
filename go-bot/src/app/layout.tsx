@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-	themeColor: '#ffffff',
+	themeColor: '#0a0a0a',
 	width: 'device-width',
 	initialScale: 1,
 };
@@ -44,6 +44,15 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 	return (
 		<html lang="en">
+			<head>
+				<link
+					rel="preload"
+					href="/fonts/monoglyphic-vf.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
+			</head>
 			<body>
 				<a
 					href="#main-content"

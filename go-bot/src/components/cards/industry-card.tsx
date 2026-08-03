@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Card, StatValue } from '@/components/ui';
+import { Tilt } from '@/components/motion/tilt';
 import type { Industry } from '@/types';
 import { cn } from '@/lib/utils';
 
@@ -16,6 +17,7 @@ export function IndustryCard({ industry, className }: IndustryCardProps) {
 	const headline = industry.stats[0];
 	return (
 		<Link href={`/industries/${industry.id}`} className={cn('group block h-full', className)}>
+			<Tilt className="h-full">
 			<Card
 				variant="outlined"
 				className="h-full bg-surface transition-[border-color,box-shadow] duration-(--duration-base) group-hover:border-gobot-300 group-hover:shadow-e2"
@@ -37,6 +39,7 @@ export function IndustryCard({ industry, className }: IndustryCardProps) {
 				</h3>
 				<p className="mt-2 text-caption text-ink-secondary">{industry.description}</p>
 			</Card>
+			</Tilt>
 		</Link>
 	);
 }

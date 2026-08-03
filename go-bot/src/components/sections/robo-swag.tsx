@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/reveal';
+import { Tilt } from '@/components/motion/tilt';
 import { swagLines, swagProof } from '@/data/robo-swag';
 
 /**
@@ -69,15 +70,17 @@ export function RoboSwag() {
 				<RevealGroup className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
 					{swagProof.map((image) => (
 						<RevealItem key={image.src}>
-							<div className="aspect-[3/4] overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3">
-								<Image
-									src={image.src}
-									width={image.width}
-									height={image.height}
-									alt={image.alt}
-									className="h-full w-full object-cover"
-								/>
-							</div>
+							<Tilt className="h-full">
+								<div className="aspect-[3/4] overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3">
+									<Image
+										src={image.src}
+										width={image.width}
+										height={image.height}
+										alt={image.alt}
+										className="h-full w-full object-cover"
+									/>
+								</div>
+							</Tilt>
 						</RevealItem>
 					))}
 				</RevealGroup>
