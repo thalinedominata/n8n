@@ -157,6 +157,12 @@ export const capabilities: Capability[] = [
 		confidence: 96,
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/natural-conversation.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'A laughing Emirati woman shares Arabic tea in a majlis with a backpack-sized Go-Bot sitting across from her, happy eyes glowing mid-conversation',
+		},
 	},
 	{
 		id: 'dj-mode',
