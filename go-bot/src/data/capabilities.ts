@@ -179,7 +179,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: '/assets/gobot/lifestyle/dj-mode.jpg',
+			src: '/assets/gobot/lifestyle/dj-mode-pool.jpg',
 			width: 1264,
 			height: 848,
 			alt: 'A Dubai villa pool party at sunset: families swim under a shade sail, two men grill, women relax with drinks, and a backpack-sized Go-Bot DJs from the poolside table with an orange equalizer on his visor',
