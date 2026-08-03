@@ -69,6 +69,12 @@ export const capabilities: Capability[] = [
 		confidence: 90,
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/personal-assistant.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'A smiling Emirati businessman with his morning coffee at a laptop while a backpack-sized Go-Bot on the desk shows his daily agenda on its visor',
+		},
 	},
 	{
 		id: 'detect-falls',
@@ -619,6 +625,12 @@ export const capabilities: Capability[] = [
 		confidence: 88,
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/personal-creator.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'A backpack-sized Go-Bot photographs a laughing Emirati couple with his built-in visor camera on a sunset marina promenade',
+		},
 	},
 	{
 		id: 'streamer-sidekick',
@@ -634,6 +646,12 @@ export const capabilities: Capability[] = [
 		confidence: 86,
 		hardware: ['gen-2'],
 		featured: true,
+		image: {
+			src: '/assets/gobot/lifestyle/streamer-sidekick.jpg',
+			width: 1264,
+			height: 848,
+			alt: 'A streamer locked into his game while a backpack-sized Go-Bot on the desk celebrates with 1st Place and K/D Ratio 3.7 on his visor',
+		},
 	},
 	{
 		id: 'karaoke-host',
