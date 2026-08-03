@@ -39,7 +39,7 @@ export function SectionHeading({
 			<motion.div variants={fadeRise}>
 				<Badge>{eyebrow}</Badge>
 			</motion.div>
-			<motion.h2 variants={fadeRise} className="text-headline font-semibold text-balance">
+			<motion.h2 variants={fadeRise} className="text-display font-bold tracking-tight text-balance">
 				{title}
 			</motion.h2>
 			{description ? (

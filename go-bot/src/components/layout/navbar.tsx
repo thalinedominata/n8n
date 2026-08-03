@@ -71,8 +71,8 @@ export function Navbar() {
 					<span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gobot-500 text-white">
 						<Logo size={16} color="#ffffff" />
 					</span>
-					<span className="whitespace-nowrap font-wordmark text-title font-semibold tracking-tight">
-						{siteConfig.name.toUpperCase()}
+					<span className="whitespace-nowrap text-title font-semibold tracking-tight">
+						{siteConfig.name}
 					</span>
 				</Link>
 

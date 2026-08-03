@@ -30,8 +30,10 @@ export const lifeDomainDetails: Record<string, LifeDomainDetails> = {
 	},
 	education: {
 		overview:
-			'Every learner gets the tutor they deserve: one who explains a concept five different ways, never sighs, and remembers exactly where you got stuck last Tuesday.',
+			'Every learner gets the tutor they deserve: one who explains a concept five different ways, never sighs, and remembers exactly where you got stuck last Tuesday. ' +
+			'Behind him is Engage Academy, the adaptive AI learning platform that designs a custom journey for every student and powers Bethe1 Academy, Engage’s flagship AI school.',
 		features: [
+			{ title: 'Engage Academy inside', description: 'Custom learning journeys from Engage’s adaptive platform, K-12 to enterprise.' },
 			{ title: 'Adaptive explanations', description: 'Concepts reshaped to the learner\'s level, language, and pace.' },
 			{ title: 'Patient practice', description: 'Quizzes, drills, and spaced repetition with genuine encouragement.' },
 			{ title: 'Homework companion', description: 'Guides toward answers without giving them away.' },

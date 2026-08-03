@@ -6,6 +6,7 @@ import {
 	Problem,
 	Architecture,
 	LifeDomains,
+	EngageAcademy,
 	HardwareExplorer,
 	HardwareStory,
 	PrototypeShowcase,
@@ -28,6 +29,7 @@ export default function HomePage() {
 				/>
 				<Architecture />
 				<LifeDomains />
+				<EngageAcademy />
 				<HardwareExplorer />
 				<HardwareStory />
 				<PrototypeShowcase />

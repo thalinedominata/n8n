@@ -20,7 +20,7 @@ export function Problem() {
 				<SectionHeading
 					eyebrow="Why Go-Bot"
 					title="Technology asks for your attention. It should offer you its care."
-					description="Screens interrupt. Apps demand. Devices wait to be operated. Go-Bot flips the relationship: a companion that understands your world and acts in it, so life gets lighter instead of busier."
+					description="Screens interrupt. Apps demand. Go-Bot flips the relationship. Life gets lighter."
 				/>
 
 				<RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

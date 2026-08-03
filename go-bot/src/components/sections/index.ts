@@ -2,6 +2,7 @@ export { Hero } from './hero';
 export { Problem } from './problem';
 export { Architecture } from './architecture';
 export { LifeDomains } from './life-domains';
+export { EngageAcademy } from './engage-academy';
 export { HardwareExplorer } from './hardware-explorer';
 export { HardwareStory } from './hardware-story';
 export { PrototypeShowcase } from './prototype-showcase';

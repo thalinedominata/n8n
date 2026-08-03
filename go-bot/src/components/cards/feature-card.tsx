@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { LucideIcon } from 'lucide-react';
 import { Card } from '@/components/ui';
+import { Tilt } from '@/components/motion/tilt';
 import type { PersonaImage } from '@/types';
 import { cn } from '@/lib/utils';
 
@@ -17,6 +18,7 @@ export interface FeatureCardProps {
 export function FeatureCard({ icon: Icon, title, description, image, className }: FeatureCardProps) {
 	if (image) {
 		return (
+			<Tilt className="h-full">
 			<Card
 				variant="outlined"
 				padding="none"
@@ -42,6 +44,7 @@ export function FeatureCard({ icon: Icon, title, description, image, className }
 					<p className="mt-2 text-caption text-ink-secondary">{description}</p>
 				</div>
 			</Card>
+			</Tilt>
 		);
 	}
 

@@ -9,19 +9,6 @@
 	font-display: swap;
 }
 
-/* Brand wordmark face — used only for the GO-BOT name in the top bar */
-@font-face {
-	font-family: 'Mawlid';
-	src: url('/fonts/mawlid.woff2') format('woff2');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-.font-wordmark {
-	font-family: 'Mawlid', var(--font-sans, sans-serif);
-}
-
 /* ============================================================
    Go-Bot Design System — Tokens
    White-first · Black typography · Go-Bot orange accents

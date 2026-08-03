@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { SmoothScrollProvider } from '@/components/motion/smooth-scroll-provider';
-import { ClickSound, CommandPalette } from '@/components/ui';
+import { CommandPalette } from '@/components/ui';
 import { searchRegistry } from '@/data/search';
 import { siteConfig } from '@/config/site';
 import './globals.css';
@@ -53,7 +53,6 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 				</a>
 				<SmoothScrollProvider>{children}</SmoothScrollProvider>
 				<CommandPalette items={searchRegistry} />
-				<ClickSound />
 			</body>
 		</html>
 	);

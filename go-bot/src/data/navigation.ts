@@ -26,6 +26,7 @@ export const footerNavigation: Array<{ heading: string; items: NavItem[] }> = [
 		items: [
 			{ label: 'Life Domains', href: '#life-domains' },
 			{ label: 'Capabilities', href: '/capabilities' },
+			{ label: 'Engage Academy', href: '#academy' },
 			{ label: 'Robo-Swag', href: '/robo-swag' },
 			{ label: 'Industries', href: '#industries' },
 		],

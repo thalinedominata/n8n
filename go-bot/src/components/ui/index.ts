@@ -21,4 +21,3 @@ export {
 	OPEN_COMMAND_PALETTE_EVENT,
 	type CommandPaletteProps,
 } from './command-palette';
-export { ClickSound } from './click-sound';
