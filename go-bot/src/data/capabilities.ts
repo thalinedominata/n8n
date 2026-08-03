@@ -182,7 +182,7 @@ export const capabilities: Capability[] = [
 			src: '/assets/gobot/lifestyle/dj-mode.jpg',
 			width: 1264,
 			height: 848,
-			alt: 'A laughing woman in a maroon lounge set and floral hair scarf cleans a bathroom while a small Go-Bot in DJ mode pumps an orange equalizer across his visor',
+			alt: 'A Dubai villa pool party at sunset — families swim under a shade sail, two men grill, women relax with drinks, and a backpack-sized Go-Bot DJs from the poolside table with an orange equalizer on his visor',
 		},
 	},
 	{
