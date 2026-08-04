@@ -99,7 +99,7 @@ export function CapabilityExplorer() {
 			</div>
 			{results.length === 0 ? (
 				<p className="py-16 text-center text-body text-ink-secondary">
-					Go-Bot searched everywhere and nothing matches yet. He&apos;s taking notes for Version 2.
+					Go-Bot searched everywhere and nothing matches yet. He&apos;s taking notes.
 				</p>
 			) : null}
 

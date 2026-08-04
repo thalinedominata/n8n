@@ -60,7 +60,6 @@ export interface Industry {
 /** A phase on the public product roadmap. */
 export interface RoadmapPhase {
 	id: string;
-	version: string;
 	title: string;
 	period: string;
 	status: 'shipped' | 'active' | 'planned';

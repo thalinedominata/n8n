@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: DomainPageProps): Promise<Met
 /**
  * Life-domain experience. The hero renders for every domain; the rich body
  * (DomainDetails) lights up for domains with database details, and others
- * show the Version 2 placeholder note.
+ * show the coming-soon placeholder note.
  */
 export default async function DomainPage({ params }: DomainPageProps) {
 	const { slug } = await params;
@@ -67,7 +67,7 @@ export default async function DomainPage({ params }: DomainPageProps) {
 							</p>
 							{!domain.details ? (
 								<p className="mt-10 inline-flex rounded-pill bg-surface-sunken px-5 py-3 text-caption text-ink-secondary">
-									The immersive {domain.title} experience arrives in Version 2.
+									The immersive {domain.title} experience is on the way.
 								</p>
 							) : null}
 						</div>

@@ -58,8 +58,7 @@ export function Roadmap() {
 									</Badge>
 									<span className="text-overline text-ink-tertiary">{phase.period}</span>
 								</div>
-								<h3 className="mt-4 text-title font-semibold">{phase.version}</h3>
-								<p className="text-caption font-medium text-gobot-600">{phase.title}</p>
+								<h3 className="mt-4 text-title font-semibold">{phase.title}</h3>
 								<ul className="mt-4 flex flex-col gap-2">
 									{phase.highlights.map((highlight) => (
 										<li key={highlight} className="flex gap-2 text-caption text-ink-secondary">
