@@ -7,8 +7,7 @@ import { Menu, Search, X } from 'lucide-react';
 import {
 	Button,
 	Container,
-	GoBotMark,
-	GoBotWordmark,
+	GoBotLogo,
 	OPEN_COMMAND_PALETTE_EVENT,
 } from '@/components/ui';
 import { mainNavigation } from '@/data/navigation';
@@ -73,9 +72,8 @@ export function Navbar() {
 			)}
 		>
 			<Container className="flex h-16 items-center justify-between">
-				<Link href="/#hero" className="flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
-					<GoBotMark gradient height={34} />
-					<GoBotWordmark height={13} className="text-ink-inverse" />
+				<Link href="/#hero" className="flex items-center" aria-label={`${siteConfig.name} home`}>
+					<GoBotLogo gradient height={40} className="text-ink-inverse" />
 				</Link>
 
 				<nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
