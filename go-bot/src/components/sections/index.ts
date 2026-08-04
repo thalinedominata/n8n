@@ -1,5 +1,6 @@
 export { Hero } from './hero';
 export { Problem } from './problem';
+export { PoweredByBeing } from './powered-by-being';
 export { Architecture } from './architecture';
 export { LifeDomains } from './life-domains';
 export { EngageAcademy } from './engage-academy';
