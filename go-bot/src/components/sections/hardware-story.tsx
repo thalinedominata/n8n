@@ -13,12 +13,12 @@ const modulesById = new Map(hardwareModules.map((module) => [module.id, module])
 
 /**
  * The guided tour — a button-driven walk through Go-Bot's anatomy.
- * Previous/Next (and the beat rail) advance the beats in `hardwareStory`:
- * the highlight ring glides across the real prototype renders, flipping
- * to the back view for the finale, while a popup card next to the ring
- * narrates the stop. On smaller screens the popup docks right under the
- * controls so the story never lands below the fold. The page itself
- * never hijacks scroll.
+ * Previous/Next (and the beat rail) dock under the section heading and
+ * advance the beats in `hardwareStory`: the highlight ring glides across
+ * the real prototype renders, flipping to the back view for the finale,
+ * while a popup card next to the ring narrates the stop. On smaller
+ * screens the popup docks right under the figure so the story never
+ * lands below the fold. The page itself never hijacks scroll.
  */
 export function HardwareStory() {
 	const [active, setActive] = useState(0);
@@ -68,6 +68,42 @@ export function HardwareStory() {
 					description="Eight stops through what he's made of."
 				/>
 
+				{/* Controls dock right under the heading: previous/next + jump-anywhere beat rail */}
+				<div className="-mt-6 mb-10 flex flex-wrap items-center justify-center gap-3">
+					<div className="flex gap-1.5">
+						<Button
+							variant="outline"
+							size="sm"
+							onClick={() => setActive(Math.max(0, active - 1))}
+							disabled={active === 0}
+							aria-label="Previous stop"
+						>
+							<ChevronLeft className="h-3.5 w-3.5" aria-hidden />
+						</Button>
+						<Button
+							variant="outline"
+							size="sm"
+							onClick={() => setActive(Math.min(last, active + 1))}
+							disabled={active === last}
+							aria-label="Next stop"
+						>
+							<ChevronRight className="h-3.5 w-3.5" aria-hidden />
+						</Button>
+					</div>
+					<div className="flex flex-wrap justify-center gap-1.5">
+						{hardwareStory.map((beat, index) => (
+							<Chip
+								key={beat.moduleId}
+								selected={index === active}
+								onClick={() => setActive(index)}
+								className="px-2.5 py-1"
+							>
+								{String(index + 1).padStart(2, '0')}
+							</Chip>
+						))}
+					</div>
+				</div>
+
 				<Reveal className="relative mx-auto w-full max-w-sm">
 					<div className="relative">
 						{/* The figure: front/back renders stacked, crossfading per beat */}
@@ -112,38 +148,7 @@ export function HardwareStory() {
 						</div>
 					</div>
 
-					{/* Controls live right under the figure: previous/next + jump-anywhere beat rail */}
-					<div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-						<div className="flex gap-2">
-							<Button
-								variant="outline"
-								size="sm"
-								onClick={() => setActive(Math.max(0, active - 1))}
-								disabled={active === 0}
-								aria-label="Previous stop"
-							>
-								<ChevronLeft className="h-4 w-4" aria-hidden />
-							</Button>
-							<Button
-								variant="outline"
-								size="sm"
-								onClick={() => setActive(Math.min(last, active + 1))}
-								disabled={active === last}
-								aria-label="Next stop"
-							>
-								<ChevronRight className="h-4 w-4" aria-hidden />
-							</Button>
-						</div>
-						<div className="flex flex-wrap justify-center gap-2">
-							{hardwareStory.map((beat, index) => (
-								<Chip key={beat.moduleId} selected={index === active} onClick={() => setActive(index)}>
-									{String(index + 1).padStart(2, '0')}
-								</Chip>
-							))}
-						</div>
-					</div>
-
-					{/* Below lg the popup docks here, right under the controls */}
+					{/* Below lg the popup docks here, right under the figure */}
 					<div
 						key={`flow-${active}`}
 						role="status"
