@@ -9,8 +9,7 @@ export const hardwareModules: HardwareModule[] = [
 	{
 		id: 'head',
 		name: 'Head',
-		description:
-			'A rounded graphite shell housing the visor, cameras, and audio array. Impact resistant and unmistakably friendly.',
+		description: 'Rounded graphite shell for the visor, cameras, and audio array. Tough and friendly.',
 		specs: [
 			{ label: 'Shell', value: 'Matte polymer composite' },
 			{ label: 'Articulation', value: '3-axis neck' },
@@ -82,9 +81,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'cpu',
 		name: 'CPU & Neural Engine',
 		description:
-			'On-device neural processing keeps perception private and responses instant, with no round trip required. ' +
-			'It runs BEING by Engage, the premier engine driving every Go-Bot feature — the brain that knows you and everything you do: ' +
-			'scheduling, messaging, travel, even those old notes you forgot about. Your data stays yours.',
+			'On-device AI, instant and private, running BEING by Engage — the brain behind every Go-Bot feature. Your data stays yours.',
 		specs: [
 			{ label: 'Neural engine', value: '48 TOPS on-device' },
 			{ label: 'Memory', value: '32 GB unified' },
