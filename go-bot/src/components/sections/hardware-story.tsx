@@ -66,10 +66,11 @@ export function HardwareStory() {
 					eyebrow="The Guided Tour"
 					title="Walk the anatomy, beat by beat."
 					description="Eight stops through what he's made of."
+					className="mb-5 gap-2"
 				/>
 
 				{/* Controls dock right under the heading: previous/next + jump-anywhere beat rail */}
-				<div className="-mt-9 mb-6 flex flex-wrap items-center justify-center gap-2">
+				<div className="mb-4 flex flex-wrap items-center justify-center gap-2">
 					<div className="flex gap-1.5">
 						<Button
 							variant="outline"
