@@ -18,7 +18,7 @@ export function Hero() {
 	return (
 		<section
 			id="hero"
-			className="relative isolate flex min-h-svh items-center overflow-hidden pb-20 pt-28"
+			className="relative isolate flex min-h-[70svh] items-center overflow-hidden pb-10 pt-28"
 		>
 			{/* Ambient stage: faint dot grid + drifting orange/graphite glows, all under the content */}
 			<div aria-hidden className="pointer-events-none absolute inset-0 -z-10">

@@ -32,10 +32,10 @@ export const architectureLayers: ArchitectureLayer[] = [
 	},
 	{
 		id: 'reasoning-engine',
-		name: 'Reasoning Engine',
+		name: 'BEING Reasoning Engine',
 		description:
-			'On-device intelligence decides what matters and what to do. Private by default, explainable always, warm by design.',
-		technologies: ['48 TOPS on-device', 'Multi-step planning', 'Explainable actions'],
+			'BEING by Engage is the premier engine driving every Go-Bot feature and unlocking every capability. It decides what matters and what to do: private by default, explainable always, warm by design.',
+		technologies: ['BEING by Engage', '48 TOPS on-device', 'Multi-step planning', 'Explainable actions'],
 		icon: Sparkles,
 	},
 	{

@@ -15,7 +15,7 @@ export function Problem() {
 	const featured = capabilities.filter((capability) => capability.featured).slice(0, 7);
 
 	return (
-		<section id="problem" className="bg-surface-warm py-28">
+		<section id="problem" className="bg-surface-warm pb-28 pt-16">
 			<Container>
 				<SectionHeading
 					eyebrow="Why Go-Bot"
