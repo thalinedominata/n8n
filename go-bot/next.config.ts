@@ -2,6 +2,10 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
+	// Person-A merged into Robo-Swag; keep old links working.
+	async redirects() {
+		return [{ source: '/person-a', destination: '/robo-swag', permanent: true }];
+	},
 	images: {
 		formats: ['image/avif', 'image/webp'],
 		remotePatterns: [

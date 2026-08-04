@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useInView } from 'motion/react';
 import { RotateCcw, Sparkles } from 'lucide-react';
 import { Container, SectionHeading, Logo, Chip } from '@/components/ui';
+import { BeingActivations } from './powered-by-being';
 import { GoBotFigure, type GoBotMood } from '@/components/gobot';
 import { aiDemoScenarios } from '@/data/ai-demo';
 import { usePrefersReducedMotion } from '@/hooks';
@@ -177,10 +178,12 @@ export function AiDemo() {
 
 						<div className="flex items-center gap-3 rounded-pill border border-border-subtle bg-surface-sunken px-5 py-3 text-caption text-ink-tertiary">
 							<Sparkles className="h-4 w-4 text-gobot-500" aria-hidden />
-							Live conversation arrives in Version 3
+							Guided scenarios above — the live engine is below
 						</div>
 					</div>
 				</div>
+
+				<BeingActivations />
 			</Container>
 		</section>
 	);

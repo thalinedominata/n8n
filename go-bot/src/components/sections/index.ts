@@ -1,15 +1,14 @@
 export { Hero } from './hero';
 export { Problem } from './problem';
-export { PoweredByBeing } from './powered-by-being';
+export { BeingActivations } from './powered-by-being';
 export { Architecture } from './architecture';
 export { LifeDomains } from './life-domains';
 export { EngageAcademy } from './engage-academy';
 export { HardwareExplorer } from './hardware-explorer';
 export { HardwareStory } from './hardware-story';
 export { PrototypeShowcase } from './prototype-showcase';
-export { PersonA } from './person-a';
-export { PersonATeaser } from './person-a-teaser';
 export { RoboSwag } from './robo-swag';
+export { RoboSwagTeaser } from './robo-swag-teaser';
 export { Industries } from './industries';
 export { AiDemo } from './ai-demo';
 export { Roadmap } from './roadmap';

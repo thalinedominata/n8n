@@ -4,14 +4,13 @@ import { Footer } from '@/components/layout/footer';
 import {
 	Hero,
 	Problem,
-	PoweredByBeing,
 	Architecture,
 	LifeDomains,
 	EngageAcademy,
 	HardwareExplorer,
 	HardwareStory,
 	PrototypeShowcase,
-	PersonATeaser,
+	RoboSwagTeaser,
 	Industries,
 	AiDemo,
 	Roadmap,
@@ -28,14 +27,13 @@ export default function HomePage() {
 				<Marquee
 					items={['He sees', 'He listens', 'He learns', 'He cares', 'Wear him like a backpack']}
 				/>
-				<PoweredByBeing />
 				<Architecture />
 				<LifeDomains />
 				<EngageAcademy />
 				<HardwareExplorer />
 				<HardwareStory />
 				<PrototypeShowcase />
-				<PersonATeaser />
+				<RoboSwagTeaser />
 				<Industries />
 				<AiDemo />
 				<Roadmap />

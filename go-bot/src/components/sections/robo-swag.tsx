@@ -1,15 +1,16 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui';
+import { cn } from '@/lib/utils';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/reveal';
-import { Tilt } from '@/components/motion/tilt';
-import { swagLines, swagProof } from '@/data/robo-swag';
+import { swagFeatures, swagLines } from '@/data/robo-swag';
 
 /**
- * Robo-Swag — the wardrobe program, staged as a dark editorial lookbook
- * to match Person-A. High-fashion and athletic drops from designer
- * collaborations, every one shipping in twin sizes: his and yours.
+ * Robo-Swag — the wardrobe program staged as a dark editorial lookbook.
+ * Designer-collaboration lines up top, then the celebrity wardrobe: the
+ * real prototype restyled in the signature looks of the icons who shape
+ * culture (the former Person-A series, now part of Robo-Swag). Content
+ * renders straight from `src/data/robo-swag.ts`.
  */
 export function RoboSwag() {
 	return (
@@ -58,41 +59,110 @@ export function RoboSwag() {
 					))}
 				</RevealGroup>
 
-				<Reveal className="mt-24 text-center">
-					<p className="text-overline text-ink-inverse/60">Already on the prototype</p>
-					<h3 className="mt-3 text-headline font-semibold">The wardrobe works.</h3>
-					<p className="mx-auto mt-4 max-w-xl text-body-lg text-ink-inverse/70">
-						These fits were styled onto the real Go-Bot for the Person-A series.
-						The drops read exactly as designed, from couture to game day.
+				{/* The celebrity wardrobe — proof the program works on the real prototype */}
+				<Reveal className="mx-auto mt-24 max-w-2xl text-center">
+					<p className="text-overline text-ink-inverse/60">The wardrobe in the wild</p>
+					<h3 className="mt-3 text-headline font-semibold">Celebrity Go-Bots.</h3>
+					<p className="mt-4 text-body-lg text-ink-inverse/70">
+						Go-Bot lives in culture as much as in homes. Each feature restyles the
+						real prototype in the signature look of an icon who shapes it — from
+						couture to game day, the drops read exactly as designed.
 					</p>
 				</Reveal>
 
-				<RevealGroup className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-					{swagProof.map((image) => (
-						<RevealItem key={image.src}>
-							<Tilt className="h-full">
-								<div className="aspect-[3/4] overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3">
-									<Image
-										src={image.src}
-										width={image.width}
-										height={image.height}
-										alt={image.alt}
-										className="h-full w-full object-cover"
-									/>
-								</div>
-							</Tilt>
-						</RevealItem>
-					))}
-				</RevealGroup>
+				{swagFeatures.map((feature, index) => {
+					const multiImage = feature.images.length > 1;
 
-				<Reveal className="mt-10 text-center">
-					<Link
-						href="/person-a"
-						className="inline-flex items-center gap-1.5 text-body font-medium text-gobot-500 transition-colors duration-(--duration-fast) hover:text-gobot-400"
-					>
-						See the full Person-A wardrobe
-						<ArrowRight className="h-4 w-4" aria-hidden />
-					</Link>
+					const textBlock = (
+						<div>
+							<p className="text-overline text-ink-inverse/60">
+								Feature {String(index + 1).padStart(3, '0')} · {feature.name}
+							</p>
+							<h3 className="mt-4 text-display font-bold uppercase leading-none tracking-tight">
+								{feature.title}
+							</h3>
+							<p className="mt-6 max-w-xl text-body-lg text-ink-inverse/70">
+								{feature.description}
+							</p>
+						</div>
+					);
+
+					const fitList = (
+						<ul className="mt-8 space-y-3">
+							{feature.fit.map((line) => (
+								<li key={line} className="flex items-start gap-3 text-body">
+									<span
+										aria-hidden
+										className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gobot-500"
+									/>
+									{line}
+								</li>
+							))}
+						</ul>
+					);
+
+					const imageTiles = feature.images.map((image) => (
+						<div
+							key={image.src}
+							className={cn(
+								'overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3',
+								// Extra-tall portraits (like Iron-Bot) shrink to a centered tile
+								// instead of towering over the column.
+								image.height / image.width > 1.5 && 'mx-auto w-full max-w-sm',
+							)}
+						>
+							<Image
+								src={image.src}
+								width={image.width}
+								height={image.height}
+								alt={image.alt}
+								className="h-full w-full object-cover"
+							/>
+						</div>
+					));
+
+					// Multi-render features go full-bleed: the renders take the
+					// entire container width so each one stays large.
+					if (multiImage) {
+						return (
+							<Reveal key={feature.id} className="mt-20">
+								<article>
+									<div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
+										{textBlock}
+										<div className="lg:self-center">{fitList}</div>
+									</div>
+									<div
+										className={cn(
+											'mt-10 grid gap-4',
+											feature.images.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3',
+										)}
+									>
+										{imageTiles}
+									</div>
+								</article>
+							</Reveal>
+						);
+					}
+
+					return (
+						<Reveal key={feature.id} className="mt-20">
+							<article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+								<div className={cn('grid gap-4', index % 2 === 1 && 'lg:order-last')}>
+									{imageTiles}
+								</div>
+								<div>
+									{textBlock}
+									{fitList}
+								</div>
+							</article>
+						</Reveal>
+					);
+				})}
+
+				<Reveal className="mt-16">
+					<p className="text-center text-overline text-ink-inverse/60">
+						More features docking soon · The celebrity wardrobe is an ENGAGE GLOBAL tribute series
+					</p>
 				</Reveal>
 
 				<Reveal className="mt-24 rounded-2xl border border-ink-secondary/40 bg-ink-inverse/5 p-10 text-center">

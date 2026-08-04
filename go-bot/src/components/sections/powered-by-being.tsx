@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ArrowUpRight, Camera, Mic } from 'lucide-react';
-import { Button, Container, Modal, SectionHeading } from '@/components/ui';
+import { Button, Modal } from '@/components/ui';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/reveal';
 
 const BEING_URL = 'https://beingbyengage.com';
@@ -30,55 +30,58 @@ const beingPillars = [
 type Activation = 'talk' | 'live' | null;
 
 /**
- * GO-BOT, powered by BEING: condensed BEING story plus its two live
- * activations. Each opens the real beingbyengage.com demo in a compact
- * popup iframe (the site sends no frame-blocking headers), anchored to
- * the demo card, with camera/microphone permission delegated so the
+ * The BEING block inside the AI Playground: condensed BEING story plus its
+ * two live activations. Each opens the real beingbyengage.com demo in a
+ * compact popup iframe (the site sends no frame-blocking headers), anchored
+ * to the demo card, with camera/microphone permission delegated so the
  * activations behave exactly as they do on the BEING site.
  */
-export function PoweredByBeing() {
+export function BeingActivations() {
 	const [activation, setActivation] = useState<Activation>(null);
 
 	return (
-		<section id="powered-by-being" className="py-28">
-			<Container>
-				<SectionHeading
-					eyebrow="Powered by BEING"
-					title="Go-Bot, powered by BEING."
-					description="Being — by Engage — is the personal AI compass for soul, mind, body and work. One compass for the whole of you: one app for the day in front of you, and the life you're actually building. That same engine drives every Go-Bot feature and unlocks every capability."
-				/>
+		<div className="mx-auto mt-20 max-w-4xl border-t border-border-subtle pt-14">
+			<Reveal className="text-center">
+				<p className="text-overline text-gobot-600">Powered by BEING</p>
+				<h3 className="mt-3 text-headline font-semibold">Go-Bot, powered by BEING.</h3>
+				<p className="mx-auto mt-4 max-w-2xl text-body-lg text-ink-secondary text-pretty">
+					Being — by Engage — is the personal AI compass for soul, mind, body and work. One
+					compass for the whole of you: one app for the day in front of you, and the life
+					you&apos;re actually building. That same engine drives every Go-Bot feature and
+					unlocks every capability.
+				</p>
+			</Reveal>
 
-				<RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-					{beingPillars.map((pillar) => (
-						<RevealItem key={pillar.name}>
-							<div className="h-full rounded-2xl border border-border-strong bg-surface p-6">
-								<h3 className="text-body-lg font-semibold">{pillar.name}</h3>
-								<p className="mt-2 text-caption text-ink-secondary">{pillar.blurb}</p>
-							</div>
-						</RevealItem>
-					))}
-				</RevealGroup>
+			<RevealGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				{beingPillars.map((pillar) => (
+					<RevealItem key={pillar.name}>
+						<div className="h-full rounded-2xl border border-border-subtle bg-surface p-5">
+							<h4 className="text-body font-semibold">{pillar.name}</h4>
+							<p className="mt-2 text-caption text-ink-secondary">{pillar.blurb}</p>
+						</div>
+					</RevealItem>
+				))}
+			</RevealGroup>
 
-				<Reveal className="mt-12 flex flex-wrap items-center justify-center gap-4">
-					<Button onClick={() => setActivation('talk')}>
-						<Mic className="h-4 w-4" aria-hidden />
-						Talk to Be
-					</Button>
-					<Button onClick={() => setActivation('live')}>
-						<Camera className="h-4 w-4" aria-hidden />
-						Show Be Live
-					</Button>
-					<a
-						href={BEING_URL}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="inline-flex items-center gap-1.5 text-body font-medium text-gobot-700 transition-colors duration-(--duration-fast) hover:text-gobot-800"
-					>
-						beingbyengage.com
-						<ArrowUpRight className="h-4 w-4" aria-hidden />
-					</a>
-				</Reveal>
-			</Container>
+			<Reveal className="mt-10 flex flex-wrap items-center justify-center gap-4">
+				<Button onClick={() => setActivation('talk')}>
+					<Mic className="h-4 w-4" aria-hidden />
+					Talk to Be
+				</Button>
+				<Button onClick={() => setActivation('live')}>
+					<Camera className="h-4 w-4" aria-hidden />
+					Show Be Live
+				</Button>
+				<a
+					href={BEING_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="inline-flex items-center gap-1.5 text-body font-medium text-gobot-700 transition-colors duration-(--duration-fast) hover:text-gobot-800"
+				>
+					beingbyengage.com
+					<ArrowUpRight className="h-4 w-4" aria-hidden />
+				</a>
+			</Reveal>
 
 			<Modal
 				open={activation === 'talk'}
@@ -117,6 +120,6 @@ export function PoweredByBeing() {
 					/>
 				) : null}
 			</Modal>
-		</section>
+		</div>
 	);
 }

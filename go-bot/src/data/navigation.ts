@@ -5,7 +5,6 @@ export const mainNavigation: NavItem[] = [
 	{ label: 'Life Domains', href: '#life-domains' },
 	{ label: 'Capabilities', href: '/capabilities' },
 	{ label: 'Hardware', href: '#hardware' },
-	{ label: 'Person-A', href: '/person-a' },
 	{ label: 'Robo-Swag', href: '/robo-swag' },
 	{ label: 'Industries', href: '#industries' },
 ];
