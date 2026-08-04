@@ -66,7 +66,7 @@ export function HardwareStory() {
 					eyebrow="The Guided Tour"
 					title="Walk the anatomy, beat by beat."
 					description="Eight stops through what he's made of."
-					className="mb-5 gap-2"
+					className="mb-3 gap-2"
 				/>
 
 				{/* Controls dock right under the heading: previous/next + jump-anywhere beat rail */}
