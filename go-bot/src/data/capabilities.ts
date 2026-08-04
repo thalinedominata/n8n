@@ -659,7 +659,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_161213_4bbc1ac9-5850-4c1b-850e-fa7957300f4c.png',
+			src: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/883d59ac-1a34-4c07-9085-f6be313d3170.png',
 			width: 1264,
 			height: 848,
 			alt: 'A streamer locked into his game while a backpack-sized Go-Bot on the desk celebrates with 1st Place and K/D Ratio 3.7 on his visor',
