@@ -9,7 +9,6 @@ import {
 	EngageAcademy,
 	HardwareExplorer,
 	HardwareStory,
-	PrototypeShowcase,
 	RoboSwagTeaser,
 	Industries,
 	AiDemo,
@@ -32,7 +31,7 @@ export default function HomePage() {
 				<EngageAcademy />
 				<HardwareExplorer />
 				<HardwareStory />
-				<PrototypeShowcase />
+				{/* PrototypeShowcase is parked for now — re-add here to restore it. */}
 				<RoboSwagTeaser />
 				<Industries />
 				<AiDemo />
