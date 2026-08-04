@@ -254,7 +254,7 @@ export const swagFeatures: PersonaFeature[] = [
 			'Match ball underfoot, celebration mode permanently on',
 		],
 		images: [{
-			src: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/3f00334a-2d59-44de-a115-4a156687e7bf.png',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001315_a5dc5353-9f09-4950-ab71-c4b5854ea00c.png',
 			width: 1200,
 			height: 896,
 			alt: 'Speed-BOT-7: Go-Bot with wild black freeform twists in a red number 7 soccer kit with the orange mango crest and green shorts, one boot on a soccer ball, arms spread wide',
