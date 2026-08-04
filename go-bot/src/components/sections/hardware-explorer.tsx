@@ -50,7 +50,7 @@ export function HardwareExplorer() {
 	};
 
 	return (
-		<section id="hardware" className="py-28">
+		<section id="hardware" className="py-14">
 			<Container>
 				<SectionHeading
 					eyebrow="Hardware Explorer"

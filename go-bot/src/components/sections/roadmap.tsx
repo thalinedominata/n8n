@@ -14,7 +14,7 @@ const statusLabel: Record<string, string> = {
 /** Timeline of the Go-Bot platform roadmap. */
 export function Roadmap() {
 	return (
-		<section id="roadmap" className="py-28">
+		<section id="roadmap" className="py-14">
 			<Container>
 				<SectionHeading
 					eyebrow="Roadmap"

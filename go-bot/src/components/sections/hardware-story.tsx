@@ -68,7 +68,7 @@ export function HardwareStory() {
 	);
 
 	return (
-		<section id="hardware-story" className="overflow-hidden bg-surface py-28">
+		<section id="hardware-story" className="overflow-hidden bg-surface py-14">
 			<Container>
 				<SectionHeading
 					eyebrow="The Guided Tour"

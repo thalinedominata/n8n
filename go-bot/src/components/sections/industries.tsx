@@ -8,7 +8,7 @@ import { industries } from '@/data/industries';
 /** Industry verticals — each card opens the industry-transformed experience. */
 export function Industries() {
 	return (
-		<section id="industries" className="py-28">
+		<section id="industries" className="py-14">
 			<Container>
 				<SectionHeading
 					eyebrow="Industries"

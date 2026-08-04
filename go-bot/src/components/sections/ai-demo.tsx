@@ -75,7 +75,7 @@ export function AiDemo() {
 	}, [inView, reducedMotion, visibleCount, scenario, conversation, finished]);
 
 	return (
-		<section id="ai-demo" className="bg-surface-warm py-28">
+		<section id="ai-demo" className="bg-surface-warm py-14">
 			<Container>
 				<SectionHeading
 					eyebrow="AI Playground"

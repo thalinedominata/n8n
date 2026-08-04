@@ -17,7 +17,7 @@ export function Architecture() {
 	const [openId, setOpenId] = useState<string | null>(architectureLayers[0]?.id ?? null);
 
 	return (
-		<section id="architecture" className="py-28">
+		<section id="architecture" className="py-14">
 			<Container>
 				<SectionHeading
 					eyebrow="Platform"

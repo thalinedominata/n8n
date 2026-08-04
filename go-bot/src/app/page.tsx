@@ -1,5 +1,5 @@
 import { Navbar } from '@/components/layout/navbar';
-import { Marquee } from '@/components/ui';
+import { Marquee, SectionDivider } from '@/components/ui';
 import { Footer } from '@/components/layout/footer';
 import {
 	Hero,
@@ -27,14 +27,18 @@ export default function HomePage() {
 					items={['He sees', 'He listens', 'He learns', 'He cares', 'Wear him like a backpack']}
 				/>
 				<Architecture />
+				<SectionDivider />
 				<LifeDomains />
 				<EngageAcademy />
 				<HardwareExplorer />
+				<SectionDivider />
 				<HardwareStory />
 				{/* PrototypeShowcase is parked for now — re-add here to restore it. */}
 				<RoboSwagTeaser />
 				<Industries />
+				<SectionDivider />
 				<AiDemo />
+				<SectionDivider />
 				<Roadmap />
 			</main>
 			<Footer />

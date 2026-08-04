@@ -28,7 +28,7 @@ const PILLARS = [
  */
 export function EngageAcademy() {
 	return (
-		<section id="academy" className="relative isolate overflow-hidden bg-ink py-28 text-ink-inverse">
+		<section id="academy" className="relative isolate overflow-hidden bg-ink py-16 text-ink-inverse">
 			<div aria-hidden className="pointer-events-none absolute inset-x-0 top-[-6rem] -z-10 flex justify-center">
 				<div className="animate-aura h-80 w-[42rem] rounded-full bg-gobot-500/15 blur-3xl" />
 			</div>

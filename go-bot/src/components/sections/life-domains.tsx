@@ -20,7 +20,7 @@ export function LifeDomains() {
 	const selected = lifeDomains.find((domain) => domain.id === selectedId) ?? null;
 
 	return (
-		<section id="life-domains" className="bg-surface-warm py-28">
+		<section id="life-domains" className="bg-surface-warm py-14">
 			<Container>
 				<SectionHeading
 					eyebrow="Life Domains"

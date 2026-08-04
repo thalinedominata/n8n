@@ -20,7 +20,7 @@ export function RoboSwagTeaser() {
 		.filter((entry) => entry.image !== undefined);
 
 	return (
-		<section id="robo-swag-teaser" className="relative isolate overflow-hidden bg-ink py-24 text-ink-inverse">
+		<section id="robo-swag-teaser" className="relative isolate overflow-hidden bg-ink py-16 text-ink-inverse">
 			<div aria-hidden className="pointer-events-none absolute inset-x-0 top-[-8rem] -z-10 flex justify-center">
 				<div className="animate-aura h-72 w-[40rem] rounded-full bg-gobot-500/15 blur-3xl" />
 			</div>
