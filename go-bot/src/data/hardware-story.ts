@@ -76,6 +76,5 @@ export const hardwareStory: HardwareStoryStep[] = [
 		view: 'back',
 		x: 42,
 		y: 42,
-		line: 'And the straps are not his. They are yours. Wear him.',
 	},
 ];
