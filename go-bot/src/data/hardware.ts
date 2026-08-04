@@ -58,7 +58,7 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'chest',
 		name: 'Chest & Emblem',
 		description:
-			'The triple-bar emblem is Go-Bot\'s heartbeat. It breathes with him, pulses when he thinks, and signals state at a glance.',
+			'The mango emblem is Go-Bot\'s heartbeat. It breathes with him, pulses when he thinks, and signals state at a glance.',
 		specs: [
 			{ label: 'Element', value: 'Edge-lit light guide' },
 			{ label: 'States', value: 'Idle · Listening · Thinking · Alert' },

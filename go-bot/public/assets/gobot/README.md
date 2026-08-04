@@ -39,3 +39,17 @@ with a vector version in `src/components/ui/logo.tsx`.
   lives in the same constants file and applies to every representation
   (SVG, 3D, video).
 - Optimize new SVGs with SVGO and compress new film to faststart MP4 before committing.
+
+## MANGOBOT chest-badge rebranding (2026-08)
+
+GO-BOT is a MANGOBOT product, and every render that showed the ENGAGE
+triple-bar emblem on the robot (chest, shoulders, helmets, jerseys) has been
+re-issued with the MANGOBOT mango mark instead. This box's network policy
+blocks pulling the finished renders into the repo, so the site references
+them directly from the ENGAGE media CDN (`d8j0ntlcm91z4.cloudfront.net` —
+see the URLs in `src/data/*.ts` and section components; hosts are allowed in
+`next.config.ts`). The JPGs in this folder are the pre-rebrand originals,
+kept as fallbacks; replace them with the CDN files when working from a
+network that can reach it. `lifestyle/kids-mode.jpg` is unreferenced. Still
+carrying the old emblem: the launch films (`launch-film*.mp4`,
+`go-bot-wave.mp4`) and the 3D model textures.

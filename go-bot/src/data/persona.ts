@@ -112,7 +112,7 @@ export const personaFeatures: PersonaFeature[] = [
 			'Signature orange sneakers, hardwood-ready',
 		],
 		images: [{
-			src: '/assets/gobot/persona/lebron-the-king.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001328_69beb344-33d2-497a-b7cc-85b21aead967.png',
 			width: 1200,
 			height: 896,
 			alt: 'The King: Go-Bot styled after LeBron James in a blue KING-BOT 23 basketball jersey, white arm sleeve, holding a basketball',
@@ -130,7 +130,7 @@ export const personaFeatures: PersonaFeature[] = [
 		fit: [
 			'Pristine white shell: the home colorway',
 			'Navy BRADY-BOT 12 jersey with silver shoulder yokes and red piping',
-			'Orange triple-bar mark on the helmet and both sleeves',
+			'Orange mango mark on the helmet and both sleeves',
 			'Black long-sleeve base layer under the pads',
 			'Silver game pants with a white towel tucked at the waist',
 			'White padded quarterback glove; silver helmet, red facemask',
@@ -138,16 +138,16 @@ export const personaFeatures: PersonaFeature[] = [
 		],
 		images: [
 			{
-				src: '/assets/gobot/persona/brady-bot-sideline.jpg',
+				src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001320_33a80520-7f29-4272-a7c9-0bb22a3ffb0f.png',
 				width: 1200,
 				height: 896,
-				alt: 'Brady Bot: a white-shelled Go-Bot in a navy BRADY-BOT 12 jersey with orange triple-bar marks, holding a silver helmet under one arm and a football in the other hand',
+				alt: 'Brady Bot: a white-shelled Go-Bot in a navy BRADY-BOT 12 jersey with orange mango marks, holding a silver helmet under one arm and a football in the other hand',
 			},
 			{
-				src: '/assets/gobot/persona/brady-bot-gameday.jpg',
+				src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001324_7b8413cc-0ebb-49f3-af93-8188a7eab00b.png',
 				width: 1200,
 				height: 896,
-				alt: 'Brady Bot in full gear: a white-shelled Go-Bot in the navy BRADY-BOT 12 jersey, silver helmet with the triple-bar mark and red facemask, cocking a football back to throw',
+				alt: 'Brady Bot in full gear: a white-shelled Go-Bot in the navy BRADY-BOT 12 jersey, silver helmet with the mango mark and red facemask, cocking a football back to throw',
 			},
 		],
 	},
@@ -158,21 +158,21 @@ export const personaFeatures: PersonaFeature[] = [
 		description:
 			'A superhero homage with a Go-Bot twist: crimson-and-gold armor ' +
 			'smoothed into his own rounded shell language, his own black visor under ' +
-			'a red-and-gold helmet, and his triple-bar heartbeat burning white-hot ' +
+			'a red-and-gold helmet, and his mango heartbeat burning white-hot ' +
 			'as the power core. Shown as a concept for potential character-licensing ' +
 			'partnerships.',
 		fit: [
 			'Rounded matte-crimson shell with polished gold accent bands: his silhouette, not a movie suit',
 			'Red-and-gold helmet around the black visor, eyes locked in hero mode',
-			'Triple-bar emblem glowing white as the chest core',
+			'Mango emblem glowing white as the chest core',
 			'Armored gauntlets, repulsor charged in the raised palm',
 			'Signature orange boots, because heroes land on their feet',
 		],
 		images: [{
-			src: '/assets/gobot/persona/iron-bot.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_002426_480b02d5-c719-4e9c-bef1-829555db0220.png',
 			width: 2294,
 			height: 4096,
-			alt: 'Iron-Bot: Go-Bot in rounded crimson-and-gold armor with a red-and-gold helmet, fierce glowing eyes on a black visor, a glowing triple-bar chest core, and a glowing repulsor in his raised palm',
+			alt: 'Iron-Bot: Go-Bot in rounded crimson-and-gold armor with a red-and-gold helmet, fierce glowing eyes on a black visor, a glowing mango chest core, and a glowing repulsor in his raised palm',
 		}],
 	},
 	{
@@ -185,16 +185,16 @@ export const personaFeatures: PersonaFeature[] = [
 			'stadium. Shown as a concept for creator partnerships.',
 		fit: [
 			'Wild crown of black freeform twists: the signature',
-			'Crimson kit with gold trim, the number 7, and the orange triple-bar crest on the chest',
+			'Crimson kit with gold trim, the number 7, and the orange mango crest on the chest',
 			'Green shorts with a gold 7 on the leg',
 			'White socks into the signature orange boots',
 			'Match ball underfoot, celebration mode permanently on',
 		],
 		images: [{
-			src: '/assets/gobot/persona/speed-bot-7.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001315_a5dc5353-9f09-4950-ab71-c4b5854ea00c.png',
 			width: 1200,
 			height: 896,
-			alt: 'Speed-BOT-7: Go-Bot with wild black freeform twists in a red number 7 soccer kit with the orange triple-bar crest and green shorts, one boot on a soccer ball, arms spread wide',
+			alt: 'Speed-BOT-7: Go-Bot with wild black freeform twists in a red number 7 soccer kit with the orange mango crest and green shorts, one boot on a soccer ball, arms spread wide',
 		}],
 	},
 ];

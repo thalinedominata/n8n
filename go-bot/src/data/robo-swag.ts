@@ -83,7 +83,7 @@ export const swagProof = [
 		alt: 'Go-Bot in an all-black fit with layered silver chains and white sneakers',
 	},
 	{
-		src: '/assets/gobot/persona/brady-bot-gameday.jpg',
+		src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001324_7b8413cc-0ebb-49f3-af93-8188a7eab00b.png',
 		width: 1200,
 		height: 896,
 		alt: 'White-shelled Go-Bot in a navy football uniform with helmet, mid-throw',

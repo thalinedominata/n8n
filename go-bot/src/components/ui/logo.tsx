@@ -10,10 +10,10 @@ export interface LogoProps {
 }
 
 /**
- * The ENGAGE GLOBAL triple-bar mark — the same emblem Go-Bot wears on his
- * chest. Vector recreation of the supplied logo
- * (public/assets/images/logo-mark.png): two inward-tapering bars over a
- * slanted base bar.
+ * The ENGAGE GLOBAL triple-bar mark — company branding only. Vector
+ * recreation of the supplied logo (public/assets/images/logo-mark.png):
+ * two inward-tapering bars over a slanted base bar. Go-Bot's chest wears
+ * the MANGOBOT mango (see GoBotMark), not this mark.
  */
 export function Logo({ className, size = 28, color = 'currentColor', title = 'ENGAGE GLOBAL' }: LogoProps) {
 	return (

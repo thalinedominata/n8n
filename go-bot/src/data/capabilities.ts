@@ -70,7 +70,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: '/assets/gobot/lifestyle/personal-assistant.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001253_e894956a-7e3b-45f5-bddc-cd92f8dd5989.png',
 			width: 1264,
 			height: 848,
 			alt: 'A smiling Emirati businessman with his morning coffee at a laptop while a backpack-sized Go-Bot on the desk shows his daily agenda on its visor',
@@ -158,7 +158,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: '/assets/gobot/lifestyle/natural-conversation.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001236_422a8fa6-fc21-443b-80d2-4d58a6d87893.png',
 			width: 1264,
 			height: 848,
 			alt: 'A laughing Emirati woman shares Arabic tea in a majlis with a backpack-sized Go-Bot sitting across from her, happy eyes glowing mid-conversation',
@@ -200,7 +200,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: '/assets/gobot/lifestyle/hide-and-seek.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001246_d5d2e312-e74b-432f-9f73-e3ada290ee3d.png',
 			width: 1264,
 			height: 848,
 			alt: 'Go-Bot covers his visor with his hands and counts while three laughing brothers scramble to hide around a cozy living room',
@@ -659,7 +659,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-2'],
 		featured: true,
 		image: {
-			src: '/assets/gobot/lifestyle/streamer-sidekick.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001308_93260adb-85e1-40c6-a823-c321b58122d3.png',
 			width: 1264,
 			height: 848,
 			alt: 'A streamer locked into his game while a backpack-sized Go-Bot on the desk celebrates with 1st Place and K/D Ratio 3.7 on his visor',

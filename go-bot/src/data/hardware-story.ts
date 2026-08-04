@@ -49,7 +49,7 @@ export const hardwareStory: HardwareStoryStep[] = [
 		view: 'front',
 		x: 53,
 		y: 39,
-		line: 'The triple-bar heartbeat: status you can read across the room.',
+		line: 'The mango heartbeat: status you can read across the room.',
 	},
 	{
 		moduleId: 'cpu',

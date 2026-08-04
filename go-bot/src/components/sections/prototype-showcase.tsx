@@ -86,7 +86,7 @@ export function PrototypeShowcase() {
 								<video
 									key={launchFilm.src}
 									src={launchFilm.src}
-									poster="/assets/gobot/go-bot-prototype-front.jpg"
+									poster="https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001159_f6d6bbed-7ebc-4a71-a398-5e848dca50b3.png"
 									controls
 									playsInline
 									preload="none"

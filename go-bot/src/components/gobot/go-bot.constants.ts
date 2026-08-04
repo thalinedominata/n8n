@@ -1,6 +1,6 @@
 /**
  * Go-Bot character specification — derived from the supplied prototype
- * (public/assets/gobot/go-bot-prototype-front.jpg / -back.jpg).
+ * (publichttps://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001159_f6d6bbed-7ebc-4a71-a398-5e848dca50b3.png / -back.jpg).
  *
  * These constants are a character bible: they encode the prototype's
  * proportions and the timing of his personality behaviors. Changing them
@@ -9,7 +9,7 @@
  * Canonical proportions (200×250 viewBox, from the prototype):
  *  - Head: 92×80 rounded cube (≈32% of height) with a glossy black visor
  *    and two glowing orange eyes 24px apart.
- *  - Torso: 80×66 rounded shell wearing the triple-bar chest emblem
+ *  - Torso: 80×66 rounded shell wearing the mango chest emblem
  *    (the ENGAGE GLOBAL logo), a camera dot beneath it, and the wearable
  *    backpack with its orange spine light (rear).
  *  - Chunky articulated arms with orange hands; short legs with dark boots

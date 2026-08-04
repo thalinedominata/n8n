@@ -7,6 +7,23 @@ import { cn } from '@/lib/utils';
 import { BLINK, BREATH, GAZE, THINK, PALETTE } from './go-bot.constants';
 import { MOODS, type GoBotMood, type GoBotRole } from './go-bot.moods';
 import { GoBotRoleBadge } from './go-bot-role-badge';
+import { MARK_LEAF_D, MARK_MANGO_D } from '@/components/ui/go-bot-logo-paths';
+
+/**
+ * The MANGOBOT mango, scaled onto the chest. The mark's own coordinate space
+ * is the 512-box from MARK_VIEWBOX; this transform lands it centered in the
+ * emblem zone (x 88–112, y ~121–137) that the old three-bar mark occupied.
+ */
+const CHEST_MANGO_TRANSFORM = 'translate(78.2, 116.4) scale(0.05)';
+
+function ChestMango() {
+	return (
+		<g transform={CHEST_MANGO_TRANSFORM}>
+			<path d={MARK_MANGO_D} fill={PALETTE.orange} fillRule="evenodd" />
+			<path d={MARK_LEAF_D} fill={PALETTE.orange} fillRule="evenodd" />
+		</g>
+	);
+}
 
 export interface GoBotProps {
 	className?: string;
@@ -26,7 +43,7 @@ export interface GoBotProps {
 /**
  * Go-Bot — the animated character, faithful to the supplied prototype:
  * graphite shell, glossy black visor with glowing orange eyes, the
- * triple-bar chest emblem, camera dot, orange hands, and boots on orange
+ * mango chest emblem, camera dot, orange hands, and boots on orange
  * soles. Proportions live in go-bot.constants.ts; the expression
  * vocabulary lives in go-bot.moods.ts.
  *
@@ -219,25 +236,14 @@ export function GoBot({
 					{/* Torso shell */}
 					<rect x="60" y="102" width="80" height="80" rx="30" fill={PALETTE.shell} stroke={PALETTE.seam} strokeWidth="2.5" />
 
-					{/* Chest emblem — the triple-bar mark, glowing (his heartbeat) */}
+					{/* Chest emblem — the MANGOBOT mango, glowing (his heartbeat) */}
 					{cfg.equalizer && animate ? (
-						<g>
-							{[0, 1, 2].map((i) => (
-								<motion.polygon
-									key={i}
-									points={
-										i === 0
-											? '88,118 112,118 107,123 93,123'
-											: i === 1
-												? '88,127 112,127 107,132 93,132'
-												: '93,136 112,136 107,141 88,141'
-									}
-									fill={PALETTE.orange}
-									animate={{ opacity: [0.35, 1, 0.35] }}
-									transition={{ duration: 0.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.14 }}
-								/>
-							))}
-						</g>
+						<motion.g
+							animate={{ opacity: [0.35, 1, 0.35] }}
+							transition={{ duration: 0.5, repeat: Infinity, ease: 'easeInOut' }}
+						>
+							<ChestMango />
+						</motion.g>
 					) : (
 						<motion.g
 							animate={animate ? { opacity: [1, cfg.emblemMin, 1] } : undefined}
@@ -245,9 +251,7 @@ export function GoBot({
 								animate ? { duration: cfg.emblemPeriod, repeat: Infinity, ease: 'easeInOut' } : undefined
 							}
 						>
-							<polygon points="88,118 112,118 107,123 93,123" fill={PALETTE.orange} />
-							<polygon points="88,127 112,127 107,132 93,132" fill={PALETTE.orange} />
-							<polygon points="93,136 112,136 107,141 88,141" fill={PALETTE.orange} />
+							<ChestMango />
 						</motion.g>
 					)}
 
