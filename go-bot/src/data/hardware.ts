@@ -83,12 +83,12 @@ export const hardwareModules: HardwareModule[] = [
 		name: 'CPU & Neural Engine',
 		description:
 			'On-device neural processing keeps perception private and responses instant, with no round trip required. ' +
-			'It runs Engage’s AtlasOS, the personal-assistant brain that knows you and everything you do: ' +
+			'It runs BEING by Engage, the premier engine driving every Go-Bot feature — the brain that knows you and everything you do: ' +
 			'scheduling, messaging, travel, even those old notes you forgot about. Your data stays yours.',
 		specs: [
 			{ label: 'Neural engine', value: '48 TOPS on-device' },
 			{ label: 'Memory', value: '32 GB unified' },
-			{ label: 'OS', value: 'Engage AtlasOS' },
+			{ label: 'Engine', value: 'BEING by Engage' },
 			{ label: 'Privacy', value: 'On-device first' },
 		],
 		hotspot: { x: 38, y: 53 },
