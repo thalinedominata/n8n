@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container } from '@/components/ui';
+import { Container, GoBotLogo } from '@/components/ui';
 import { footerNavigation } from '@/data/navigation';
 import { siteConfig } from '@/config/site';
 
@@ -8,8 +8,11 @@ export function Footer() {
 		<footer className="border-t border-border-subtle bg-surface-warm">
 			<Container className="grid gap-12 py-16 md:grid-cols-[1.5fr_repeat(3,1fr)]">
 				<div className="max-w-xs">
-					<p className="text-title font-semibold">{siteConfig.name}</p>
-					<p className="mt-3 text-caption text-ink-secondary">{siteConfig.mission}</p>
+					<GoBotLogo gradient height={64} className="text-ink" />
+					<p className="mt-4 text-caption text-ink-secondary">{siteConfig.mission}</p>
+					<p className="mt-2 text-overline text-ink-tertiary">
+						By MANGOBOT, in partnership with ENGAGE GLOBAL.
+					</p>
 				</div>
 
 				{footerNavigation.map((group) => (
