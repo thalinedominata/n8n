@@ -71,6 +71,8 @@ export interface HardwareModule {
 	id: string;
 	name: string;
 	description: string;
+	/** Closing line rendered bold in the brand orange after the description. */
+	accent?: string;
 	specs: Array<{ label: string; value: string }>;
 	/** Anchor position on the hardware explorer figure, in percent. */
 	hotspot: { x: number; y: number };

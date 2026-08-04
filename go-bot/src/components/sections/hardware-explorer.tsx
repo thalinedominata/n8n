@@ -106,7 +106,15 @@ export function HardwareExplorer() {
 				<Modal open={active !== null} onClose={() => setActiveId(null)} title={active?.name ?? ''}>
 					{active ? (
 						<>
-							<p className="text-body text-ink-secondary">{active.description}</p>
+							<p className="text-body text-ink-secondary">
+								{active.description}
+								{active.accent ? (
+									<>
+										{' '}
+										<strong className="font-bold text-gobot-600">{active.accent}</strong>
+									</>
+								) : null}
+							</p>
 							<dl className="mt-6 divide-y divide-border-subtle">
 								{active.specs.map((spec) => (
 									<div key={spec.label} className="flex items-center justify-between py-3">

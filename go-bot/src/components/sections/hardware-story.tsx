@@ -42,8 +42,16 @@ export function HardwareStory() {
 				{step.view === 'front' ? 'Front' : 'Back'}
 			</p>
 			<h3 className="mt-2 text-title font-semibold">{module.name}</h3>
-			<p className="mt-2 text-body text-ink-secondary">{module.description}</p>
-			<p className="mt-3 text-body italic text-gobot-700">{step.line}</p>
+			<p className="mt-2 text-body text-ink-secondary">
+				{module.description}
+				{module.accent ? (
+					<>
+						{' '}
+						<strong className="font-bold text-gobot-600">{module.accent}</strong>
+					</>
+				) : null}
+			</p>
+			{step.line ? <p className="mt-3 text-body italic text-gobot-700">{step.line}</p> : null}
 
 			<dl className="mt-4 grid grid-cols-2 gap-2">
 				{module.specs.slice(0, 4).map((spec) => (

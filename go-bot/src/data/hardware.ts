@@ -81,7 +81,8 @@ export const hardwareModules: HardwareModule[] = [
 		id: 'cpu',
 		name: 'CPU & Neural Engine',
 		description:
-			'On-device AI, instant and private, running BEING by Engage — the brain behind every Go-Bot feature. Your data stays yours.',
+			'On-device AI, instant and private, running BEING by Engage — the brain behind every Go-Bot feature.',
+		accent: 'Your data stays yours.',
 		specs: [
 			{ label: 'Neural engine', value: '48 TOPS on-device' },
 			{ label: 'Memory', value: '32 GB unified' },

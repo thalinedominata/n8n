@@ -11,8 +11,8 @@ export interface HardwareStoryStep {
 	/** Hotspot anchor on that render, in percent of the photo. */
 	x: number;
 	y: number;
-	/** One-line narration for the tour. */
-	line: string;
+	/** One-line narration for the tour; omit when the module copy says it all. */
+	line?: string;
 }
 
 /**
@@ -56,7 +56,6 @@ export const hardwareStory: HardwareStoryStep[] = [
 		view: 'front',
 		x: 46,
 		y: 55,
-		line: 'The brain lives here: on-device AI, private by default.',
 	},
 	{
 		moduleId: 'feet',
