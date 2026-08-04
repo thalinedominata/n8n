@@ -221,21 +221,21 @@ export const swagFeatures: PersonaFeature[] = [
 		description:
 			'A superhero homage with a Go-Bot twist: crimson-and-gold armor ' +
 			'smoothed into his own rounded shell language, his own black visor under ' +
-			'a red-and-gold helmet, and his mango heartbeat burning white-hot ' +
-			'as the power core. Shown as a concept for potential character-licensing ' +
+			'a red-and-gold helmet, and the mango mark glowing on his chest ' +
+			'as the heartbeat. Shown as a concept for potential character-licensing ' +
 			'partnerships.',
 		fit: [
 			'Rounded matte-crimson shell with polished gold accent bands: his silhouette, not a movie suit',
 			'Red-and-gold helmet around the black visor, eyes locked in hero mode',
-			'Mango emblem glowing white as the chest core',
+			'The mango mark glowing on the chest',
 			'Armored gauntlets, repulsor charged in the raised palm',
 			'Signature orange boots, because heroes land on their feet',
 		],
 		images: [{
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_002426_480b02d5-c719-4e9c-bef1-829555db0220.png',
-			width: 2294,
-			height: 4096,
-			alt: 'Iron-Bot: Go-Bot in rounded crimson-and-gold armor with a red-and-gold helmet, fierce glowing eyes on a black visor, a glowing mango chest core, and a glowing repulsor in his raised palm',
+			src: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/cbcf38ab-f4f6-48a7-b6a4-1e06bf395a02.png',
+			width: 1536,
+			height: 2752,
+			alt: 'Iron-Bot: Go-Bot in rounded crimson-and-gold armor with a red-and-gold helmet, fierce glowing eyes on a black visor, the glowing mango mark on his chest, and a glowing repulsor in his raised palm',
 		}],
 	},
 	{
