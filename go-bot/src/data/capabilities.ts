@@ -107,7 +107,7 @@ export const capabilities: Capability[] = [
 		safetyNotes: 'Emergency dialing follows regional regulations and owner consent settings.',
 		featured: true,
 		image: {
-			src: '/assets/gobot/lifestyle/call-for-help.jpg',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_154243_f935a818-3cd9-462c-8d9d-bad965e4e2a3.png',
 			width: 1264,
 			height: 848,
 			alt: 'A reassured grandmother in her armchair beside a backpack-sized Go-Bot standing on the side table with a glowing phone-call icon on his visor',
@@ -158,7 +158,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001236_422a8fa6-fc21-443b-80d2-4d58a6d87893.png',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_153504_465fc4dc-f509-4f21-9621-c178147be46d.png',
 			width: 1264,
 			height: 848,
 			alt: 'A laughing Emirati woman shares Arabic tea in a majlis with a backpack-sized Go-Bot sitting across from her, happy eyes glowing mid-conversation',
@@ -200,7 +200,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001246_d5d2e312-e74b-432f-9f73-e3ada290ee3d.png',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_153259_0b62918e-c695-4d80-8f92-b90ae1ae55f4.png',
 			width: 1264,
 			height: 848,
 			alt: 'Go-Bot covers his visor with his hands and counts while three laughing brothers scramble to hide around a cozy living room',
@@ -659,7 +659,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001308_93260adb-85e1-40c6-a823-c321b58122d3.png',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_153517_61710160-ccb1-4eeb-a852-6b2d084375a6.png',
 			width: 1264,
 			height: 848,
 			alt: 'A streamer locked into his game while a backpack-sized Go-Bot on the desk celebrates with 1st Place and K/D Ratio 3.7 on his visor',
