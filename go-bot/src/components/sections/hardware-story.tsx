@@ -51,7 +51,7 @@ export function HardwareStory() {
 					</>
 				) : null}
 			</p>
-			{step.line ? <p className="mt-3 text-body italic text-gobot-700">{step.line}</p> : null}
+			{step.line ? <p className="mt-3 text-body font-bold italic text-gobot-700">{step.line}</p> : null}
 
 			<dl className="mt-4 grid grid-cols-2 gap-2">
 				{module.specs.slice(0, 4).map((spec) => (
