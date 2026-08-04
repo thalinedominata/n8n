@@ -158,7 +158,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_153504_465fc4dc-f509-4f21-9621-c178147be46d.png',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_160834_0d90d0b0-2302-45f8-8989-c844eac09001.png',
 			width: 1264,
 			height: 848,
 			alt: 'A laughing Emirati woman shares Arabic tea in a majlis with a backpack-sized Go-Bot sitting across from her, happy eyes glowing mid-conversation',
@@ -200,7 +200,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_153259_0b62918e-c695-4d80-8f92-b90ae1ae55f4.png',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_160939_25dc1941-d1e6-4045-9c53-da07930e3bcc.png',
 			width: 1264,
 			height: 848,
 			alt: 'Go-Bot covers his visor with his hands and counts while three laughing brothers scramble to hide around a cozy living room',
@@ -659,7 +659,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_153517_61710160-ccb1-4eeb-a852-6b2d084375a6.png',
+			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_161213_4bbc1ac9-5850-4c1b-850e-fa7957300f4c.png',
 			width: 1264,
 			height: 848,
 			alt: 'A streamer locked into his game while a backpack-sized Go-Bot on the desk celebrates with 1st Place and K/D Ratio 3.7 on his visor',
