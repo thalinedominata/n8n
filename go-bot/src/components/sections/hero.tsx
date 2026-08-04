@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
-import { Badge, Button, Container, Modal } from '@/components/ui';
+import { Button, Container, Modal } from '@/components/ui';
 import { GoBotFigure } from '@/components/gobot';
 import { heroReveal, staggerChildren } from '@/animations/variants';
 
@@ -30,12 +30,9 @@ export function Hero() {
 
 			<Container className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 				<motion.div variants={staggerChildren} initial="hidden" animate="visible">
-					<motion.div variants={heroReveal}>
-						<Badge>ENGAGE GLOBAL · Version 2 Preview</Badge>
-					</motion.div>
 					<motion.h1
 						variants={heroReveal}
-						className="mt-6 text-display font-bold text-balance sm:text-display-xl"
+						className="text-display font-bold text-balance sm:text-display-xl"
 					>
 						Meet <span className="text-shimmer">Go-Bot</span>
 					</motion.h1>
