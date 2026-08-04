@@ -69,7 +69,7 @@ export function HardwareStory() {
 				/>
 
 				{/* Controls dock right under the heading: previous/next + jump-anywhere beat rail */}
-				<div className="-mt-6 mb-10 flex flex-wrap items-center justify-center gap-3">
+				<div className="-mt-9 mb-6 flex flex-wrap items-center justify-center gap-2">
 					<div className="flex gap-1.5">
 						<Button
 							variant="outline"
