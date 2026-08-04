@@ -107,8 +107,8 @@ export function RoboSwag() {
 							className={cn(
 								'overflow-hidden rounded-2xl border border-ink-secondary/40 shadow-e3',
 								// Extra-tall portraits (like Iron-Bot) shrink to a centered tile
-								// instead of towering over the column.
-								image.height / image.width > 1.5 && 'mx-auto w-full max-w-sm',
+								// that renders at the same height as the landscape features.
+								image.height / image.width > 1.5 && 'mx-auto w-full max-w-60',
 							)}
 						>
 							<Image
