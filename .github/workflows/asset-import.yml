@@ -1,6 +1,12 @@
 name: Asset import
 
 on:
+  push:
+    branches:
+      - 'claude/**'
+    paths:
+      - 'go-bot/.design-refs/asset-manifest.json'
+      - '.github/workflows/asset-import.yml'
   workflow_dispatch:
     inputs:
       manifest:
@@ -27,8 +33,12 @@ jobs:
       - name: Fetch assets
         run: |
           set -euo pipefail
-          if [ -n "${{ inputs.manifest }}" ]; then
-            jq -r '.assets[] | [.url, .path] | @tsv' "${{ inputs.manifest }}" |
+          MANIFEST="${{ inputs.manifest }}"
+          if [ -z "$MANIFEST" ] && [ "${{ github.event_name }}" = "push" ]; then
+            MANIFEST="go-bot/.design-refs/asset-manifest.json"
+          fi
+          if [ -n "$MANIFEST" ]; then
+            jq -r '.assets[] | [.url, .path] | @tsv' "$MANIFEST" |
             while IFS=$'\t' read -r url path; do
               mkdir -p "$(dirname "$path")"
               curl -fsSL --retry 3 --retry-delay 2 "$url" -o "$path"
