@@ -14,7 +14,7 @@ export interface GoBotFigureProps {
 }
 
 const stills = {
-	front: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001153_576f5f61-fb37-4a51-9c2b-1196e71f9eba.png', width: 1000, height: 764 },
+	front: { src: '/assets/gobot/go-bot-front.png', width: 1000, height: 764 },
 	back: { src: '/assets/gobot/go-bot-back.jpg', width: 1000, height: 738 },
 } as const;
 
@@ -36,8 +36,8 @@ export function GoBotFigure({ media, className, bare = false, priority = false }
 			<div className={cn(chrome, className)}>
 				{/* Honors prefers-reduced-motion: the poster frame holds instead of looping */}
 				<video
-					src="https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260805_125458_82b2323f-5599-4e9c-be17-f0c6f244796b.mp4"
-					poster="https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001208_6d1b9633-b599-4412-8f82-0e18f8066ced.png"
+					src="/assets/video/go-bot-wave.mp4"
+					poster="/assets/video/go-bot-wave-poster.png"
 					autoPlay={!reduceMotion}
 					muted
 					loop

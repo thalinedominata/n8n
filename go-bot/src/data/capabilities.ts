@@ -70,7 +70,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001253_e894956a-7e3b-45f5-bddc-cd92f8dd5989.png',
+			src: '/assets/gobot/lifestyle/personal-assistant.png',
 			width: 1264,
 			height: 848,
 			alt: 'A smiling Emirati businessman with his morning coffee at a laptop while a backpack-sized Go-Bot on the desk shows his daily agenda on its visor',
@@ -107,7 +107,7 @@ export const capabilities: Capability[] = [
 		safetyNotes: 'Emergency dialing follows regional regulations and owner consent settings.',
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_154243_f935a818-3cd9-462c-8d9d-bad965e4e2a3.png',
+			src: '/assets/gobot/lifestyle/call-for-help.png',
 			width: 1264,
 			height: 848,
 			alt: 'A reassured grandmother in her armchair beside a backpack-sized Go-Bot standing on the side table with a glowing phone-call icon on his visor',
@@ -158,7 +158,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_160834_0d90d0b0-2302-45f8-8989-c844eac09001.png',
+			src: '/assets/gobot/lifestyle/natural-conversation.png',
 			width: 1264,
 			height: 848,
 			alt: 'A laughing Emirati woman shares Arabic tea in a majlis with a backpack-sized Go-Bot sitting across from her, happy eyes glowing mid-conversation',
@@ -200,7 +200,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-1', 'gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_160939_25dc1941-d1e6-4045-9c53-da07930e3bcc.png',
+			src: '/assets/gobot/lifestyle/kids-mode.png',
 			width: 1264,
 			height: 848,
 			alt: 'Go-Bot covers his visor with his hands and counts while three laughing brothers scramble to hide around a cozy living room',
@@ -659,7 +659,7 @@ export const capabilities: Capability[] = [
 		hardware: ['gen-2'],
 		featured: true,
 		image: {
-			src: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/883d59ac-1a34-4c07-9085-f6be313d3170.png',
+			src: '/assets/gobot/lifestyle/streamer-sidekick.png',
 			width: 1264,
 			height: 848,
 			alt: 'A streamer locked into his game while a backpack-sized Go-Bot on the desk celebrates with 1st Place and K/D Ratio 3.7 on his visor',

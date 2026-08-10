@@ -1,6 +1,6 @@
 /**
  * Go-Bot character specification — derived from the supplied prototype
- * (publichttps://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001159_f6d6bbed-7ebc-4a71-a398-5e848dca50b3.png / -back.jpg).
+ * (public/assets/gobot/go-bot-prototype-front.png / -back.jpg).
  *
  * These constants are a character bible: they encode the prototype's
  * proportions and the timing of his personality behaviors. Changing them

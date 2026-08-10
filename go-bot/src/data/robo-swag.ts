@@ -117,19 +117,19 @@ export const swagFeatures: PersonaFeature[] = [
 		],
 		images: [
 			{
-				src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163518_d15e326e-ca7c-4841-873d-45a7dfd2cbec.png',
+				src: '/assets/gobot/persona/bad-bunny-suit.png',
 				width: 896,
 				height: 1200,
 				alt: 'The Suit: Go-Bot styled after Bad Bunny in a powder-blue tailored suit and cream polo, his visor playing multicolored spectrum equalizer bars',
 			},
 			{
-				src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163521_68ad0bb7-cf97-4764-ae6c-6fd702d3c980.png',
+				src: '/assets/gobot/persona/bad-bunny-coat.png',
 				width: 896,
 				height: 1200,
 				alt: 'The Coat: Go-Bot styled after Bad Bunny in an oversized cream faux-fur coat with a silver cross chain, his visor tracing a multicolored sound waveform',
 			},
 			{
-				src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163524_8e791ba9-ec03-4658-b315-99d82e13f61c.png',
+				src: '/assets/gobot/persona/bad-bunny-fit.png',
 				width: 896,
 				height: 1200,
 				alt: 'The Fit: Go-Bot styled after Bad Bunny in a brown fleece sweatshirt, tan cargo trousers, bucket hat, and gold rope chain, his visor showing a retro LED dot-matrix equalizer',
@@ -152,7 +152,7 @@ export const swagFeatures: PersonaFeature[] = [
 			'Signature orange boots beneath the hem',
 		],
 		images: [{
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163526_72e9039b-d072-4142-a0f0-c22641b07572.png',
+			src: '/assets/gobot/persona/mo-bot-uae.png',
 			width: 1200,
 			height: 896,
 			alt: 'Mo-Bot, the Go-Bot in traditional Emirati attire: white kandura and ghutra, black agal, gold-trimmed black bisht, eyes glowing warm mango orange',
@@ -175,7 +175,7 @@ export const swagFeatures: PersonaFeature[] = [
 			'Signature orange sneakers, hardwood-ready',
 		],
 		images: [{
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001328_69beb344-33d2-497a-b7cc-85b21aead967.png',
+			src: '/assets/gobot/persona/lebron-the-king.png',
 			width: 1200,
 			height: 896,
 			alt: 'The King: Go-Bot styled after LeBron James in a blue KING-BOT 23 basketball jersey, white arm sleeve, holding a basketball',
@@ -201,13 +201,13 @@ export const swagFeatures: PersonaFeature[] = [
 		],
 		images: [
 			{
-				src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163332_cf520edd-9025-4c0f-9b82-6763996403de.png',
+				src: '/assets/gobot/persona/brady-bot-helmet.png',
 				width: 896,
 				height: 1200,
 				alt: 'Brady Bot: a white-shelled Go-Bot in a navy BRADY-BOT 12 jersey with orange mango marks, holding a silver helmet under one arm and a football in the other hand',
 			},
 			{
-				src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001324_7b8413cc-0ebb-49f3-af93-8188a7eab00b.png',
+				src: '/assets/gobot/persona/brady-bot-throw.png',
 				width: 1200,
 				height: 896,
 				alt: 'Brady Bot in full gear: a white-shelled Go-Bot in the navy BRADY-BOT 12 jersey, silver helmet with the mango mark and red facemask, cocking a football back to throw',
@@ -232,7 +232,7 @@ export const swagFeatures: PersonaFeature[] = [
 			'Signature orange boots, because heroes land on their feet',
 		],
 		images: [{
-			src: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/cbcf38ab-f4f6-48a7-b6a4-1e06bf395a02.png',
+			src: '/assets/gobot/persona/iron-bot.png',
 			width: 1536,
 			height: 2752,
 			alt: 'Iron-Bot: Go-Bot in rounded crimson-and-gold armor with a red-and-gold helmet, fierce glowing eyes on a black visor, the glowing mango mark on his chest, and a glowing repulsor in his raised palm',
@@ -254,7 +254,7 @@ export const swagFeatures: PersonaFeature[] = [
 			'Match ball underfoot, celebration mode permanently on',
 		],
 		images: [{
-			src: 'https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001315_a5dc5353-9f09-4950-ab71-c4b5854ea00c.png',
+			src: '/assets/gobot/persona/speed-bot-7.png',
 			width: 1200,
 			height: 896,
 			alt: 'Speed-BOT-7: Go-Bot with wild black freeform twists in a red number 7 soccer kit with the orange mango crest and green shorts, one boot on a soccer ball, arms spread wide',

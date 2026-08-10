@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		images: [
 			{
-				url: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/35491d06-4431-4d7c-ae22-55ac38b8e99c.png',
+				url: '/assets/brand/og-image.png',
 				width: 1200,
 				height: 630,
 				alt: 'Meet Go-Bot, the wearable humanoid robot by MANGOBOT and ENGAGE GLOBAL',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 		card: 'summary_large_image',
 		title: siteConfig.title,
 		description: siteConfig.description,
-		images: ['https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/35491d06-4431-4d7c-ae22-55ac38b8e99c.png'],
+		images: ['/assets/brand/og-image.png'],
 	},
 };
 

@@ -36,7 +36,7 @@ export function GoBotViewer({ className }: { className?: string }) {
 			{ready ? (
 				<model-viewer
 					src={GOBOT_MODEL_URL}
-					poster="https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001153_576f5f61-fb37-4a51-9c2b-1196e71f9eba.png"
+					poster="/assets/gobot/go-bot-front.png"
 					alt="Interactive 3D model of Go-Bot"
 					camera-controls
 					auto-rotate
@@ -56,7 +56,7 @@ export function GoBotViewer({ className }: { className?: string }) {
 				/* Poster stands in while the engine chunk loads */
 				// eslint-disable-next-line @next/next/no-img-element
 				<img
-					src="https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001153_576f5f61-fb37-4a51-9c2b-1196e71f9eba.png"
+					src="/assets/gobot/go-bot-front.png"
 					alt="Go-Bot, front view"
 					width={1000}
 					height={764}
