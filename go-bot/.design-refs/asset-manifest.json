@@ -1,0 +1,89 @@
+{
+  "$comment": "Remote generation-output assets to vendor into the repo. Consumed by .github/workflows/asset-import.yml (workflow_dispatch). Paths are repo-relative.",
+  "assets": [
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001153_576f5f61-fb37-4a51-9c2b-1196e71f9eba.png",
+      "path": "go-bot/public/assets/gobot/go-bot-front.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001159_f6d6bbed-7ebc-4a71-a398-5e848dca50b3.png",
+      "path": "go-bot/public/assets/gobot/go-bot-prototype-front.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260805_125458_82b2323f-5599-4e9c-be17-f0c6f244796b.mp4",
+      "path": "go-bot/public/assets/video/go-bot-wave.mp4"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001208_6d1b9633-b599-4412-8f82-0e18f8066ced.png",
+      "path": "go-bot/public/assets/video/go-bot-wave-poster.png"
+    },
+    {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/35491d06-4431-4d7c-ae22-55ac38b8e99c.png",
+      "path": "go-bot/public/assets/brand/og-image.png"
+    },
+    {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/14ca18f1-7bf0-42f4-9589-236ba3c59234.glb?v=2",
+      "path": "go-bot/public/assets/models/go-bot.glb"
+    },
+    {
+      "url": "https://d3u0tzju9qaucj.cloudfront.net/7d051b5a-7bfe-49fe-a484-24e7b3a9458a/d1fb2741-a1d5-4b2f-b1da-7825918abecb.glb",
+      "path": "go-bot/public/assets/models/go-bot-rigged.glb"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001253_e894956a-7e3b-45f5-bddc-cd92f8dd5989.png",
+      "path": "go-bot/public/assets/gobot/lifestyle/personal-assistant.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_154243_f935a818-3cd9-462c-8d9d-bad965e4e2a3.png",
+      "path": "go-bot/public/assets/gobot/lifestyle/call-for-help.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_160834_0d90d0b0-2302-45f8-8989-c844eac09001.png",
+      "path": "go-bot/public/assets/gobot/lifestyle/natural-conversation.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_160939_25dc1941-d1e6-4045-9c53-da07930e3bcc.png",
+      "path": "go-bot/public/assets/gobot/lifestyle/kids-mode.png"
+    },
+    {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/883d59ac-1a34-4c07-9085-f6be313d3170.png",
+      "path": "go-bot/public/assets/gobot/lifestyle/streamer-sidekick.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163518_d15e326e-ca7c-4841-873d-45a7dfd2cbec.png",
+      "path": "go-bot/public/assets/gobot/persona/bad-bunny-suit.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163521_68ad0bb7-cf97-4764-ae6c-6fd702d3c980.png",
+      "path": "go-bot/public/assets/gobot/persona/bad-bunny-coat.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163524_8e791ba9-ec03-4658-b315-99d82e13f61c.png",
+      "path": "go-bot/public/assets/gobot/persona/bad-bunny-fit.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163526_72e9039b-d072-4142-a0f0-c22641b07572.png",
+      "path": "go-bot/public/assets/gobot/persona/mo-bot-uae.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001328_69beb344-33d2-497a-b7cc-85b21aead967.png",
+      "path": "go-bot/public/assets/gobot/persona/lebron-the-king.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_163332_cf520edd-9025-4c0f-9b82-6763996403de.png",
+      "path": "go-bot/public/assets/gobot/persona/brady-bot-helmet.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001324_7b8413cc-0ebb-49f3-af93-8188a7eab00b.png",
+      "path": "go-bot/public/assets/gobot/persona/brady-bot-throw.png"
+    },
+    {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/cbcf38ab-f4f6-48a7-b6a4-1e06bf395a02.png",
+      "path": "go-bot/public/assets/gobot/persona/iron-bot.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001315_a5dc5353-9f09-4950-ab71-c4b5854ea00c.png",
+      "path": "go-bot/public/assets/gobot/persona/speed-bot-7.png"
+    }
+  ]
+}

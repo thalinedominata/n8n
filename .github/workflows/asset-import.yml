@@ -3,13 +3,17 @@ name: Asset import
 on:
   workflow_dispatch:
     inputs:
+      manifest:
+        description: Repo path of a JSON manifest ({assets:[{url,path}]}) to import
+        required: false
+        type: string
       url:
-        description: Source URL of the asset to fetch
-        required: true
+        description: Source URL of a single asset to fetch (ignored when manifest is set)
+        required: false
         type: string
       path:
-        description: Repo path to write the asset to
-        required: true
+        description: Repo path to write the single asset to
+        required: false
         type: string
 
 permissions:
@@ -20,15 +24,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch asset
+      - name: Fetch assets
         run: |
-          mkdir -p "$(dirname "${{ inputs.path }}")"
-          curl -fsSL "${{ inputs.url }}" -o "${{ inputs.path }}"
-          ls -la "${{ inputs.path }}"
+          set -euo pipefail
+          if [ -n "${{ inputs.manifest }}" ]; then
+            jq -r '.assets[] | [.url, .path] | @tsv' "${{ inputs.manifest }}" |
+            while IFS=$'\t' read -r url path; do
+              mkdir -p "$(dirname "$path")"
+              curl -fsSL --retry 3 --retry-delay 2 "$url" -o "$path"
+              echo "fetched $path ($(stat -c%s "$path") bytes)"
+            done
+          elif [ -n "${{ inputs.url }}" ] && [ -n "${{ inputs.path }}" ]; then
+            mkdir -p "$(dirname "${{ inputs.path }}")"
+            curl -fsSL --retry 3 --retry-delay 2 "${{ inputs.url }}" -o "${{ inputs.path }}"
+            echo "fetched ${{ inputs.path }} ($(stat -c%s "${{ inputs.path }}") bytes)"
+          else
+            echo "Provide either 'manifest' or both 'url' and 'path'." >&2
+            exit 1
+          fi
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "${{ inputs.path }}"
-          git commit -m "chore: import asset ${{ inputs.path }}"
-          git push
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: import assets [skip ci]"
+            git push
+          fi
