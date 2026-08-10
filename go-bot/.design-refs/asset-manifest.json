@@ -26,10 +26,6 @@
       "path": "go-bot/public/assets/models/go-bot.glb"
     },
     {
-      "url": "https://d3u0tzju9qaucj.cloudfront.net/7d051b5a-7bfe-49fe-a484-24e7b3a9458a/d1fb2741-a1d5-4b2f-b1da-7825918abecb.glb",
-      "path": "go-bot/public/assets/models/go-bot-rigged.glb"
-    },
-    {
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260804_001253_e894956a-7e3b-45f5-bddc-cd92f8dd5989.png",
       "path": "go-bot/public/assets/gobot/lifestyle/personal-assistant.png"
     },
