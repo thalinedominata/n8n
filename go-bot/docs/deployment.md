@@ -23,6 +23,15 @@ Turbo + pnpm workspace and run a monorepo-wide `pnpm install`, which
 fails n8n's pnpm engine check. `package.json` declares
 `"packageManager": "npm"` for the same reason.
 
+## Replacing an asset in place
+
+`/assets` ships with `Cache-Control: max-age=31536000, immutable`, so a
+browser that has fetched an asset will not ask for it again — even after
+a deploy changes the file's content at the same path. Whenever a file
+under `public/assets` is *replaced* (not added), bump a `?v=N` query on
+every reference to it so clients fetch the new version. New files at new
+paths need nothing.
+
 ## After transfer to a dedicated repository
 
 When the `go-bot/` contents move to their own repo, delete the Root
