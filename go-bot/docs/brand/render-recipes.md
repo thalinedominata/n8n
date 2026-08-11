@@ -63,7 +63,7 @@ THE TEN OUTFITS, left to right in this exact order:
 2. THE SUIT - powder-blue tailored two-piece suit over a cream polo, mango-orange loafers.
 3. THE COAT - oversized cream faux-fur coat worn open over a white tank, silver cross chain.
 4. THE FIT - brown fleece sweatshirt, tan cargo trousers, cream bucket hat, thick gold rope chain.
-5. THE VOICE - royal-blue wool varsity jacket with double white shoulder stripes, honey-blonde dreadlocks under a black GO-BOT snapback, iced-out pendant on layered cuban links, black denim.
+5. THE VOICE - royal-blue wool varsity jacket with double white shoulder stripes, honey-blonde dreadlocks under a black GO-BOT snapback, black denim, and his signature THE VOICE pendant on layered cuban links: a large iced-out rectangular plaque, pave-diamond face with a raised diamond border, raised block letters spelling THE over VOICE fully encrusted in diamonds, hung from a boxy pave bail.
 6. MO-BOT - pristine white kandura with a knotted collar tassel, white ghutra draped over the shoulders with a black double-coiled agal, and a sheer black bisht with gold-embroidered trim worn open.
 7. THE KING - royal-blue basketball jersey reading KING-BOT 23 with red-and-white stitched trim, matching striped shorts, white compression sleeve on one arm, a leather basketball on the hip.
 8. BRADY BOT - white shell, navy american-football jersey reading BRADY-BOT 12 with silver shoulder yokes and red piping, black long-sleeve base layer, silver game pants, a silver helmet with a red facemask carried under one arm.
