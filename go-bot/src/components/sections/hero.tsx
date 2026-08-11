@@ -75,7 +75,7 @@ export function Hero() {
 			>
 				{demoOpen ? (
 					<video
-						src="/assets/video/go-bot-wave.mp4"
+						src="/assets/video/go-bot-wave.mp4?v=2"
 						poster="/assets/video/go-bot-wave-poster.png"
 						autoPlay
 						loop

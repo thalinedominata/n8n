@@ -12,4 +12,4 @@
  * Vendored in the repo (current texture pass); the previous mesh lives
  * in git history.
  */
-export const GOBOT_MODEL_URL = '/assets/models/go-bot.glb';
+export const GOBOT_MODEL_URL = '/assets/models/go-bot.glb?v=2';

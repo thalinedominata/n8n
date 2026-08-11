@@ -36,7 +36,7 @@ export function GoBotFigure({ media, className, bare = false, priority = false }
 			<div className={cn(chrome, className)}>
 				{/* Honors prefers-reduced-motion: the poster frame holds instead of looping */}
 				<video
-					src="/assets/video/go-bot-wave.mp4"
+					src="/assets/video/go-bot-wave.mp4?v=2"
 					poster="/assets/video/go-bot-wave-poster.png"
 					autoPlay={!reduceMotion}
 					muted
