@@ -84,6 +84,30 @@
     {
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260811_135005_576334d4-19f7-4857-8e7f-1c2f20a8fae1.png",
       "path": "go-bot/public/assets/gobot/persona/wardrobe-lineup.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260812_082753_885a1ca1-7b9d-489f-89f9-bd067a42b453.png",
+      "path": "go-bot/.design-refs/deck/bg-hero-void.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260812_082752_02cf1c42-1645-4aed-abf9-aa5f51393f93.png",
+      "path": "go-bot/.design-refs/deck/bg-macro-straps.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260812_082752_b83a36db-c6e6-4f06-929e-a09729aa3890.png",
+      "path": "go-bot/.design-refs/deck/bg-macro-visor.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260812_082752_d8df376e-bca0-4edb-9eb7-1a0b7a748727.png",
+      "path": "go-bot/.design-refs/deck/bg-walk.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260812_082752_0bedcdfc-26d2-43d8-af49-ff6b73639265.png",
+      "path": "go-bot/.design-refs/deck/bg-worn.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260812_082752_c7e8dc81-0c15-469d-a92d-1a40d32c6b23.png",
+      "path": "go-bot/.design-refs/deck/bg-horizon.png"
     }
   ]
 }
