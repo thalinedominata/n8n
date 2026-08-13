@@ -112,6 +112,46 @@
     {
       "url": "https://engage-x-mangobot.netlify.app/",
       "path": "go-bot/.design-refs/ref-site/index.html"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260813_085518_2e986eb4-ae2c-4ff2-a2ef-a8caa403eafe.png",
+      "path": "go-bot/.design-refs/fleet-site/cand-walk-1.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260813_085518_282449aa-521a-43bf-9216-bff645506a97.png",
+      "path": "go-bot/.design-refs/fleet-site/cand-walk-2.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260813_085518_26c0072e-9b19-4314-bb8e-0e8c5b040930.png",
+      "path": "go-bot/.design-refs/fleet-site/cand-studio.png"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/posters/A3.jpg",
+      "path": "go-bot/public/fleet/posters/A3.jpg"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/posters/A2Ultra.jpg",
+      "path": "go-bot/public/fleet/posters/A2Ultra.jpg"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/posters/X2Ultra.jpg",
+      "path": "go-bot/public/fleet/posters/X2Ultra.jpg"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/posters/D1Ultra.jpg",
+      "path": "go-bot/public/fleet/posters/D1Ultra.jpg"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/posters/D1Max.jpg",
+      "path": "go-bot/public/fleet/posters/D1Max.jpg"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/posters/D1MaxPro.jpg",
+      "path": "go-bot/public/fleet/posters/D1MaxPro.jpg"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/posters/G2.jpg",
+      "path": "go-bot/public/fleet/posters/G2.jpg"
     }
   ]
 }
