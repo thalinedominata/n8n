@@ -152,6 +152,14 @@
     {
       "url": "https://engage-x-mangobot.netlify.app/posters/G2.jpg",
       "path": "go-bot/public/fleet/posters/G2.jpg"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260813_105853_8ba9e56f-10b3-4bb2-aa56-4135fd2ba10d.png",
+      "path": "go-bot/.design-refs/military/range-still-1.png"
+    },
+    {
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260813_105853_2287ad9d-5aed-42e9-9f50-75a0bd851bbe.png",
+      "path": "go-bot/.design-refs/military/range-still-2.png"
     }
   ]
 }
