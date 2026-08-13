@@ -108,6 +108,10 @@
     {
       "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EeYIiYO7La2AjEEpUKVwwXuvj6/hf_20260812_082752_c7e8dc81-0c15-469d-a92d-1a40d32c6b23.png",
       "path": "go-bot/.design-refs/deck/bg-horizon.png"
+    },
+    {
+      "url": "https://engage-x-mangobot.netlify.app/",
+      "path": "go-bot/.design-refs/ref-site/index.html"
     }
   ]
 }
