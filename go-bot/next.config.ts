@@ -4,7 +4,11 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	// Person-A merged into Robo-Swag; keep old links working.
 	async redirects() {
-		return [{ source: '/person-a', destination: '/robo-swag', permanent: true }];
+		return [
+			{ source: '/person-a', destination: '/robo-swag', permanent: true },
+			// Static fleet catalog page lives in public/fleet/index.html.
+			{ source: '/fleet', destination: '/fleet/index.html', permanent: false },
+		];
 	},
 	images: {
 		formats: ['image/avif', 'image/webp'],
