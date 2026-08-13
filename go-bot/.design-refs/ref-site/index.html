@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fleet — Engage × Mangobot · Powered by AtlasOS</title>
+<style>
+  :root {
+    --z950:#09090b; --z800:#27272a; --z600:#52525b; --z500:#71717a;
+    --z400:#a1a1aa; --z200:#e4e4e7; --z50:#fafafa; --plate:#f0ebe0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--z50); color:var(--z800);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 28px; }
+
+  /* masthead */
+  header.mast { position:sticky; top:0; background:rgba(250,250,250,.96); z-index:20; }
+  .mast-in { display:flex; align-items:baseline; gap:22px; padding:16px 0 11px; }
+  .wordmark { font-weight:700; font-size:21px; letter-spacing:-.03em; color:var(--z950); }
+  .eyebrow { font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.22em; color:var(--z600); }
+  .mast-r { margin-left:auto; font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.16em; color:var(--z800); }
+  .rule { height:4px; background:var(--z950); }
+
+  /* progress */
+  .progress { position:fixed; right:22px; top:50%; transform:translateY(-50%); z-index:15;
+    font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.2em; color:var(--z400);
+    writing-mode:vertical-rl; opacity:0; transition:opacity .3s; }
+  .progress.on { opacity:1; }
+  .progress b { color:var(--z950); }
+
+  /* hero */
+  .hero { padding:92px 0 46px; }
+  .hero .kick { font-family:ui-monospace,Menlo,monospace; font-size:12px; letter-spacing:.24em; color:var(--z500); margin-bottom:26px; }
+  h1 { font-size:clamp(48px,7.5vw,94px); line-height:1.02; letter-spacing:-.035em; font-weight:700; color:var(--z950); }
+  h1 .l { color:var(--z500); }
+  h1 .line { display:block; overflow:hidden; }
+  h1 .line span { display:block; transform:translateY(110%); animation:rise .8s cubic-bezier(.2,.6,.2,1) forwards; }
+  h1 .line:nth-child(2) span { animation-delay:.12s; }
+  @keyframes rise { to { transform:translateY(0); } }
+  .hero p { max-width:680px; margin-top:28px; font-size:17px; line-height:1.6; color:var(--z600); }
+  .hero p b { color:var(--z800); }
+  .hero .ctas { margin-top:34px; }
+
+  .btn { display:inline-block; padding:13px 26px; font-size:13px; letter-spacing:.14em; text-decoration:none;
+         font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; transition:all .15s; }
+  .btn.solid { background:var(--z950); color:#fff; }
+  .btn.solid:hover { transform:translateY(-2px); }
+  .btn.ghost { border:1px solid var(--z950); color:var(--z950); margin-left:10px; }
+  .btn.ghost:hover { background:var(--z950); color:#fff; }
+
+  /* ticker */
+  .ticker { border-top:1px solid var(--z950); border-bottom:1px solid var(--z950); overflow:hidden; margin-top:56px; }
+  .ticker-in { display:flex; white-space:nowrap; width:max-content; animation:tick 28s linear infinite;
+    font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.24em; color:var(--z950); padding:10px 0; }
+  @keyframes tick { to { transform:translateX(-50%); } }
+
+  .jvgrid { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--z950); margin:52px 0 0; }
+  .jvgrid>div { padding:18px 20px; border-right:1px solid var(--z950); }
+  .jvgrid>div:last-child { border-right:none; }
+  .jvgrid .k { display:block; font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.24em; color:var(--z400); margin-bottom:8px; }
+  .jvgrid .v { font-weight:700; font-size:17px; color:var(--z950); letter-spacing:-.01em; }
+  .jvgrid .s { display:block; font-size:12.5px; color:var(--z600); margin-top:4px; }
+
+  .index { margin:64px 0 0; }
+  .index-head { display:flex; justify-content:space-between; margin-bottom:14px; }
+  .index-head span { font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.24em; }
+  .index-head .a { color:var(--z950); font-weight:700; }
+  .index-head .b { color:var(--z400); }
+  .cells { display:grid; grid-template-columns:repeat(7,1fr); border:1px solid var(--z950); }
+  .cell { padding:14px 12px 12px; border-right:1px solid var(--z950); text-decoration:none; transition:background .15s; }
+  .cell:last-child { border-right:none; }
+  .cell:hover, .cell.live { background:var(--z950); }
+  .cell:hover .nm, .cell.live .nm { color:#fff; }
+  .cell:hover .cl, .cell.live .cl { color:var(--z400); }
+  .cell .n { display:block; font-family:ui-monospace,Menlo,monospace; font-size:10px; color:var(--z400); letter-spacing:.2em; }
+  .cell .nm { display:block; font-weight:700; font-size:15px; color:var(--z950); margin:5px 0 4px; letter-spacing:-.01em; }
+  .cell .cl { display:block; font-family:ui-monospace,Menlo,monospace; font-size:8.5px; color:var(--z500); letter-spacing:.12em; }
+
+  /* atlas band */
+  .atlas-band { background:var(--z950); color:#fff; margin-top:72px; }
+  .atlas-band .in { padding:64px 0 58px; }
+  .atlas-band .kick { font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.24em; color:var(--z500); margin-bottom:20px; }
+  .atlas-band h2 { color:#fff; max-width:860px; font-size:clamp(34px,4vw,50px); letter-spacing:-.03em; line-height:1.08; font-weight:700; }
+  .atlas-band h2 .l { color:var(--z500); }
+  .atlas-band .lede { margin-top:20px; max-width:700px; font-size:16px; line-height:1.62; color:var(--z400); }
+  .atlas-band .lede b { color:#fff; }
+  .atlas-cols { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--z600); margin-top:40px; }
+  .atlas-cols>div { padding:22px 24px 26px; border-right:1px solid var(--z600); }
+  .atlas-cols>div:last-child { border-right:none; }
+  .atlas-cols .n { display:block; font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.24em; color:var(--z500); margin-bottom:10px; }
+  .atlas-cols .t { display:block; font-weight:700; font-size:18px; letter-spacing:-.01em; color:#fff; margin-bottom:8px; }
+  .atlas-cols .b { font-size:13.5px; line-height:1.55; color:var(--z400); }
+
+  /* units */
+  .unit { padding:84px 0; border-top:1px solid var(--z200); }
+  .unit:first-of-type { border-top:none; }
+  .unit-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  .unit.flip .unit-grid .plate-wrap { order:2; }
+  .plate { background:var(--plate); border:1px solid var(--z950); display:flex; align-items:center; justify-content:center;
+    padding:34px; min-height:440px; overflow:hidden; perspective:900px; }
+  .par { will-change:transform; }
+  .plate img { max-width:100%; max-height:430px; display:block; will-change:transform; }
+  .plate-video { padding:0; min-height:0; aspect-ratio:4/3; }
+  .plate-video .par { width:100%; height:100%; }
+  .plate-video video { width:100%; height:100%; object-fit:cover; display:block; }
+  .figcap { font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.2em; color:var(--z400); margin-top:10px; }
+  .tags .tag { display:inline-block; font-family:ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:.18em; padding:6px 12px; }
+  .tag.fill { background:var(--z950); color:#fff; font-weight:700; }
+  .tag.line { border:1px solid var(--z950); color:var(--z950); margin-left:8px; }
+  .tag.atlas { border:1px solid var(--z400); color:var(--z500); margin-left:8px; }
+  .unit h2 { font-size:clamp(34px,4vw,50px); letter-spacing:-.03em; line-height:1.05; font-weight:700; margin-top:18px; }
+  .unit h2 .d { color:var(--z950); }
+  .unit h2 .l { color:var(--z500); }
+  .unit .body { margin-top:18px; font-size:15.5px; line-height:1.62; color:var(--z600); max-width:520px; }
+  .specs { margin-top:26px; border-top:1px solid var(--z200); }
+  .spec { display:flex; padding:9px 0; border-bottom:1px solid var(--z200); }
+  .spec .k { width:140px; flex:none; font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.2em; color:var(--z400); padding-top:3px; }
+  .spec .v { font-size:14px; color:var(--z800); }
+  .deploys { margin-top:18px; font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.18em; color:var(--z500); }
+  .unit .ctas { margin-top:24px; }
+
+  /* reveal */
+  .rv { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.6,.2,1); }
+  .d1 { transition-delay:.08s; } .d2 { transition-delay:.16s; } .d3 { transition-delay:.24s; } .d4 { transition-delay:.32s; }
+  .inview .rv { opacity:1; transform:none; }
+
+  /* idle animations */
+  @keyframes sway    { 0%,100% { transform:rotate(-1.6deg) translateY(0); } 50% { transform:rotate(1.6deg) translateY(-10px); } }
+  @keyframes breathe { 0%,100% { transform:translateY(0) scale(1); } 50% { transform:translateY(-8px) scale(1.015); } }
+  @keyframes wiggle  { 0%,100% { transform:rotate(0) translateY(0); } 20% { transform:rotate(-2.5deg) translateY(-6px); } 45% { transform:rotate(2deg) translateY(-12px); } 70% { transform:rotate(-1.5deg) translateY(-4px); } }
+  @keyframes trot    { 0%,100% { transform:translateX(-16px) translateY(0); } 25% { transform:translateX(0) translateY(-7px); } 50% { transform:translateX(16px) translateY(0); } 75% { transform:translateX(0) translateY(-7px); } }
+  @keyframes roll    { 0%,100% { transform:translateX(-26px) rotate(-.6deg); } 50% { transform:translateX(26px) rotate(.6deg); } }
+  @keyframes heavy   { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-5px); } }
+  @keyframes glide   { 0%,100% { transform:translateX(-22px); } 50% { transform:translateX(22px); } }
+  .anim-sway    { animation:sway 5.2s ease-in-out infinite; transform-origin:50% 95%; }
+  .anim-breathe { animation:breathe 4.6s ease-in-out infinite; }
+  .anim-wiggle  { animation:wiggle 2.8s ease-in-out infinite; transform-origin:50% 95%; }
+  .anim-trot    { animation:trot 3.4s ease-in-out infinite; }
+  .anim-roll    { animation:roll 4.4s ease-in-out infinite; }
+  .anim-heavy   { animation:heavy 5.8s ease-in-out infinite; }
+  .anim-glide   { animation:glide 5s ease-in-out infinite; }
+
+  /* footer */
+  .foot-band { background:var(--z950); color:#fff; margin-top:80px; }
+  .foot-band .in { display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding:26px 0; }
+  .foot-band .jv { font-weight:700; font-size:17px; }
+  .foot-band .jv .x { color:var(--z500); padding:0 6px; }
+  .foot-band .contact { margin-left:auto; font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.16em; color:var(--z400); }
+  .foot-band .contact a { color:#fff; text-decoration:none; }
+  footer.small { padding:20px 0 40px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between;
+                 font-family:ui-monospace,Menlo,monospace; font-size:10px; letter-spacing:.18em; color:var(--z400); }
+
+  @media (max-width:900px) {
+    .unit-grid { grid-template-columns:1fr; gap:30px; }
+    .unit.flip .unit-grid .plate-wrap { order:0; }
+    .cells { grid-template-columns:repeat(2,1fr); }
+    .cell { border-bottom:1px solid var(--z950); }
+    .jvgrid { grid-template-columns:repeat(2,1fr); }
+    .jvgrid>div { border-bottom:1px solid var(--z950); }
+    .atlas-cols { grid-template-columns:1fr; }
+    .atlas-cols>div { border-right:none; border-bottom:1px solid var(--z600); }
+    .mast-r, .progress { display:none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation:none !important; transition:none !important; }
+    .rv { opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body id="top">
+
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-in">
+      <a class="wordmark" href="#top" style="text-decoration:none">Engage.</a>
+      <span class="eyebrow">× MANGOBOT · POWERED BY ATLASOS</span>
+      <span class="mast-r"><a href="https://engagework.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">ENGAGEWORK.COM</a> · <a href="https://mangobot.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">MANGOBOT.COM</a></span>
+    </div>
+  </div>
+  <div class="rule"></div>
+</header>
+
+<div class="progress" id="prog">UNIT <b id="prog-n">01</b> / 07</div>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="kick">THE FULL FAMILY SERIES · DOC 02 · AUG 2026</div>
+    <h1>
+      <span class="line"><span>Many robots.</span></span>
+      <span class="line"><span class="l">One ecosystem.</span></span>
+    </h1>
+    <p>Every unit in the family is purpose-engineered for a specific tier of performance — and every one of them runs on a single mind. <b>Mangobot engineers the machines; Engage powers them with AtlasOS</b>, our Enterprise AI Operating System, across manufacturing, inventory, customer experience, facility maintenance, and car washing.</p>
+    <div class="ctas">
+      <a class="btn solid" href="#a3">Explore the fleet ↓</a>
+      <a class="btn ghost" href="mailto:jared@engagework.com?subject=Fleet%20quote%20request">Request a quote</a>
+    </div>
+  </section>
+</main>
+
+<div class="ticker"><div class="ticker-in"><span>ENGAGE × MANGOBOT&nbsp;&nbsp;·&nbsp;&nbsp;POWERED BY ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;SEVEN ROBOTS&nbsp;&nbsp;·&nbsp;&nbsp;FIVE VERTICALS&nbsp;&nbsp;·&nbsp;&nbsp;ONE ECOSYSTEM&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>ENGAGE × MANGOBOT&nbsp;&nbsp;·&nbsp;&nbsp;POWERED BY ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;SEVEN ROBOTS&nbsp;&nbsp;·&nbsp;&nbsp;FIVE VERTICALS&nbsp;&nbsp;·&nbsp;&nbsp;ONE ECOSYSTEM&nbsp;&nbsp;·&nbsp;&nbsp;</span></div></div>
+
+<main class="wrap">
+  <div class="jvgrid">
+    <div><span class="k">PARTNERSHIP</span><span class="v">Engage × Mangobot</span><span class="s">A true joint venture</span></div>
+    <div><span class="k">OPERATING SYSTEM</span><span class="v">AtlasOS</span><span class="s">Engage's Enterprise AI OS — on every unit</span></div>
+    <div><span class="k">FLEET</span><span class="v">Seven robots</span><span class="s">Five verticals · one ecosystem</span></div>
+    <div><span class="k">CONTACT</span><span class="v">Jared Green</span><span class="s">jared@engagework.com</span></div>
+  </div>
+
+  <div class="index">
+    <div class="index-head"><span class="a">THE FLEET</span><span class="b">IN ORDER</span></div>
+    <div class="cells" id="cells">
+<a class="cell" href="#a3"><span class="n">01</span><span class="nm">A3</span><span class="cl">BORN FOR THE STAGE</span></a>
+<a class="cell" href="#a2ultra"><span class="n">02</span><span class="nm">A2 Ultra</span><span class="cl">THE FACE OF THE FLOOR</span></a>
+<a class="cell" href="#x2ultra"><span class="n">03</span><span class="nm">X2 Ultra</span><span class="cl">THE VIBE MASTER</span></a>
+<a class="cell" href="#d1ultra"><span class="n">04</span><span class="nm">D1 Ultra</span><span class="cl">THE EXPLORER</span></a>
+<a class="cell" href="#d1max"><span class="n">05</span><span class="nm">D1 Max</span><span class="cl">THE CARRIER</span></a>
+<a class="cell" href="#d1maxpro"><span class="n">06</span><span class="nm">D1 Max Pro</span><span class="cl">THE TITAN</span></a>
+<a class="cell" href="#g2"><span class="n">07</span><span class="nm">G2</span><span class="cl">THE EMBODIED OPERATOR</span></a>
+    </div>
+  </div>
+</main>
+
+<div class="atlas-band">
+  <div class="wrap">
+    <div class="in">
+      <div class="kick">THE OPERATING LAYER · ENGAGE SOFTWARE</div>
+      <h2><span style="color:#fff">AtlasOS.</span> <span class="l">One mind for the whole fleet.</span></h2>
+      <p class="lede">Every robot on this page — stage humanoid or industrial quadruped — runs <b>AtlasOS, Engage's Enterprise AI Operating System</b>. It is the only AI software in the venture: one deployment console, one fleet view, one intelligence layer. Hardware by Mangobot. Mind by Engage.</p>
+      <div class="atlas-cols">
+        <div><span class="n">01 · ORCHESTRATE</span><span class="t">One console, seven robots</span><span class="b">Task assignment, routing, and fleet coordination across every unit — humanoids and quadrupeds under a single operator view.</span></div>
+        <div><span class="n">02 · PLAYBOOKS</span><span class="t">Industry presets, day one</span><span class="b">AtlasOS ships with Engage playbooks for all five verticals — from production-line workflows to Engage Wash service routines.</span></div>
+        <div><span class="n">03 · CARE</span><span class="t">Always current, always watched</span><span class="b">Monitoring, over-the-air updates, and fleet analytics keep every robot earning — and every customer renewing.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<section class="unit" id="a3" data-unit="01">
+  <div class="unit-grid">
+    <div class="plate-wrap rv">
+      <div class="plate plate-video" data-tilt>
+        <div class="par"><video autoplay muted loop playsinline preload="auto" poster="posters/A3.jpg">
+          <source src="media/A3.mp4" type="video/mp4">
+          <source src="media/A3.webm" type="video/webm">
+        </video></div>
+      </div>
+      <div class="figcap">FIG. 01 · MANGOBOT A3 · LIVE MOTION</div>
+    </div>
+    <div class="unit-copy">
+      <div class="tags rv"><span class="tag fill">STAGE FLAGSHIP</span><span class="tag line">FULL-SIZE HUMANOID</span><span class="tag atlas">POWERED BY ATLASOS</span></div>
+      <h2 class="rv d1"><span class="d">A3.</span> <span class="l">Born for the stage.</span></h2>
+      <p class="body rv d2">A full-size humanoid built to perform — 51 degrees of freedom, a ten-hour runtime, and the kind of stage presence that holds a crowd. The flagship of the family, and the first robot your guests will remember.</p>
+      <div class="specs rv d3"><div class="spec"><span class="k">HEIGHT</span><span class="v">173 cm</span></div>
+<div class="spec"><span class="k">WEIGHT</span><span class="v">55 kg</span></div>
+<div class="spec"><span class="k">RUNTIME</span><span class="v">10 hrs</span></div>
+<div class="spec"><span class="k">FREEDOM</span><span class="v">51 DOF</span></div>
+<div class="spec"><span class="k">SPEED</span><span class="v">5 m/s max</span></div>
+<div class="spec"><span class="k">CHARGE</span><span class="v">2 hrs</span></div></div>
+      <div class="deploys rv d4">OS · ENGAGE ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;DEPLOYS · CUSTOMER EXPERIENCE · EVENTS · BRAND ACTIVATIONS</div>
+      <div class="ctas rv d4">
+        <a class="btn solid" href="mailto:jared@engagework.com?subject=Quote%20request%20·%20A3">Request a quote</a>
+        <a class="btn ghost" href="https://mangobot.com/products" target="_blank" rel="noopener">Explore more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="unit flip" id="a2ultra" data-unit="02">
+  <div class="unit-grid">
+    <div class="plate-wrap rv">
+      <div class="plate plate-video" data-tilt>
+        <div class="par"><video autoplay muted loop playsinline preload="auto" poster="posters/A2Ultra.jpg">
+          <source src="media/A2Ultra.mp4" type="video/mp4">
+          <source src="media/A2Ultra.webm" type="video/webm">
+        </video></div>
+      </div>
+      <div class="figcap">FIG. 02 · MANGOBOT A2 ULTRA · LIVE MOTION</div>
+    </div>
+    <div class="unit-copy">
+      <div class="tags rv"><span class="tag fill">EVENT FLAGSHIP</span><span class="tag line">FULL-SIZE HUMANOID</span><span class="tag atlas">POWERED BY ATLASOS</span></div>
+      <h2 class="rv d1"><span class="d">A2 Ultra.</span> <span class="l">The face of the floor.</span></h2>
+      <p class="body rv d2">Standing 169 cm with 360° perception and more than twenty languages, the A2 Ultra works the room — reception, guided tours, and brand moments, handled with composure a human shift can't sustain.</p>
+      <div class="specs rv d3"><div class="spec"><span class="k">HEIGHT</span><span class="v">169 cm</span></div>
+<div class="spec"><span class="k">WEIGHT</span><span class="v">69 kg</span></div>
+<div class="spec"><span class="k">RUNTIME</span><span class="v">3 hrs</span></div>
+<div class="spec"><span class="k">FREEDOM</span><span class="v">40+ DOF</span></div>
+<div class="spec"><span class="k">SPEED</span><span class="v">0.8 m/s</span></div>
+<div class="spec"><span class="k">VOICE</span><span class="v">20+ languages</span></div></div>
+      <div class="deploys rv d4">OS · ENGAGE ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;DEPLOYS · CUSTOMER EXPERIENCE · HOSPITALITY · ENGAGE WASH CHECK-IN</div>
+      <div class="ctas rv d4">
+        <a class="btn solid" href="mailto:jared@engagework.com?subject=Quote%20request%20·%20A2%20Ultra">Request a quote</a>
+        <a class="btn ghost" href="https://mangobot.com/products" target="_blank" rel="noopener">Explore more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="unit" id="x2ultra" data-unit="03">
+  <div class="unit-grid">
+    <div class="plate-wrap rv">
+      <div class="plate plate-video" data-tilt>
+        <div class="par"><video autoplay muted loop playsinline preload="auto" poster="posters/X2Ultra.jpg">
+          <source src="media/X2Ultra.mp4" type="video/mp4">
+          <source src="media/X2Ultra.webm" type="video/webm">
+        </video></div>
+      </div>
+      <div class="figcap">FIG. 03 · MANGOBOT X2 ULTRA · LIVE MOTION</div>
+    </div>
+    <div class="unit-copy">
+      <div class="tags rv"><span class="tag fill">PERFORMER</span><span class="tag line">COMPACT HUMANOID</span><span class="tag atlas">POWERED BY ATLASOS</span></div>
+      <h2 class="rv d1"><span class="d">X2 Ultra.</span> <span class="l">The vibe master.</span></h2>
+      <p class="body rv d2">130 centimeters of choreography, sprints, and synchronized fleet routines — small enough to charm, precise enough to headline. Multiple units sync for performances built to travel far beyond the room.</p>
+      <div class="specs rv d3"><div class="spec"><span class="k">HEIGHT</span><span class="v">130 cm</span></div>
+<div class="spec"><span class="k">WEIGHT</span><span class="v">35 kg</span></div>
+<div class="spec"><span class="k">RUNTIME</span><span class="v">2 hrs</span></div>
+<div class="spec"><span class="k">FREEDOM</span><span class="v">31+ DOF</span></div>
+<div class="spec"><span class="k">PAYLOAD</span><span class="v">3 kg</span></div>
+<div class="spec"><span class="k">BATTERY</span><span class="v">500 Wh</span></div></div>
+      <div class="deploys rv d4">OS · ENGAGE ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;DEPLOYS · CUSTOMER EXPERIENCE · EVENTS · EDUCATION</div>
+      <div class="ctas rv d4">
+        <a class="btn solid" href="mailto:jared@engagework.com?subject=Quote%20request%20·%20X2%20Ultra">Request a quote</a>
+        <a class="btn ghost" href="https://mangobot.com/products" target="_blank" rel="noopener">Explore more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="unit flip" id="d1ultra" data-unit="04">
+  <div class="unit-grid">
+    <div class="plate-wrap rv">
+      <div class="plate plate-video" data-tilt>
+        <div class="par"><video autoplay muted loop playsinline preload="auto" poster="posters/D1Ultra.jpg">
+          <source src="media/D1Ultra.mp4" type="video/mp4">
+          <source src="media/D1Ultra.webm" type="video/webm">
+        </video></div>
+      </div>
+      <div class="figcap">FIG. 04 · MANGOBOT D1 ULTRA · LIVE MOTION</div>
+    </div>
+    <div class="unit-copy">
+      <div class="tags rv"><span class="tag fill">PATROL</span><span class="tag line">QUADRUPED</span><span class="tag atlas">POWERED BY ATLASOS</span></div>
+      <h2 class="rv d1"><span class="d">D1 Ultra.</span> <span class="l">The explorer.</span></h2>
+      <p class="body rv d2">A 15-kilogram explorer that climbs stairs and learns terrain as it goes — patrol routes, inspection rounds, and a live feed back to base from the places people skip.</p>
+      <div class="specs rv d3"><div class="spec"><span class="k">WEIGHT</span><span class="v">15 kg</span></div>
+<div class="spec"><span class="k">SPEED</span><span class="v">3.7 m/s</span></div>
+<div class="spec"><span class="k">RUNTIME</span><span class="v">1–2 hrs</span></div>
+<div class="spec"><span class="k">PAYLOAD</span><span class="v">5 kg</span></div>
+<div class="spec"><span class="k">SEALED</span><span class="v">IP54</span></div>
+<div class="spec"><span class="k">TORQUE</span><span class="v">48 Nm</span></div></div>
+      <div class="deploys rv d4">OS · ENGAGE ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;DEPLOYS · INVENTORY · FACILITY MAINTENANCE · OVERNIGHT SECURITY</div>
+      <div class="ctas rv d4">
+        <a class="btn solid" href="mailto:jared@engagework.com?subject=Quote%20request%20·%20D1%20Ultra">Request a quote</a>
+        <a class="btn ghost" href="https://mangobot.com/products" target="_blank" rel="noopener">Explore more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="unit" id="d1max" data-unit="05">
+  <div class="unit-grid">
+    <div class="plate-wrap rv">
+      <div class="plate plate-video" data-tilt>
+        <div class="par"><video autoplay muted loop playsinline preload="auto" poster="posters/D1Max.jpg">
+          <source src="media/D1Max.mp4" type="video/mp4">
+          <source src="media/D1Max.webm" type="video/webm">
+        </video></div>
+      </div>
+      <div class="figcap">FIG. 05 · MANGOBOT D1 MAX · LIVE MOTION</div>
+    </div>
+    <div class="unit-copy">
+      <div class="tags rv"><span class="tag fill">TRANSPORT</span><span class="tag line">HYBRID QUADRUPED</span><span class="tag atlas">POWERED BY ATLASOS</span></div>
+      <h2 class="rv d1"><span class="d">D1 Max.</span> <span class="l">The carrier.</span></h2>
+      <p class="body rv d2">Near 1:1 load-to-weight — 30 kilograms carried at four meters a second on legs, eight on wheels. IP67-sealed for docks, yards, and the routes that don't forgive.</p>
+      <div class="specs rv d3"><div class="spec"><span class="k">WEIGHT</span><span class="v">30 kg</span></div>
+<div class="spec"><span class="k">LEGGED</span><span class="v">4+ m/s</span></div>
+<div class="spec"><span class="k">WHEELED</span><span class="v">8+ m/s</span></div>
+<div class="spec"><span class="k">PAYLOAD</span><span class="v">25 kg</span></div>
+<div class="spec"><span class="k">SEALED</span><span class="v">IP67</span></div>
+<div class="spec"><span class="k">RUNTIME</span><span class="v">2.5 hrs</span></div></div>
+      <div class="deploys rv d4">OS · ENGAGE ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;DEPLOYS · INVENTORY · FACILITY MAINTENANCE · SITE TRANSPORT</div>
+      <div class="ctas rv d4">
+        <a class="btn solid" href="mailto:jared@engagework.com?subject=Quote%20request%20·%20D1%20Max">Request a quote</a>
+        <a class="btn ghost" href="https://mangobot.com/products" target="_blank" rel="noopener">Explore more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="unit flip" id="d1maxpro" data-unit="06">
+  <div class="unit-grid">
+    <div class="plate-wrap rv">
+      <div class="plate plate-video" data-tilt>
+        <div class="par"><video autoplay muted loop playsinline preload="auto" poster="posters/D1MaxPro.jpg">
+          <source src="media/D1MaxPro.mp4" type="video/mp4">
+          <source src="media/D1MaxPro.webm" type="video/webm">
+        </video></div>
+      </div>
+      <div class="figcap">FIG. 06 · MANGOBOT D1 MAX PRO · LIVE MOTION</div>
+    </div>
+    <div class="unit-copy">
+      <div class="tags rv"><span class="tag fill">HEAVY DUTY</span><span class="tag line">INDUSTRIAL QUADRUPED</span><span class="tag atlas">POWERED BY ATLASOS</span></div>
+      <h2 class="rv d1"><span class="d">D1 Max Pro.</span> <span class="l">The titan.</span></h2>
+      <p class="body rv d2">Fifty kilograms carried continuously, one hundred at maximum — industrial-grade haulage with a 5.5-hour unloaded runtime. The heaviest jobs on the site, handled without a complaint.</p>
+      <div class="specs rv d3"><div class="spec"><span class="k">WEIGHT</span><span class="v">64 kg</span></div>
+<div class="spec"><span class="k">MAX LOAD</span><span class="v">100 kg</span></div>
+<div class="spec"><span class="k">CONTINUOUS</span><span class="v">50 kg</span></div>
+<div class="spec"><span class="k">RUNTIME</span><span class="v">5.5 hrs</span></div>
+<div class="spec"><span class="k">BATTERY</span><span class="v">2160 Wh</span></div>
+<div class="spec"><span class="k">SEALED</span><span class="v">IP67</span></div></div>
+      <div class="deploys rv d4">OS · ENGAGE ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;DEPLOYS · MANUFACTURING · FACILITY MAINTENANCE · RESCUE</div>
+      <div class="ctas rv d4">
+        <a class="btn solid" href="mailto:jared@engagework.com?subject=Quote%20request%20·%20D1%20Max%20Pro">Request a quote</a>
+        <a class="btn ghost" href="https://mangobot.com/products" target="_blank" rel="noopener">Explore more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="unit" id="g2" data-unit="07">
+  <div class="unit-grid">
+    <div class="plate-wrap rv">
+      <div class="plate plate-video" data-tilt>
+        <div class="par"><video autoplay muted loop playsinline preload="auto" poster="posters/G2.jpg">
+          <source src="media/G2.mp4" type="video/mp4">
+          <source src="media/G2.webm" type="video/webm">
+        </video></div>
+      </div>
+      <div class="figcap">FIG. 07 · MANGOBOT G2 · LIVE MOTION</div>
+    </div>
+    <div class="unit-copy">
+      <div class="tags rv"><span class="tag fill">INDUSTRIAL</span><span class="tag line">WHEELED HUMANOID</span><span class="tag atlas">POWERED BY ATLASOS</span></div>
+      <h2 class="rv d1"><span class="d">G2.</span> <span class="l">The embodied operator.</span></h2>
+      <p class="body rv d2">An industrial operator with 7-DOF force-controlled arms and 360° perception — height-adjustable from 122.5 to 179.5 cm and built for scalable deployment on real production lines.</p>
+      <div class="specs rv d3"><div class="spec"><span class="k">HEIGHT</span><span class="v">122.5–179.5 cm</span></div>
+<div class="spec"><span class="k">WEIGHT</span><span class="v">185 kg</span></div>
+<div class="spec"><span class="k">RUNTIME</span><span class="v">4+ hrs</span></div>
+<div class="spec"><span class="k">FREEDOM</span><span class="v">26+ DOF</span></div>
+<div class="spec"><span class="k">VISION</span><span class="v">2× 360° coverage</span></div>
+<div class="spec"><span class="k">CHARGE</span><span class="v">2 hrs</span></div></div>
+      <div class="deploys rv d4">OS · ENGAGE ATLASOS&nbsp;&nbsp;·&nbsp;&nbsp;DEPLOYS · MANUFACTURING · INVENTORY · ENGAGE WASH INTERIORS</div>
+      <div class="ctas rv d4">
+        <a class="btn solid" href="mailto:jared@engagework.com?subject=Quote%20request%20·%20G2">Request a quote</a>
+        <a class="btn ghost" href="https://mangobot.com/products" target="_blank" rel="noopener">Explore more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="foot-band">
+  <div class="wrap">
+    <div class="in">
+      <span class="jv"><a href="https://engagework.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Engage.</a><span class="x">×</span><a href="https://mangobot.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Mangobot</a></span>
+      <span class="eyebrow" style="color:var(--z500)">POWERED BY ATLASOS</span>
+      <span class="contact"><a href="mailto:jared@engagework.com">JARED@ENGAGEWORK.COM</a> · <a href="mailto:jared@engagework.com?subject=Fleet%20quote%20request">REQUEST A QUOTE</a></span>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <footer class="small">
+    <span>© 2026 ENGAGE × MANGOBOT · A JOINT VENTURE · POWERED BY ATLASOS</span>
+    <span>PRODUCT IMAGERY COURTESY OF MANGOBOT · ENGAGEWORK.COM</span>
+  </footer>
+</div>
+
+<script>
+(function() {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // section reveal
+  var io = new IntersectionObserver(function(es) {
+    es.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('inview'); });
+  }, { threshold: 0.18 });
+  document.querySelectorAll('.unit').forEach(function(s) { io.observe(s); });
+
+  // keep robot motion clips playing when visible (browsers pause offscreen autoplay)
+  var vio = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
+      var v = e.target;
+      if (e.isIntersecting) { var pr = v.play(); if (pr && pr.catch) pr.catch(function() {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.plate-video video').forEach(function(v) { vio.observe(v); });
+
+  // scrollspy: progress + index highlight
+  var prog = document.getElementById('prog'), progN = document.getElementById('prog-n');
+  var cells = Array.prototype.slice.call(document.querySelectorAll('#cells .cell'));
+  var spy = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
+      if (e.isIntersecting) {
+        var n = e.target.getAttribute('data-unit');
+        progN.textContent = n;
+        prog.classList.add('on');
+        cells.forEach(function(c) {
+          c.classList.toggle('live', c.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.unit').forEach(function(s) { spy.observe(s); });
+  window.addEventListener('scroll', function() {
+    var first = document.querySelector('.unit');
+    if (first && first.getBoundingClientRect().top > window.innerHeight) prog.classList.remove('on');
+  }, { passive: true });
+
+  if (reduced) return;
+
+  // parallax on plates
+  var pars = Array.prototype.slice.call(document.querySelectorAll('.plate:not(.plate-video) .par'));
+  var ticking = false;
+  function parallax() {
+    var vh = window.innerHeight;
+    pars.forEach(function(p) {
+      var r = p.getBoundingClientRect();
+      var off = (r.top + r.height / 2 - vh / 2) * -0.07;
+      p.style.transform = 'translateY(' + off.toFixed(1) + 'px)';
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(parallax); ticking = true; }
+  }, { passive: true });
+  parallax();
+
+  // hover tilt
+  if (matchMedia('(hover:hover)').matches) {
+    document.querySelectorAll('[data-tilt]').forEach(function(pl) {
+      pl.addEventListener('mousemove', function(ev) {
+        var r = pl.getBoundingClientRect();
+        var rx = ((ev.clientY - r.top) / r.height - 0.5) * -5;
+        var ry = ((ev.clientX - r.left) / r.width - 0.5) * 5;
+        pl.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+      });
+      pl.addEventListener('mouseleave', function() {
+        pl.style.transform = '';
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
