@@ -19,4 +19,4 @@ jobs:
         run: |
           curl -sS -o /dev/null -w "PUT status: %{http_code}\n" -L -X PUT "$TRANSFER_URL" \
             -H "Content-Type: text/html" \
-            --data-binary @go-bot/.design-refs/gobot-deck.html
+            --data-binary @go-bot/.design-refs/products-deck.html
