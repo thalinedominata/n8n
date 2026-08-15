@@ -1,0 +1,65 @@
+name: Asset import
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+    paths:
+      - 'go-bot/.design-refs/asset-manifest.json'
+      - '.github/workflows/asset-import.yml'
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Repo path of a JSON manifest ({assets:[{url,path}]}) to import
+        required: false
+        type: string
+      url:
+        description: Source URL of a single asset to fetch (ignored when manifest is set)
+        required: false
+        type: string
+      path:
+        description: Repo path to write the single asset to
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch assets
+        run: |
+          set -euo pipefail
+          MANIFEST="${{ inputs.manifest }}"
+          if [ -z "$MANIFEST" ] && [ "${{ github.event_name }}" = "push" ]; then
+            MANIFEST="go-bot/.design-refs/asset-manifest.json"
+          fi
+          if [ -n "$MANIFEST" ]; then
+            jq -r '.assets[] | [.url, .path] | @tsv' "$MANIFEST" |
+            while IFS=$'\t' read -r url path; do
+              mkdir -p "$(dirname "$path")"
+              curl -fsSL --retry 3 --retry-delay 2 "$url" -o "$path"
+              echo "fetched $path ($(stat -c%s "$path") bytes)"
+            done
+          elif [ -n "${{ inputs.url }}" ] && [ -n "${{ inputs.path }}" ]; then
+            mkdir -p "$(dirname "${{ inputs.path }}")"
+            curl -fsSL --retry 3 --retry-delay 2 "${{ inputs.url }}" -o "${{ inputs.path }}"
+            echo "fetched ${{ inputs.path }} ($(stat -c%s "${{ inputs.path }}") bytes)"
+          else
+            echo "Provide either 'manifest' or both 'url' and 'path'." >&2
+            exit 1
+          fi
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: import assets [skip ci]"
+            git push
+          fi
