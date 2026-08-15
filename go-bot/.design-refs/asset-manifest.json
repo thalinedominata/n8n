@@ -172,6 +172,10 @@
     {
       "url": "https://mangobot.com/products",
       "path": "go-bot/.design-refs/ref-site/products.html"
+    },
+    {
+      "url": "https://mangobot.com/partnerships",
+      "path": "go-bot/.design-refs/ref-site/partnerships.html"
     }
   ]
 }
